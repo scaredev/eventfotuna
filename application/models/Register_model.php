@@ -12,9 +12,11 @@ class Register_model extends CI_Model
 public function add_user()
  {
   $data=array(
-    'username'=>$this->input->post('user_name'),
-    'email'=>$this->input->post('email_address'),
-    'password'=>md5($this->input->post('password'))
+    'company'=>$this->input->post('company'),
+    'email'=>$this->input->post('email'),
+    'password'=>md5($this->input->post('password')),
+	'mobile'=>$this->input->post('mobile'),
+	'cart_type'=>$this->input->post('cart-type')	
   );
   $this->db->insert('user',$data);
  }

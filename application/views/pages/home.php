@@ -187,7 +187,7 @@
 										<div class="collapse" id="tabs">
 											<div class="well">
 												<div role="tabpanel">
-												<form method="POST" action="#" id="reg-form">												
+												<form method="POST" action="<?php echo base_url();?>Register/registration" id="reg-form">												
 												  <div class="form-group">
 												  	<label for="company">Company</label>
 													<input type="text" class="form-control" id="company" name="company" placeholder="Company Name" minlength="2" required>
@@ -202,8 +202,16 @@
 												  </div>
 												  <div class="form-group">
 													<label for="email">Email Address</label>
-													<input type="email" class="form-control" id="email" name="email" placeholder="you@mailserver.domain">
-												  </div>												  									  
+													<input type="email" class="form-control" id="email" name="email" placeholder="you@mailserver.domain" email required>
+												  </div>
+												 <div class="form-group">
+													<label for="password">Password</label>
+													<input type="password" class="form-control" id="password" name="password" placeholder="password" minlength="8" required>
+												  </div>
+												   <div class="form-group">
+													<label for="password2">Confirm Password</label>
+													<input type="password" class="form-control" id="password2" name="password2" placeholder="password">
+												  </div>
 												  <button type="submit" class="btn btn-success">Submit</button>
 												  <button type="reset" class="btn">Cancel</button>
 												</form>

@@ -11,7 +11,7 @@ class login_model extends CI_Model
     function validate(){
         
       $this->db->where('email', $this->input->post('email'));
-      $this->db->where('password', $this->input->post('password'));
+      $this->db->where('password', md5($this->input->post('password')));
       $query = $this->db->get('user');
       return $query->num_rows();
 	  
@@ -22,7 +22,7 @@ class login_model extends CI_Model
 	function valid(){
         
       $this->db->where('email', $this->input->post('email'));
-      $this->db->where('password', $this->input->post('password'));
+      $this->db->where('password', md5($this->input->post('password')));
       $query = $this->db->get('user');
       if($query->num_rows > 0){
           return true;

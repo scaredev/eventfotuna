@@ -13,26 +13,20 @@ class Register extends CI_Controller
           $this->load->database();
           $this->load->library('form_validation');
           //load the login model
-          $this->load->model('Login_model');
+          $this->load->model('Register_model');
      }
 
 public function registration()
  {
-  $this->load->library('form_validation');
-  // field name, error message, validation rules
-  $this->form_validation->set_rules('user_name', 'User Name', 'trim|required|min_length[4]|xss_clean');
-  $this->form_validation->set_rules('email_address', 'Your Email', 'trim|required|valid_email');
-  $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[4]|max_length[32]');
-  $this->form_validation->set_rules('con_password', 'Password Confirmation', 'trim|required|matches[password]');
-
-  if($this->form_validation->run() == FALSE)
-  {
-   $this->index();
-  }
-  else
-  {
-   $this->user_model->add_user();
-   $this->thank();
-  }
+ 
+   $this->Register_model->add_user();
+   $email = $this->input->post("email");
+   $sessiondata = array(    
+   'email' => $email,         
+   'logged_in' => TRUE );
+                        
+ $this->session->set_userdata($sessiondata);
+ redirect('Event/profile');
+  
  }
 }
