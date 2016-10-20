@@ -88,7 +88,7 @@
 									  <div class="modal-dialog">
 										<div class="modal-content">
 											<div class="modal-header">
-												<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+												<button type="button" class="close" data-dismiss="modal"><i class="glyphicon glyphicon-remove-circle"></i><span class="sr-only">Close</span></button>
 												<h3 class="modal-title" id="lineModalLabel">Personal Information</h3>
 											</div>
 											<div class="modal-body">
@@ -104,14 +104,14 @@
 												  	<label for="exampleInputEmail1">Tel</label>
 													<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Tel #">
 												  </div>
+												  
 												  <div class="form-group">
-													<label for="exampleInputEmail1">Date of Event</label>
-													<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Date of event">
-												  </div>
-												  <div class="form-group">
-													<label for="exampleInputEmail1">Time interval</label>
-													<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Time interval">
-												  </div>
+													 <label for="exampleInputEmail1">Date and Time of Event</label>
+													 <div class="input-append date form_datetime">
+															<input class="form-control" type="text" value="" >
+															<span class="add-on"><i class="icon-th"></i></span>
+														</div>
+												  </div>	
 												  <div class="form-group">
 													<label for="exampleInputEmail1">Participants</label>
 													<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Estimated # of Participants">

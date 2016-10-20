@@ -11,7 +11,7 @@
 
     <!-- Bootstrap -->
     <link href="<?php echo base_url();?>css/bootstrap.min.css" rel="stylesheet">
-	
+	<link href="<?php echo base_url();?>css/bootstrap-datetimepicker.css" rel="stylesheet">
 	<link href="<?php echo base_url();?>css/custom.css" rel="stylesheet">
 	
 	<!--link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous"-->
@@ -24,7 +24,8 @@
     <![endif]-->
 	<script src="<?php echo base_url();?>js/jquery-1.11.2.min.js"></script>
 	<script src="<?php echo base_url();?>js/jquery-3.1.1.js"></script>
-    <script src="<?php echo base_url();?>js/bootstrap.min.js"></script>
-	 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.js"></script>
+    <script src="<?php echo base_url();?>js/bootstrap.js"></script>
+	<script src="<?php echo base_url();?>js/bootstrap-datetimepicker.js"></script>
+	<script src="<?php echo base_url();?>js/jquery.validate.js"></script>
   </head>
   
