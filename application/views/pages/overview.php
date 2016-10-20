@@ -119,16 +119,16 @@
 									</tr>
 								  </tbody>
 								</table>
-								<div class="container">
-									<div class="row">
+								
+								<div class="row">
 									<nav aria-label="...">
 									  <ul class="pager">
 										<li><a href="#">Previous</a></li>
 										<li><a href="#">Next</a></li>
 									  </ul>
 									</nav>
-									</div>
 								</div>
+								
 							
 
 					</div>
