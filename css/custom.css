@@ -286,6 +286,7 @@ vertical-align: middle;
     background-color: #FFF;
     border-radius: 3px;
     box-shadow: 0 1px 2px #c8d1d3;
+	padding:0px 20px;
 }
 .card-body{
 	display: table;
@@ -295,4 +296,21 @@ padding: 20px 20px;
 .app-title{
 	display: table-cell;
 vertical-align: middle;
+padding:0px 20px;
+}
+.timeline-badge {
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4em;
+    text-align: center;
+    margin-left: -25px;
+    background-color: #999999;
+    z-index: 100;
+    border-top-right-radius: 50%;
+    border-top-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+	vertical-align: middle;
 }
