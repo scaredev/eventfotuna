@@ -96,7 +96,7 @@
 									</tr>
 								  </tbody>
 								</table>
-								<div class="container">
+								
 									<div class="row">
 									<nav aria-label="...">
 									  <ul class="pager">
@@ -105,7 +105,7 @@
 									  </ul>
 									</nav>
 									</div>
-								</div>
+								
 							</div>
 						</div>	
 
