@@ -67,7 +67,7 @@
 			                        </div>
 									<div class="form-group input-group-lg">
 			                        	<label class="sr-only" for="zip">Location</label>
-			                        	<input type="text" name="zip" placeholder="Zip Code..." class="form-last-name form-control" id="form-last-name" required>
+			                        	<input type="text" name="zip" placeholder="Zip Code..." class="form-last-name form-control" id="form-last-name">
 			                        </div>
 									<button  type="button" data-toggle="modal" data-target="#squarespaceModal" class="btn btn-info btn-lg">Get 3 offers!</button>
 									
@@ -97,23 +97,26 @@
 												
 												  <div class="form-group">
 												  	<label for="inputname">Name</label>
-													<input type="text" name="inputname" class="form-control" id="inputname" placeholder="Name" required>
+													<input type="text" name="inputname" class="form-control" id="inputname" placeholder="Name">
+												  </div><div class="form-group">
+												  	<label for="inputemail">Email</label>
+													<input type="text" name="inputemail" class="form-control" id="inputname" placeholder="Name">
 												  </div>
 												  <div class="form-group">
 												  	<label for="tel">Tel</label>
-													<input name="tel" type="text" class="form-control" id="tel" placeholder="Tel #" required>
+													<input name="tel" type="text" class="form-control" id="tel" placeholder="Tel #">
 												  </div>
 												  
 												  <div class="form-group">
 													 <label for="date-time">Date and Time of Event</label>
 													 <div class="input-append date form_datetime">
-															<input id="date-time" name="date-time" class="form-control" type="text" value="" placeholder="Date and time of event" required>
+															<input id="date-time" name="date-time" class="form-control" type="text" value="" placeholder="Date and time of event">
 															<span class="add-on"><i class="icon-th"></i></span>
 														</div>
 												  </div>	
 												  <div class="form-group">
 													<label for="participants">Participants</label>
-													<input name="participants" type="text" class="form-control" id="participants" placeholder="Estimated # of Participants" required>
+													<input name="participants" type="text" class="form-control" id="participants" placeholder="Estimated # of Participants">
 												  </div>
 												  <div class="form-group">
 													<label for="address">Address</label>
@@ -121,9 +124,13 @@
 												  </div>
 												   <div class="form-group">
 													<label for="agreement">Agreement</label>
-													<p>dasdfasasfghfh</p>
-													<input type="checkbox" name="agreement" class="form-control" id="address" placeholder="Address/Postal Code" required>
-													<span> I understand and agree</span>
+													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+													<div class="checkbox">
+														
+														<label>
+														 <input name="agreement" type="checkbox"><p> Check to agree </p>
+														</label>
+													  </div>
 												  </div>
 												  <button type="submit"  class="btn btn-success">Submit</button>
 												  <button type="reset" class="btn btn-default"  role="button">Clear</button>
