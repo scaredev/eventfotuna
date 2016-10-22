@@ -26,32 +26,32 @@
                     <div class="tab-content">
                         <div class="tab-pane fade in active" id="tab1default">
 							<div class="form-bottom">
-			                    <form role="form" action="" method="post" class="registration-form">
-									<div class="form-group input-group-lg">
-										<label for="inlineRadioOptions" class="control-label">Party type</label>
-										<div class="radio">
-										  <label>
-											<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-											Private
-										  </label>
-										</div>
-										<div class="radio">
-										  <label>
-											<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-											Company
-										  </label>
-										</div>
-									 </div>
-									
-									<div class="form-group input-group-lg">
-			                        	<label class="sr-only" for="form-email">No. of guests</label>
-										
-			                        </div>
-									
+			                    <form id="order-form" role="form" action="event/order" method="post" class="registration-form">
+								<div class="form-group input-group-lg">
+								<label  for="inputHelpBlock">Party Type</label>
+									<div class="row">
+										  <div class="col-lg-6">
+											<div class="input-group">
+											  <span class="input-group-addon">
+												<input name="eventtype" type="radio" aria-label="..." value="company">
+											  </span>
+										  <input type="text" class="form-control" aria-label="..." disabled value="Company">
+											</div><!-- /input-group -->
+										  </div><!-- /.col-lg-6 -->
+										  <div class="col-lg-6">
+											<div class="input-group">
+											  <span class="input-group-addon">
+												<input name="eventtype" type="radio" aria-label="..." value="private">
+											  </span>
+											  <input type="text" class="form-control" aria-label="..." disabled value="Private">
+											</div><!-- /input-group -->
+										  </div><!-- /.col-lg-6 -->
+										</div><!-- /.row -->
+								</div>			
 			                        <div class="form-group input-group-lg">
-										<label class="sr-only" for="form-email">Event</label>
+										<label class="sr-only" for="event">Event</label>
 			                        	
-										  <select class="form-control" id="sel1" data-placeholder="Select Event..">
+										  <select class="form-control" id="event" name="event" data-placeholder="Select Event..">
 											<option>Bryllup</option>
 											<option>Barnedab</option>
 											<option>Komfirmation</option>
@@ -66,12 +66,12 @@
 									
 			                        </div>
 									<div class="form-group input-group-lg">
-			                        	<label class="sr-only" for="form-last-name">Location</label>
-			                        	<input type="text" name="form-last-name" placeholder="Zip Code..." class="form-last-name form-control" id="form-last-name">
+			                        	<label class="sr-only" for="zip">Location</label>
+			                        	<input type="text" name="zip" placeholder="Zip Code..." class="form-last-name form-control" id="form-last-name" required>
 			                        </div>
 									<button  type="button" data-toggle="modal" data-target="#squarespaceModal" class="btn btn-info btn-lg">Get 3 offers!</button>
 									
-									<div style=" padding-left: 15px;padding-top: 15px; font-size: 85%; float: right; font-size:85%">
+									<!--div style=" padding-left: 15px;padding-top: 15px; font-size: 85%; float: right; font-size:85%">
 										<a href="#" onclick="$('#loginbox').hide(); $('#signupbox').show()" style="padding:15px;">
                                             Log in
                                         </a>
@@ -79,8 +79,8 @@
                                         <a href="#" onclick="$('#loginbox').hide(); $('#signupbox').show()">
                                             Sign Up Here
                                         </a>
-                                        </div>
-									</form> 
+                                        </div -->
+									
 									
 									
 									<!-- line modal -->
@@ -94,47 +94,47 @@
 											<div class="modal-body">
 												
 												<!-- content goes here -->
-												<form>
 												
 												  <div class="form-group">
-												  	<label for="exampleInputEmail1">Name</label>
-													<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Name">
+												  	<label for="inputname">Name</label>
+													<input type="text" name="inputname" class="form-control" id="inputname" placeholder="Name" required>
 												  </div>
 												  <div class="form-group">
-												  	<label for="exampleInputEmail1">Tel</label>
-													<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Tel #">
+												  	<label for="tel">Tel</label>
+													<input name="tel" type="text" class="form-control" id="tel" placeholder="Tel #" required>
 												  </div>
 												  
 												  <div class="form-group">
-													 <label for="exampleInputEmail1">Date and Time of Event</label>
+													 <label for="date-time">Date and Time of Event</label>
 													 <div class="input-append date form_datetime">
-															<input class="form-control" type="text" value="" >
+															<input id="date-time" name="date-time" class="form-control" type="text" value="" placeholder="Date and time of event" required>
 															<span class="add-on"><i class="icon-th"></i></span>
 														</div>
 												  </div>	
 												  <div class="form-group">
-													<label for="exampleInputEmail1">Participants</label>
-													<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Estimated # of Participants">
+													<label for="participants">Participants</label>
+													<input name="participants" type="text" class="form-control" id="participants" placeholder="Estimated # of Participants" required>
 												  </div>
 												  <div class="form-group">
-													<label for="exampleInputEmail1">Address</label>
-													<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Address/Postal Code">
+													<label for="address">Address</label>
+													<textarea name="address" class="form-control" id="address" placeholder="Address/Postal Code"></textarea>
 												  </div>
-												  
-												  <div class="form-group">
-													<label for="exampleInputFile">Upload Picture</label>
-													<input type="file" id="exampleInputFile">
-													<p class="help-block">Avatar or Event Icon</p>
+												   <div class="form-group">
+													<label for="agreement">Agreement</label>
+													<p>dasdfasasfghfh</p>
+													<input type="checkbox" name="agreement" class="form-control" id="address" placeholder="Address/Postal Code" required>
+													<span> I understand and agree</span>
 												  </div>
-												  
-												  <a href= "<?= base_url();?>Event/thankyou"  class="btn btn-default">Submit</a>
-												</form>
+												  <button type="submit"  class="btn btn-success">Submit</button>
+												  <button type="reset" class="btn btn-default"  role="button">Clear</button>
+								</form>
 
 											</div>
 											<div class="modal-footer">
 												<div class="btn-group btn-group-justified" role="group" aria-label="group button">
-													<div class="btn-group" role="group">
-														<button type="button" class="btn btn-default" data-dismiss="modal"  role="button">Close</button>
+													<div class="button-group" role="group">
+														<button type="button" class="btn btn-default" data-dismiss="modal" role="button">Close</button>
+														
 													</div>
 													
 												</div>
@@ -239,4 +239,4 @@
         </div>
 	</div>
  </div>
-  
+   
