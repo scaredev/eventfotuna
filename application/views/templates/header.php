@@ -26,6 +26,6 @@
 	<script src="<?php echo base_url();?>js/jquery-3.1.1.js"></script>
     <script src="<?php echo base_url();?>js/bootstrap.js"></script>
 	<script src="<?php echo base_url();?>js/bootstrap-datetimepicker.js"></script>
-	<script src="<?php echo base_url();?>js/jquery.validate.js"></script>
+	
   </head>
   

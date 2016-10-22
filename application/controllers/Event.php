@@ -1,9 +1,7 @@
 <?php 
 
 class Event extends CI_Controller{
-    
-	
-     
+ 
 	public function __construct()
     {
         parent::__construct();		
@@ -18,7 +16,7 @@ class Event extends CI_Controller{
 	function dashboard($page = 'dashboard')
 	{
 		
-		 if($this->session->userdata('logged_in')){
+		if($this->session->userdata('logged_in')){
 			$data ['email']= $this->session->userdata('email'); 
 			$data['title'] = ucfirst($page); // Capitalize the first letter
 			$this->load->view('templates/admin-header',$data);
@@ -58,7 +56,7 @@ class Event extends CI_Controller{
 			$data ['email']= $this->session->userdata('email'); 
 			$data['title'] = ucfirst($page); // Capitalize the first letter
 			
-			$prefs['template'] = '
+		$prefs['template'] = '
 
         {table_open}<table border="0" cellpadding="0" cellspacing="0">{/table_open}
 

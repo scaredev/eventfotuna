@@ -26,14 +26,14 @@
                     <div class="tab-content">
                         <div class="tab-pane fade in active" id="tab1default">
 							<div class="form-bottom">
-			                    <form id="order-form" role="form" action="event/order" method="post" class="registration-form">
+			                    <form id="order-form" data-toggle="validator" role="form" action="<?php echo base_url();?>Order/submit_order" method="post" class="registration-form">
 								<div class="form-group input-group-lg">
-								<label  for="inputHelpBlock">Party Type</label>
+								<label  for="eventtype">Party Type</label>
 									<div class="row">
 										  <div class="col-lg-6">
 											<div class="input-group">
 											  <span class="input-group-addon">
-												<input name="eventtype" type="radio" aria-label="..." value="company">
+												<input id="eventtype" name="eventtype" type="radio" aria-label="..." value="company">
 											  </span>
 										  <input type="text" class="form-control" aria-label="..." disabled value="Company">
 											</div><!-- /input-group -->
@@ -41,7 +41,7 @@
 										  <div class="col-lg-6">
 											<div class="input-group">
 											  <span class="input-group-addon">
-												<input name="eventtype" type="radio" aria-label="..." value="private">
+												<input id="eventtype" name="eventtype" type="radio" aria-label="..." value="private">
 											  </span>
 											  <input type="text" class="form-control" aria-label="..." disabled value="Private">
 											</div><!-- /input-group -->
@@ -66,8 +66,9 @@
 									
 			                        </div>
 									<div class="form-group input-group-lg">
-			                        	<label class="sr-only" for="zip">Location</label>
-			                        	<input type="text" name="zip" placeholder="Zip Code..." class="form-last-name form-control" id="form-last-name">
+			                        	<label class="sr-only" for="zip" >Location</label>
+			                        	<input type="text" name="zip" placeholder="Zip Code..." class="form-last-name form-control" id="form-last-name" data-error="Thats not a Zip Code" required>
+										<div class="help-block with-errors"></div>
 			                        </div>
 									<button  type="button" data-toggle="modal" data-target="#squarespaceModal" class="btn btn-info btn-lg">Get 3 offers!</button>
 									
@@ -97,38 +98,37 @@
 												
 												  <div class="form-group">
 												  	<label for="inputname">Name</label>
-													<input type="text" name="inputname" class="form-control" id="inputname" placeholder="Name">
+													<input type="text" name="inputname" class="form-control" id="inputname" placeholder="Name" required>
 												  </div><div class="form-group">
 												  	<label for="inputemail">Email</label>
-													<input type="text" name="inputemail" class="form-control" id="inputname" placeholder="Name">
+													<input type="email" name="inputemail" class="form-control" id="inputname" placeholder="Name" required>
 												  </div>
 												  <div class="form-group">
 												  	<label for="tel">Tel</label>
-													<input name="tel" type="text" class="form-control" id="tel" placeholder="Tel #">
+													<input name="tel" type="text" class="form-control" id="tel" placeholder="Tel #" required>
 												  </div>
 												  
 												  <div class="form-group">
 													 <label for="date-time">Date and Time of Event</label>
 													 <div class="input-append date form_datetime">
-															<input id="date-time" name="date-time" class="form-control" type="text" value="" placeholder="Date and time of event">
+															<input id="date-time" name="inputname" class="form-control" type="text" value="" placeholder="Date and time of event" required>
 															<span class="add-on"><i class="icon-th"></i></span>
 														</div>
 												  </div>	
 												  <div class="form-group">
 													<label for="participants">Participants</label>
-													<input name="participants" type="text" class="form-control" id="participants" placeholder="Estimated # of Participants">
+													<input name="participants" type="text" class="form-control" id="participants" placeholder="Estimated # of Participants" required>
 												  </div>
 												  <div class="form-group">
 													<label for="address">Address</label>
-													<textarea name="address" class="form-control" id="address" placeholder="Address/Postal Code"></textarea>
+													<textarea name="address" class="form-control" id="address" placeholder="Address/Postal Code" required></textarea>
 												  </div>
 												   <div class="form-group">
 													<label for="agreement">Agreement</label>
 													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
 													<div class="checkbox">
-														
 														<label>
-														 <input name="agreement" type="checkbox"><p> Check to agree </p>
+														 <input name="agreement" type="checkbox" required><p> Check to agree </p>
 														</label>
 													  </div>
 												  </div>
@@ -209,7 +209,7 @@
 												  </div>
 												  <div class="form-group">
 													<label for="email">Email Address</label>
-													<input type="email" class="form-control" id="email" name="email" placeholder="you@mailserver.domain" email required>
+													<input type="email" class="form-control" id="email" name="email" placeholder="you@mailserver.domain" required>
 												  </div>
 												 <div class="form-group">
 													<label for="password">Password</label>
