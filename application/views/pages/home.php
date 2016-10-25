@@ -111,7 +111,7 @@
 												  <div class="form-group">
 													 <label for="date-time">Date and Time of Event</label>
 													 <div class="input-append date form_datetime">
-															<input id="date-time" name="inputname" class="form-control" type="text" value="" placeholder="Date and time of event" required>
+															<input id="date-time" name="date-time" class="form-control" type="text" value="" placeholder="Date and time of event" required>
 															<span class="add-on"><i class="icon-th"></i></span>
 														</div>
 												  </div>	

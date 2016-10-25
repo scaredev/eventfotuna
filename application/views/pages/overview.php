@@ -19,8 +19,8 @@
 								  <thead>
 									<tr>
 									  <th>Costumer</th>
-									  <th>Cart Type</th>
-									  <th>Event type</th>
+									  <th>Even Type</th>
+									  <th>Party type</th>
 									  <th>No.of Guest</th>
 									  <th>Location</th>
 									  <th>Status</th>
@@ -29,11 +29,11 @@
 								  <tbody>
 								  <?php foreach($results as $orders){?>
 									<tr class="">
-									  <td><img src="<?= base_url();?>img/profilepic.jpg" alt="..." class="img-circle img-fluid"></td>
-									  <td>Coffee cart</td>
+									  <td><?php echo $orders->name;?></td>
 									  <td><?php echo $orders->party; ?></td>
-									  <td>50</td>
-									 <td>#3412 st. lorem ipsum</button></td>
+									  <td><?php echo $orders->partytype; ?></td>
+									  <td><?php echo $orders->participants;?></td>
+									 <td><?php echo $orders->address;?></td>
 									  <td> <span class="bidder">
 											<i class="fa fa-clock-o" aria-hidden="true"></i> <span>10 Bids</span></span>
 											<a class="bidder" href="#" role="button">Bid</a> </td>
