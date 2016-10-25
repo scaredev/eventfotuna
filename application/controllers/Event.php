@@ -13,7 +13,7 @@ class Event extends CI_Controller{
 		  $this->load->library('pagination');
           //load the login model
          $this->load->model('Order_model');
-		  
+		 
 		 
 		  
     }
@@ -83,10 +83,6 @@ class Event extends CI_Controller{
 				$config['num_links'] = $total_row;
 				$this->pagination->initialize($config);
 				$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-				
-				$data["results"] = $this->Order_model->fetch_data($config["per_page"], $page);
-				$data["links"]  = $this->pagination->create_links();
-
 				
 				$data['results'] = $this->Order_model->fetch_data($config['per_page'],$page);       
 				$data['links'] = $this->pagination->create_links();
@@ -163,11 +159,17 @@ class Event extends CI_Controller{
 				   redirect('Login');
 		}
 	}
-	function profile($page = 'profile')
+	function profile()
 	{
+		$page = 'profile';
 		if($this->session->userdata('logged_in')){
 			$data ['email']= $this->session->userdata('email'); 
+			 
 			$data['title'] = ucfirst($page); // Capitalize the first letter
+			$this->load->model('Login_model'); 
+			$data['people'] = $this->Login_model->get_info();
+			
+			
 			$this->load->view('templates/admin-header',$data);
 			$this->load->view('pages/'.$page);
 			$this->load->view('templates/admin-footer');

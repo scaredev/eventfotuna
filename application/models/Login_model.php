@@ -28,4 +28,10 @@ class login_model extends CI_Model
           return true;
       }
     }
+	public function get_info() {
+		$people = $this->input->post('email');
+        $this->db->where('email',$people);
+        $query = $this->db->get("user");
+		return $query->row();
+   }
 }	

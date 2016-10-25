@@ -18,6 +18,7 @@
 								<table class="table table-condensed table-hover">
 								  <thead>
 									<tr>
+									  <th>#</th>
 									  <th>Costumer</th>
 									  <th>Even Type</th>
 									  <th>Party type</th>
@@ -28,7 +29,8 @@
 								  </thead>
 								  <tbody>
 								  <?php foreach($results as $orders){?>
-									<tr class="">
+									<tr class="<?php echo $orders->id;?>">
+									  <td><?php echo $orders->id;?></td>
 									  <td><?php echo $orders->name;?></td>
 									  <td><?php echo $orders->party; ?></td>
 									  <td><?php echo $orders->partytype; ?></td>

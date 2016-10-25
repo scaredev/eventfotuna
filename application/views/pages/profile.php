@@ -39,7 +39,7 @@
 
 					          		<div class="btn-group">
 									  	<button type="button" disabled="" class="btn btn-primary">Name</button>
-									  	<button type="button" disabled="" class="btn btn-default">JONATHAN DOE</button>
+									  	<button type="button" disabled="" class="btn btn-default"><?php print_r($people);?></button>
 									</div>
 									<div class="btn-group">
 									  	<button type="button" disabled="" class="btn btn-primary">date of birth</button>
