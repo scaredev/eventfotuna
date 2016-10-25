@@ -15,7 +15,7 @@
 								<li class="<?php if($title=="Calendarview"){echo "active";}?>">
 								<a href="<?=base_url();?>Event/calendarview"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Calendar</span></a></li>
 								<li class="<?php if($title=="Cashier"){echo "active";}?>">
-								 <a href="<?=base_url();?>Event/cashier"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Cashier</span></a></li>
+								 <a href="<?=base_url();?>Event/cashier"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Cashier</span></a></li>
 								<li class="<?php if($title=="Settings"){echo "active";}?>">
 								 <a href="<?=base_url();?>Event/settings"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Setting</span></a></li>
 							</ul>

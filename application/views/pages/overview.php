@@ -14,7 +14,7 @@
 							
 							</form>
 							<hr>
-						
+								
 								<table class="table table-condensed table-hover">
 								  <thead>
 									<tr>
@@ -27,105 +27,25 @@
 									</tr>
 								  </thead>
 								  <tbody>
+								  <?php foreach($results as $orders){?>
 									<tr class="">
 									  <td><img src="<?= base_url();?>img/profilepic.jpg" alt="..." class="img-circle img-fluid"></td>
 									  <td>Coffee cart</td>
-									  <td>Private</td>
+									  <td><?php echo $orders->party; ?></td>
 									  <td>50</td>
 									 <td>#3412 st. lorem ipsum</button></td>
 									  <td> <span class="bidder">
 											<i class="fa fa-clock-o" aria-hidden="true"></i> <span>10 Bids</span></span>
 											<a class="bidder" href="#" role="button">Bid</a> </td>
+									
 									</tr>
-									<tr class="">
-									  <td><img src="<?= base_url();?>img/profilepic.jpg" alt="..." class="img-circle img-fluid"></td>
-									  <td>Coffee cart</td>
-									  <td>Private</td>
-									  <td>50</td>
-									 <td>#3412 st. lorem ipsum</button></td>
-									   <td> <span class="bidder">
-											<i class="fa fa-clock-o" aria-hidden="true"></i> <span>10 Bids</span></span>
-											<a class="bidder" href="#" role="button">Bid</a> </td>
-									</tr>
-									<tr class="">
-									  <td><img src="<?= base_url();?>img/profilepic.jpg" alt="..." class="img-circle img-fluid"></td>
-									  <td>Coffee cart</td>
-									  <td>Private</td>
-									  <td>50</td>
-									 <td>#3412 st. lorem ipsum</button></td>
-									  <td> <span class="bidder">
-											<i class="fa fa-clock-o" aria-hidden="true"></i> <span>10 Bids</span></span>
-											<a class="bidder" href="#" role="button">Bid</a> </td>
-									</tr>
-									<tr class="">
-									  <td><img src="<?= base_url();?>img/profilepic.jpg" alt="..." class="img-circle img-fluid"></td>
-									  <td>Coffee cart</td>
-									  <td>Private</td>
-									  <td>50</td>
-									 <td>#3412 st. lorem ipsum</button></td>
-									   <td> <span class="bidder">
-											<i class="fa fa-clock-o" aria-hidden="true"></i> <span>10 Bids</span></span>
-											<a class="bidder" href="#" role="button">Bid</a> </td>
-									</tr>
-									<tr class="">
-									  <td><img src="<?= base_url();?>img/profilepic.jpg" alt="..." class="img-circle img-fluid"></td>
-									  <td>Coffee cart</td>
-									  <td>Private</td>
-									  <td>50</td>
-									 <td>#3412 st. lorem ipsum</button></td>
-									   <td> <span class="bidder">
-											<i class="fa fa-clock-o" aria-hidden="true"></i> <span>10 Bids</span></span>
-											<a class="bidder" href="#" role="button">Bid</a> </td>
-									</tr>
-									<tr class="">
-									  <td><img src="<?= base_url();?>img/profilepic.jpg" alt="..." class="img-circle img-fluid"></td>
-									  <td>Coffee cart</td>
-									  <td>Private</td>
-									  <td>50</td>
-									 <td>#3412 st. lorem ipsum</button></td>
-									  <td> <span class="bidder">
-											<i class="fa fa-clock-o" aria-hidden="true"></i> <span>10 Bids</span></span>
-											<a class="bidder" href="#" role="button">Bid</a> </td>
-									</tr>
-									<tr class="">
-									  <td><img src="<?= base_url();?>img/profilepic.jpg" alt="..." class="img-circle img-fluid"></td>
-									  <td>Coffee cart</td>
-									  <td>Private</td>
-									  <td>50</td>
-									 <td>#3412 st. lorem ipsum</button></td>
-									   <td> <span class="bidder">
-											<i class="fa fa-clock-o" aria-hidden="true"></i> <span>10 Bids</span></span>
-											<a class="bidder" href="#" role="button">Bid</a> </td>
-									</tr>
-									<tr class="">
-									  <td><img src="<?= base_url();?>img/profilepic.jpg" alt="..." class="img-circle img-fluid"></td>
-									  <td>Coffee cart</td>
-									  <td>Private</td>
-									  <td>50</td>
-									 <td>#3412 st. lorem ipsum</button></td>
-									  <td> <span class="bidder">
-											<i class="fa fa-clock-o" aria-hidden="true"></i> <span>10 Bids</span></span>
-											<a class="bidder" href="#" role="button">Bid</a> </td>
-									</tr>
-									<tr class="">
-									  <td><img src="<?= base_url();?>img/profilepic.jpg" alt="..." class="img-circle img-fluid"></td>
-									  <td>Coffee cart</td>
-									  <td>Private</td>
-									  <td>50</td>
-									 <td>#3412 st. lorem ipsum</button></td>
-									  <td> <span class="bidder">
-											<i class="fa fa-clock-o" aria-hidden="true"></i> <span>10 Bids</span></span>
-											<a class="bidder" href="#" role="button">Bid</a> </td>
-									</tr>
+									<?php }?>  
 								  </tbody>
 								</table>
 								
 								<div class="row">
-									<nav aria-label="...">
-									  <ul class="pager">
-										<li><a href="#">Previous</a></li>
-										<li><a href="#">Next</a></li>
-									  </ul>
+									<nav aria-label="...">									 	
+											<?php echo $links;?>
 									</nav>
 								</div>
 								

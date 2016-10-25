@@ -9,16 +9,32 @@ class Event extends CI_Controller{
           $this->load->library('session');
           $this->load->helper('html');
           $this->load->library('form_validation');
+		  $this->load->database();
+		  $this->load->library('pagination');
           //load the login model
-          $this->load->model('Login_model');
+         $this->load->model('Order_model');
+		  
+		 
 		  
     }
-	function dashboard($page = 'dashboard')
+	function dashboard($pages = 'dashboard')
 	{
 		
 		if($this->session->userdata('logged_in')){
 			$data ['email']= $this->session->userdata('email'); 
-			$data['title'] = ucfirst($page); // Capitalize the first letter
+			$data['title'] = ucfirst($pages); // Capitalize the first letter
+			$this->load->view('templates/admin-header',$data);
+			$this->load->view('pages/'.$pages);
+			$this->load->view('templates/admin-footer');
+		}else{
+				   redirect('Login');
+		}
+	}
+	function history($pages = 'history')
+	{
+		if($this->session->userdata('logged_in')){
+			$data ['email']= $this->session->userdata('email'); 
+			$data['title'] = ucfirst($pages); // Capitalize the first letter
 			$this->load->view('templates/admin-header',$data);
 			$this->load->view('pages/'.$page);
 			$this->load->view('templates/admin-footer');
@@ -26,35 +42,67 @@ class Event extends CI_Controller{
 				   redirect('Login');
 		}
 	}
-	function history($page = 'history')
+	function overview($pages = 'overview')
 	{
-		if($this->session->userdata('logged_in')){
+		if($this->session->userdata('logged_in'))
+			{
 			$data ['email']= $this->session->userdata('email'); 
-			$data['title'] = ucfirst($page); // Capitalize the first letter
+			$data['title'] = ucfirst($pages); // Capitalize the first letter
+			
+			
+			
+				if ($query = $this->Order_model->get_record())
+			 {
+				$results =array(); 
+				$config = array();
+				$config['per_page'] = 2;
+				$config['uri_segment'] = 3;
+				$config['full_tag_open'] = '<ul class="pager">';
+				$config['full_tag_close'] = '</ul>';
+				$config['cur_tag_open'] = '<li class="active" ><a href="#">';
+				$config['cur_tag_close'] = '</a></li>';
+				$config['num_tag_open'] = '<li class="paginate_button">';
+				$config['num_tag_close'] = '</li>';
+				$config['prev_tag_open']='<li>';
+				$config['prev_tag_close'] = '</li>';
+				$config['next_tag_open']='<li>';
+				$config['next_tag_close'] = '</li>';
+				$config['first_tag_open'] = '<li>';
+				$config['first_tag_cloe'] = '</li>';
+				$config['last_tag_open'] = '<li>';
+				$config['last_tag_close'] = '</li>';
+				$config['last_link'] = 'Last';
+				$config['first_link'] = 'First';
+				$config['base_url'] = base_url() . 'Event/overview/';
+				$config['total_rows'] = $this->Order_model->record_count();
+			
+				$this->pagination->initialize($config);
+				$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+				
+				$data['results'] = $this->Order_model->get_all($config['per_page'],$page);       
+				$data['links'] = $this->pagination->create_links();
+				$data['errors']= ''; 
+				}
+				 else {
+					$data['errors']= ''; 
+					$data['links']= '';
+					$this->load->view('templates/admin-header',$data);
+					$this->load->view('pages/'.$pages);
+					$this->load->view('templates/admin-footer');
+				 }
+			
 			$this->load->view('templates/admin-header',$data);
-			$this->load->view('pages/'.$page);
+			$this->load->view('pages/'.$pages);
 			$this->load->view('templates/admin-footer');
-		}else{
-				   redirect('Login');
-		}
+			}
+			
 	}
-	function overview($page = 'overview')
+	
+	function calendarview ($pages = 'calendar')
 	{
 		if($this->session->userdata('logged_in')){
 			$data ['email']= $this->session->userdata('email'); 
-			$data['title'] = ucfirst($page); // Capitalize the first letter
-			$this->load->view('templates/admin-header',$data);
-			$this->load->view('pages/'.$page);
-			$this->load->view('templates/admin-footer');
-		}else{
-				   redirect('Login');
-		}
-	}
-	function calendarview ($page = 'calendar')
-	{
-		if($this->session->userdata('logged_in')){
-			$data ['email']= $this->session->userdata('email'); 
-			$data['title'] = ucfirst($page); // Capitalize the first letter
+			$data['title'] = ucfirst($pages); // Capitalize the first letter
 			
 		$prefs['template'] = '
 
