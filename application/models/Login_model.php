@@ -31,19 +31,17 @@ class login_model extends CI_Model
 	
 	function validate_user( $email, $password ) {
 	
-    // Build a query to retrieve the user's details
-    // based on the received username and password
+
     $this->db->from('user');
     $this->db->where('email',$email );
     $this->db->where( 'password', md5($password) );
     $login = $this->db->get()->result();
 
-    // The results of the query are stored in $login.
-    // If a value exists, then the user account exists and is validated
+    
     if ( is_array($login) && count($login) == 1 ) {
-        // Set the users details into the $details property of this class
+        
         $this->details = $login[0];
-        // Call set_session to set the user's session vars via CodeIgniter
+        
         $this->set_session();
         return true;
     }

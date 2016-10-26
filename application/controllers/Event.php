@@ -122,6 +122,9 @@ class Event extends CI_Controller{
 		{cal_cell_no_content_today}<div class="today"><span class="day_listing">{day}</span></div>{/cal_cell_no_content_today}
 	'; 		
 		$prefs['day_type'] = 'long'; 
+		
+		$prefs['show_next_prev' ] = TRUE;
+		$prefs['next_prev_url' ] = site_url('Event/calendarview');
 		$datas = array(
 				3  => 'Sample Event',
 				7  => 'Delivery Private Party',
