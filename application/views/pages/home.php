@@ -155,7 +155,7 @@
 		                    </div>
 						</div>
                         <div class="tab-pane fade" id="tab2default">
-							 <form id="loginform" action='<?php echo base_url('Login/validate_credentials');?>' method='post' class="form-horizontal" role="form">
+							 <form id="loginform" action='<?php echo base_url('Login/index');?>' method='post' class="form-horizontal" role="form">
                                     
 								<div style="margin-bottom: 25px" class="input-group input-group-lg">
 											<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>

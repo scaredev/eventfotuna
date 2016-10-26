@@ -134,23 +134,18 @@
 					          		<div class="row" id="contact">
 					          			<div class="col-md-6">
 					          				<address>
-											  	<strong>Jonathan, Inc.</strong><br>
-											  	795 Folsom Ave, Suite 600<br>
-											  	San Francisco, CA 94107<br>
-											  	<abbr title="Phone">P:</abbr> (123) 456-7890
+											  	<strong><?php echo $user->company;?>, Inc.</strong><br>
+											  	<p><?php echo $user->company_address;?></p>
+											  	<abbr title="Phone">Mobile:</abbr><?php echo $user->mobile;?>
 											</address>
 
 											<address>
-											  	<strong>JONATHAN DOE</strong><br>
-											  	<a href="mailto:#">name@company.com</a>
+											  	<strong><?php echo $user->fname;?>&nbsp;<?php echo $user->lname;?> </strong><br>
+											  	<a href="mailto:#"><?php echo $user->email;?></a>
 											</address>
 					          			</div>
 					          			<div class="col-md-6">
-					          				<p>Ut enim ad minim veniam,
-					          				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					          				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-					          				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-					          				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					          				<p><?php echo $user->about_person;?></p>
 					          			</div>
 					          		</div>
 					          		<div class="row">

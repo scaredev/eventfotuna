@@ -7,7 +7,7 @@
 					<h3 class="panel-title"> <i class="glyphicon "></i></a> calendar</h3>
 				</div>
 			<div class="panel-body">
-			<?php echo $this->calendar->generate();?>
+			<?php echo $calendar;?>
 			</div>
 		 </div>
 		</div>

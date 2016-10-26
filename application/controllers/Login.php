@@ -21,7 +21,7 @@ class login extends CI_Controller
      {
           //get the posted values
           $email = $this->input->post("email");
-          $password = $this->input->post("password");
+          $pass = $this->input->post("password");
 
           //set validations
           $this->form_validation->set_rules("email", "Email", "required");
@@ -40,30 +40,17 @@ class login extends CI_Controller
           else
           {
                //validation succeeds
-               if ($this->input->post('btn_login') == "Login")
-               {
-                    //check if username and password is correct
-                    $usr_result = $this->Login_model->validate($email, $password);
-                    if ($usr_result > 0) //active user record is present
-                    {
-                         //set the session variables
-                         $sessiondata = array(
-                              'email' => $email,         
-							  'logged_in' => TRUE
-                         );
-                         $this->session->set_userdata($sessiondata);
-                         redirect('Event/overview');
-                    }
-                    else
+             if( $email && $pass && $this->Login_model->validate_user($email,$pass)){
+				 
+				 redirect('Event/overview');
+			 }
+			 else
                     {
                          $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Invalid username and password!</div>');
                          redirect('login/index');
                     }
-               }
-               else
-               {
-                    redirect('login/index');
-               }
+               
+               
           }
      }
 	
@@ -79,7 +66,7 @@ class login extends CI_Controller
                               'email' => $email_post,         
 							  'logged_in' => TRUE
                          );
-                         $this->session->set_userdata($sessiondata);
+                         
                          redirect('Event/overview',$this->session->all_userdata());
                     }
                     else
@@ -88,15 +75,16 @@ class login extends CI_Controller
                          redirect('login/index');
                     }
     }
+	
     function logout()
-{
-    $user_data = $this->session->all_userdata();
-        foreach ($user_data as $key => $value) {
-            if ($key != 'session_id' && $key != 'ip_address' && $key != 'user_agent' && $key != 'last_activity') {
-                $this->session->unset_userdata($key);
-            }
-        }
-    $this->session->sess_destroy();
-    redirect('login');
-}
+		{
+			$user_data = $this->session->all_userdata();
+				foreach ($user_data as $key => $value) {
+					if ($key != 'session_id' && $key != 'ip_address' && $key != 'user_agent' && $key != 'last_activity') {
+						$this->session->unset_userdata($key);
+					}
+				}
+			$this->session->sess_destroy();
+			redirect('login');
+		}
 }
