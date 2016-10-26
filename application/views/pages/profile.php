@@ -7,7 +7,7 @@
 				<div class="card-body app-heading">
 					<div class="timeline-badge img-circle" ><i class="fa fa-user" data-original-title="" title=""></i></div>
 					<div class="app-title">
-					  <div class="title"><h3>User Name</h3></div>
+					  <div class="title"><h3><?php echo $user->fname;?></h3></div>
 					  <div class="description">Barista - Coffee on the Road</div>
 					</div>
 					
@@ -21,7 +21,7 @@
 				<div class="panel-body">
 					
 						<div class="page-header">
-						  <h1>The Company</h1><p><small>Subtext for header</small></p>
+						  <h1><?php echo $user->company;?></h1><p><small>Subtext for header</small></p>
 						</div>
 						
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
@@ -39,28 +39,25 @@
 
 					          		<div class="btn-group">
 									  	<button type="button" disabled="" class="btn btn-primary">Name</button>
-									  	<button type="button" disabled="" class="btn btn-default"><?php print_r($people);?></button>
+									  	<button type="button" disabled="" class="btn btn-default"><?php echo $user->fname;?>&nbsp;<?php echo $user->lname;?></button>
 									</div>
 									<div class="btn-group">
-									  	<button type="button" disabled="" class="btn btn-primary">date of birth</button>
-									  	<button type="button" disabled="" class="btn btn-default">Desember 09, 1990</button>
+									  	<button type="button" disabled="" class="btn btn-primary">Company</button>
+									  	<button type="button" disabled="" class="btn btn-default"><?php echo $user->company;?></button>
 									</div>
 									<div class="btn-group">
 									  	<button type="button" disabled="" class="btn btn-primary">email</button>
-									  	<button type="button" disabled="" class="btn btn-default">info@yourdomain.com</button>
+									  	<button type="button" disabled="" class="btn btn-default"><?php echo $user->email;?></button>
 									</div>
 									<div class="btn-group">
 									  	<button type="button" disabled="" class="btn btn-primary">Address</button>
-									  	<button type="button" disabled="" class="btn btn-default">222 St. Newmon UK</button>
+									  	<button type="button" disabled="" class="btn btn-default"><?php echo $user->company_address;?></button>
 									</div>
 									<div class="btn-group">
 									  	<button type="button" disabled="" class="btn btn-primary">Phone</button>
-									  	<button type="button" disabled="" class="btn btn-default">023-2314 1231</button>
+									  	<button type="button" disabled="" class="btn btn-default"><?php echo $user->mobile;?></button>
 									</div>
-									<div class="btn-group">
-									  	<button type="button" disabled="" class="btn btn-primary">Website</button>
-									  	<button type="button" disabled="" class="btn btn-default">www.wrapbootstrap.com</button>
-									</div>
+									
 					</div>				
 					
 				</div>

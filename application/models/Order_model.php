@@ -1,5 +1,4 @@
 <?php
-
 class Order_model extends CI_Model
 {
      function __construct()
@@ -7,9 +6,8 @@ class Order_model extends CI_Model
           // Call the Model constructor
           parent::__construct();
 		 
-     
-	}
-	
+  
+  }
 	function add_order(){
 		
 		$trans_id =strtoupper(uniqid());
@@ -20,7 +18,7 @@ class Order_model extends CI_Model
 		'name'=>$this->input->post('inputname'),
 		'email'=>$this->input->post('inputemail'),
 		'tel'=>$this->input->post('tel'),
-		'eventdate'=>$this->input->post('inputname'),
+		'eventdate'=>$this->input->post('date-time'),
 		'participants'=>$this->input->post('participants'),
 		'address'=> $this->input->post('address'),
 		'completed'=>"0",
@@ -31,28 +29,16 @@ class Order_model extends CI_Model
 		$this->db->insert('orders',$order);
 		
 	}
-	 function get_all($limit, $start) 
-	{
-        
-		$this->db->limit($limit, $start);
-		 $this->db->select('*');
-         $this->db->from('orders'); 
-        $query = $this->db->get();
+	public function record_count() {
+		
+	return $this->db->count_all('orders');
+	}
 
-         if ($query->num_rows() > 0) {
-            foreach ($query->result() as $row) {
-                $data[] = $row;
-            }
-            return $data;
-        }
-        return false;
+	// Fetch data according to per_page limit.
+	public function fetch_data($limit, $start) {
+        $this->db->limit($limit, $start);
+        $query = $this->db->get("orders");
 
-    } 
-	function get_record() 
-	{
-      	    
-      	$query = $this->db->get('orders');
-		        
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
                 $data[] = $row;
@@ -60,11 +46,12 @@ class Order_model extends CI_Model
             return $data;
         }
         return false;
-	}
-	function record_count() {
-        
-        $query = $this->db->get('orders');
-        return $query->num_rows();
-    }
+   }
+   function getById() 
+    {     
+        $this->db->where('email',$this->session->userdata('email'));
+        return $this->db->get('user');
 	
-}	
+	}
+  
+}
