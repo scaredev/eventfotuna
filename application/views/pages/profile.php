@@ -150,12 +150,23 @@
 					          		</div>
 					          		<div class="row">
 					          			<div class="col-md-12">
-					          				<img src="#" style="border:0" width="100%" height="250" frameborder="0">
+										
+					          				<script src='https://maps.googleapis.com/maps/api/js?v=3.exp&key= AIzaSyC4nA2IwFGsb2vIuL8u1RJXE81XUVd3_tE '>
+											</script><div style='overflow:hidden;height:350px;width:100%;'>
+											<div id='gmap_canvas' style='height:350px;width:100%;'></div>
+											<style>#gmap_canvas img{max-width:none!important;background:none!important}</style></div>
+											<a href='https://embedmaps.net'>embedding google map</a> 
+											<script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=1d6ae52143c4afc07d5d501dd66988fc3acb7513'></script>
+											<script type='text/javascript'>
+											
+											
+											function init_map(){ var place = panglao;
+												var myOptions = {zoom:15,center:place,mapTypeId: google.maps.MapTypeId.ROADMAP};map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions);marker = new google.maps.Marker({map: map,position: new google.maps.LatLng(14.558737,121.00286249999999)});infowindow = new google.maps.InfoWindow({content:'<strong>Shop</strong><br>3472 florida st makati city<br> makati<br>'});google.maps.event.addListener(marker, 'click', function(){infowindow.open(map,marker);});infowindow.open(map,marker);}google.maps.event.addDomListener(window, 'load', init_map);</script>
 					          			</div>
 					          		</div>
 					</div>					
 				</div>
-				<div class="panel panel-default">
+				<div class="panel panel-default" style="display:none;">
 					<div class="panel-body">
 					          		<h1>Contact Me</h1>
 					          		<div class="hr-left"></div>

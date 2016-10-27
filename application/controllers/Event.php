@@ -114,7 +114,7 @@ class Event extends CI_Controller{
 			$data['title'] = ucfirst($pages); // Capitalize the first letter
 			
 		$prefs['template'] = 
-		'{table_open}<table class="calendar table ">{/table_open}
+		'{table_open}<table class="calendar table table-bordered">{/table_open}
 		{week_day_cell}<th class="day_header">{week_day}</th>{/week_day_cell}
 		{cal_cell_content}<span class="day_listing">{day}</span>&nbsp;&bull; {content}&nbsp;{/cal_cell_content}
 		{cal_cell_content_today}<div class="today"><span class="day_listing">{day}</span>&bull; {content}</div>{/cal_cell_content_today}
