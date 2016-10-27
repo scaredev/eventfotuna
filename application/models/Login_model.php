@@ -53,7 +53,7 @@ class Login_model extends CI_Model
     // stores data in a cookie in the user's browser.  Some of the values are built in
     // to CodeIgniter, others are added (like the IP address).  See CodeIgniter's documentation for details.
     $this->session->set_userdata( array(
-            'id'=>$this->details->id,
+            'id'=>$this->details->user_id,
             'name'=> $this->details->fname . ' ' . $this->details->lname,
             'email'=>$this->details->email,
             'avatar'=>$this->details->fname,
@@ -63,6 +63,11 @@ class Login_model extends CI_Model
         )
     );
 }
+	function getById() 
+    {     
+        $this->db->where('email',$this->session->userdata('email'));
+        return $this->db->get('user');
 	
+	}
 
 }	

@@ -26,21 +26,37 @@ class Order_model extends CI_Model
 		'transaction_id'=>$trans_id
 		);
 		
-		$this->db->insert('orders',$order);
-			
-			
-	
+		if ($this->db->insert('orders',$order)){
 		
+			$this->db->select('orders_id');
+			$this->db->where('transaction_id',$trans_id);
+			$this->db->limit(1);
+			$bidding = $this->db->get('orders')->row();
+			
+			$bid = array(
+			'order_id'=>$bidding->orders_id,
+			'barista_id'=>"0",
+			'prize'=>"0",		
+			);
+					
+			$this->db->insert('bidding',$bid);
+			
+			}
+		return;
 	}
 	public function record_count() {
-		
+		   $this->db->where('completed',0);
 	return $this->db->count_all('orders');
 	}
 
 	// Fetch data according to per_page limit.
 	public function fetch_data($limit, $start) {
         $this->db->limit($limit, $start);
-        $query = $this->db->get("orders");
+		$this->db->from('orders');
+		$this->db->join('bidding', 'bidding.barista_id = 0');
+		$this->db->where('completed',0);
+		
+        $query = $this->db->get();
 
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {
@@ -50,7 +66,33 @@ class Order_model extends CI_Model
         }
         return false;
    }
-   function getById() 
+   
+   public function bid_count() {
+		
+	return $this->db->count_all('bidding');
+	}
+
+	// Fetch data according to per_page limit.
+	public function fetch_bid_data($limit, $start) {
+        $this->db->limit($limit, $start);
+		
+		$this->db->select('*');
+		$this->db->from('bidding');
+		$this->db->join('orders', 'orders.orders_id = bidding.order_id');
+		$this->db->where('barista_id',$this->session->userdata('id'));
+		$query = $this->db->get();
+				
+
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+        return false;
+   }
+   
+   function getOrderById() 
     {     
         $this->db->where('email',$this->session->userdata('email'));
         return $this->db->get('user');

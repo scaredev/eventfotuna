@@ -15,7 +15,7 @@
 			
 			<div class="panel with-nav-tabs panel-default">
 				
-                <div class="panel-heading">
+                <div class="panel-heading" style="padding: 0;">
                         <ul class="nav nav-tabs">
                             <li class="active"><a href="#tab1default" data-toggle="tab">Am a customer</a></li>
                             <li><a href="#tab2default" data-toggle="tab">Am a Barista</a></li>
