@@ -38,7 +38,11 @@
 									 <td><?php echo $orders->address;?></td>
 									  <td> <span class="bidder">
 											<i class="fa fa-clock-o" aria-hidden="true"></i> <span>10 Bids</span></span>
-											<a class="bidder" href="#" role="button">Bid</a> </td>
+											<form id="order-form" data-toggle="validator" role="form" action="<?php echo base_url();?>Bid/submit_bid" method="post">
+												<input  class="bidder" type="hidden" name="order-id" value="<?php echo $orders->id;?>">
+												<input class="bidder" type="text" name="prize">
+												<button type="submit" class="bidder" href="#" role="button">Bid</button> </td>
+											</form>	
 									
 									</tr>
 									<?php }?>  
