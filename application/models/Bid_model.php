@@ -19,7 +19,7 @@ class Bid_model extends CI_Model
 		
 		$bid = array(
 		'order_id'=>$this->input->post('order-id'),
-		'barista_id'=>$bidder->id,
+		'barista_id'=>$bidder->user_id,
 		'prize'=>$this->input->post('prize'),
 		'bid_completed' => "0"
 		);
