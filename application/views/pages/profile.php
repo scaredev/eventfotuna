@@ -5,7 +5,9 @@
 			<div class="col-md-12">
 			<div class="panel panel-default card">
 				<div class="card-body app-heading">
-					<div class="timeline-badge img-circle" ><i class="fa fa-user" data-original-title="" title=""></i></div>
+					<div class="timeline-badge img-circle" >
+						<img class="img-circle" src="<?php echo base_url();?>img/REGxSz.jpg">
+					</div>
 					<div class="app-title">
 					  <div class="title"><h3><?php echo $user->fname;?></h3></div>
 					  <div class="description">Barista - Coffee on the Road</div>
@@ -32,6 +34,40 @@
 					
 			  </div>
 			 </div>
+			 <section>
+				<div class="row">
+					<div class="page-header">
+						  <h1>Personal Info</h1>
+					</div>
+					<div class="col-md-3">
+						
+					</div>
+					<div class="col-md-4">
+						<dl>
+							<dt class="l3">	<strong>Name :</strong></dt>
+							<dd class="p3"><?php echo $user->fname;?>&nbsp;<?php echo $user->lname;?></dd>
+							<dt class="l3"><strong>Company :</strong></dt>
+							<dd class="p3"><?php echo $user->company;?></dd>
+							<dt class="l3"><strong>Email :</strong></dt>
+							<dd class="p3"><?php echo $user->email;?></dd>
+							<dt class="l3"><strong>Phone :</strong></dt>
+							<dd class="p3"><?php echo $user->mobile;?></dd>
+						</dl>
+					</div>
+					<div class="col-md-4 offset1">
+						<dl>
+							<dt class="l3">	<strong>Name :</strong></dt>
+							<dd class="p3"><?php echo $user->fname;?>&nbsp;<?php echo $user->lname;?></dd>
+							<dt class="l3"><strong>Company :</strong></dt>
+							<dd class="p3"><?php echo $user->company;?></dd>
+							<dt class="l3"><strong>Email :</strong></dt>
+							<dd class="p3"><?php echo $user->email;?></dd>
+							<dt class="l3"><strong>Phone :</strong></dt>
+							<dd class="p3"><?php echo $user->mobile;?></dd>
+						</dl>
+					</div>
+					</div>
+			 </section>
 				<div class="panel panel-default">
 					<div class="panel-body">
 					          		<h1>Personal Info</h1>

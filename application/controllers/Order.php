@@ -19,8 +19,9 @@ class Order extends CI_Controller{
     }
 	function submit_order($page='thankyou')
 		{
-		$data ['email'] = $this->input->post("email");	
-		$this->Order_model->add_order();	
+		$data ['email'] = $this->input->post("inputemail");	
+		
+			$this->Order_model->add_order();	
 		
 		$data['title'] = ucfirst($page); // Capitalize the first letter
 		$this->load->view('templates/header',$data);

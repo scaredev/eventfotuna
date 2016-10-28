@@ -8,9 +8,12 @@ class Order_model extends CI_Model
 		 
   
   }
+	
+  
 	function add_order(){
 		
 		$trans_id =strtoupper(uniqid());
+		
 		$order = array(
 		'party'=>$this->input->post('eventtype'),
 		'partytype'=>$this->input->post('event'),
@@ -26,24 +29,11 @@ class Order_model extends CI_Model
 		'transaction_id'=>$trans_id
 		);
 		
-		if ($this->db->insert('orders',$order)){
-		
-			$this->db->select('orders_id');
-			$this->db->where('transaction_id',$trans_id);
-			$this->db->limit(1);
-			$bidding = $this->db->get('orders')->row();
-			
-			$bid = array(
-			'order_id'=>$bidding->orders_id,
-			'barista_id'=>"0",
-			'prize'=>"0",		
-			);
-					
-			$this->db->insert('bidding',$bid);
-			
-			}
+		$this->db->insert('orders',$order);
 		return;
 	}
+	
+	
 	public function record_count() {
 		   $this->db->where('completed',0);
 	return $this->db->count_all('orders');
@@ -51,12 +41,11 @@ class Order_model extends CI_Model
 
 	// Fetch data according to per_page limit.
 	public function fetch_data($limit, $start) {
+		
         $this->db->limit($limit, $start);
 		$this->db->from('orders');
-		$this->db->join('bidding', 'bidding.barista_id = 0');
 		$this->db->where('completed',0);
-		
-        $query = $this->db->get();
+	    $query = $this->db->get();
 
         if ($query->num_rows() > 0) {
             foreach ($query->result() as $row) {

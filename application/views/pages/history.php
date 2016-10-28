@@ -13,7 +13,7 @@
 							
 							</form>
 							<hr>
-							<div class="table-responsive">
+							<div class="table table-condensed table-hover">
 								<table class="table table-hover">
 								  <thead>
 									<tr>
@@ -40,10 +40,10 @@
 													<?php if ($bids->completed === $bids->barista_id){ ?>
 														<td><?php echo $bids->completed ;?><span class="badge badge-success badge-icon"><i class="fa fa-check" aria-hidden="true"></i><span>Complete</span></span></td>
 													<?php } else {?>
-														<td><?php echo $bids->completed ;?><span class="badge alert-danger badge-icon"><i class="fa fa-ban-circle" aria-hidden="true"></i><span>BidOut!</span></span></td>
+														<td><?php echo $bids->completed ;?><span class="badge badge-danger badge-icon"><i class="fa fa-ban" aria-hidden="true"></i><span>BidOut!</span></span></td>
 													<?php } ?>
 											<?php } else { ?>
-												<td><?php echo $bids->completed ;?><span class="badge badge-warning badge-icon"><i class="fa fa-time" aria-hidden="true"></i><span>Pending</span></span></td>
+												<td><?php echo $bids->completed ;?><span class="badge badge-warning badge-icon"><i class="fa fa-clock-o" aria-hidden="true"></i><span>Pending</span></span></td>
 											<?php } ?>
 										</tr>
 									  <?php } ?>

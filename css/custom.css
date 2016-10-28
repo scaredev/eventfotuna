@@ -1,6 +1,8 @@
 body 
 {
-	
+	font-family: "Segoe UI","wf_segoe-ui_normal","Arial",sans-serif;
+	font-weight: 400;
+	font-style: normal;
 }
 .form-container
 {
@@ -252,6 +254,10 @@ background-color: #8d9293;}
     color: #fc8229;
     background-color: rgba(252, 130, 41, 0.2);
 } 
+.badge.badge-danger {
+    color: #291512;
+    background-color: rgba(158, 16, 11, 0.8);
+} 
 .badge.badge-success {
     color: #29c75f;
     background-color: rgba(41, 199, 95, 0.2);
@@ -260,9 +266,7 @@ background-color: #8d9293;}
 	background-color: rgba(231, 76, 60, 0.2);
 	padding:6px;
 }
-.badget.badge-warning.badge-icon i {
-    background-color: rgba(252, 130, 41, 0.1);
-}
+
 .bidder{
 display: inline-block;
 padding: 5px 14px;
