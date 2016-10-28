@@ -278,12 +278,12 @@ border-radius: 15px;
  /***** profile***/
  
 .profile-img {
-    width: 80px;
-    height: 80px;
+    
+    height: 50%;
     border-radius: 50%;
     margin-right: 30px;
-	display: table-cell;
-vertical-align: middle;
+	display: inline-block;
+
 }
 .card {
     width: 100%;
@@ -318,7 +318,45 @@ padding:0px 20px;
     border-bottom-left-radius: 50%;
 	vertical-align: middle;
 }
+.avatar{
+position: relative;
+margin-top: -50px;
+}
+.avatar img{
+	width: 140px;
+height: 140px;
+max-width: 140px;
+max-height: 140px;
+-webkit-border-radius: 50%;
+-moz-border-radius: 50%;
+border-radius: 50%;
+border: 5px solid rgba(255,255,255,0.5);
+}
+.avatar-wrapper{
+	text-align:center;
+	
+}
+address{font-size:15px;}
 
+address .glyphicon {margin-right:10px;
+}
+.coffee-product{
+width: 100px;
+height: 100px;
+max-width: 100px;
+max-height: 100px;
+-webkit-border-radius: 50%;
+-moz-border-radius: 50%;
+border-radius: 50%;
+border: 5px solid rgba(255,255,255,0.5);
+display:inline-block;	
+}
+
+.product-wrapper {
+	text-align:center;
+	border:none;
+	box-shadow:none;
+}
 /******calendar******//
 
 .calendar {
