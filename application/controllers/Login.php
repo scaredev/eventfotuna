@@ -54,6 +54,14 @@ class login extends CI_Controller
           }
      }
 	
+	function parallax (){
+		
+			$this->load->view('templates/material-header');
+			$this->load->view('pages/material-profile');
+			$this->load->view('templates/material-footer');
+		
+		
+	}
     function validate_credentials($email, $password){
 					$email_post = $this->input->post("email");
 					$password = $this->input->post("password");

@@ -1,0 +1,62 @@
+.action-button{
+	text-align:center;
+	margin-top:220px;
+}
+.large-blue{
+font-size: 18px;
+line-height: 1.5;
+padding: 11px 47px 9px;
+-webkit-transition: background-color .15s ease,border-color .15s ease,color .15s ease;
+-o-transition: background-color .15s ease,border-color .15s ease,color .15s ease;
+transition: background-color .15s ease,border-color .15s ease,color .15s ease;
+border-width: 0;
+letter-spacing: 1.2px;
+min-width: 130px;
+text-transform: uppercase;
+white-space: normal;
+color: #FFF;
+background-color: #2196F3;
+margin: 20px 10px 30px;
+display:inline-block;
+}
+.large-blue:hover{
+color: #2196F3;
+background-color:#fff; 	
+}
+.large-white{
+font-size: 18px;
+line-height: 1.5;
+padding: 11px 47px 9px;
+-webkit-transition: background-color .15s ease,border-color .15s ease,color .15s ease;
+-o-transition: background-color .15s ease,border-color .15s ease,color .15s ease;
+transition: background-color .15s ease,border-color .15s ease,color .15s ease;
+border-width: 0;
+letter-spacing: 1.2px;
+min-width: 130px;
+text-transform: uppercase;
+white-space: normal;
+color: #2196F3;
+background-color:#fff; 
+margin: 20px 10px 30px;
+display:inline-block;
+}
+.large-white:hover{
+color: #2196F3;
+background-color:#fff; 
+}
+
+.order-form{
+	margin-top:50px;
+	background:#fff;
+	padding:20px 20px;
+}
+.order-form .row{
+	padding:0px 20px;
+}
+.login-panel{
+	max-width: 370px;
+margin-left: auto;
+margin-right: auto;
+padding: 10px 10px;
+	
+}
