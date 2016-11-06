@@ -54,10 +54,10 @@ class login extends CI_Controller
           }
      }
 	
-	function parallax (){
+	function parallax(){
 		
 			$this->load->view('templates/material-header');
-			$this->load->view('pages/material-profile');
+			$this->load->view('pages/material-index');
 			$this->load->view('templates/material-footer');
 		
 		
