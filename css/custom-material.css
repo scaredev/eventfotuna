@@ -60,3 +60,8 @@ margin-right: auto;
 padding: 10px 10px;
 	
 }
+.edit-butt{
+text-align: right;
+position: absolute;
+top: -30px;
+right: 5px;}

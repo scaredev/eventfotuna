@@ -62,6 +62,7 @@ class login extends CI_Controller
 		
 		
 	}
+	
     function validate_credentials($email, $password){
 					$email_post = $this->input->post("email");
 					$password = $this->input->post("password");

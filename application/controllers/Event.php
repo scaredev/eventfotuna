@@ -198,6 +198,21 @@ class Event extends CI_Controller{
 				   redirect('Login');
 		}
 	}
+		function materialprof()
+	{
+		if($this->session->userdata('logged_in')){
+			$data ['email']= $this->session->userdata('email'); 
+			$data['title'] = ucfirst("profile"); // Capitalize the first letter
+			
+			$this->load->model('Login_model');
+			$data['user'] = $this->Login_model->getById()->row();  
+			$this->load->view('templates/material-header',$data);
+			$this->load->view('pages/material-profile');
+			$this->load->view('templates/material-footer');
+		}else{
+				   redirect('Login');
+		}
+	}
 	function cashier($page = 'cashier')
 	{
 		if($this->session->userdata('logged_in')){
