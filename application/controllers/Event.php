@@ -206,7 +206,7 @@ class Event extends CI_Controller{
 			
 			$this->load->model('Login_model');
 			$data['user'] = $this->Login_model->getById()->row();  
-			$this->load->view('templates/material-header',$data);
+			$this->load->view('templates/login-material-header',$data);
 			$this->load->view('pages/material-profile');
 			$this->load->view('templates/material-footer');
 		}else{
