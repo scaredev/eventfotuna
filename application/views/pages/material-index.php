@@ -60,13 +60,13 @@
 			  </div>
         
 			</div>
-        </div>
+			</div>
 			</div>
 			<div class="modal-footer">
 			  
 			</div>
-		</div>
-    <!-- -->
+		
+	<!-- -->
   <div class="section white">
     <div class="row container hide-on-small-only" style="padding: 40px 0px;">
       <div class="col s12 " id="for_passengers">

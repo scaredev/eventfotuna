@@ -11,9 +11,9 @@
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
-<body>
+<body class="grey lighten-3">
 <header>
-  <nav>
+  <nav class="grey darken-3">
     <div class="container">
       <div class="nav-wrapper">
 		<a href="#" data-activates="slide-out" class="button-collapse "><i class="material-icons">menu</i></a>
