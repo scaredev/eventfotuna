@@ -198,7 +198,7 @@ class Event extends CI_Controller{
 				   redirect('Login');
 		}
 	}
-		function materialprof()
+	function materialprof()
 	{
 		if($this->session->userdata('logged_in')){
 			$data ['email']= $this->session->userdata('email'); 

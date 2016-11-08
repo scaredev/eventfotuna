@@ -11,7 +11,7 @@
 								<li class="<?php if($title=="History"){echo "active";}?>">
 								<a href="<?=base_url();?>Event/history"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">History</span></a></li>
 								<li class="<?php if($title=="Profile"){echo "active";}?>">
-								<a href="<?=base_url();?>Event/profile"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Profile</span></a></li>								
+								<a href="<?=base_url();?>Event/materialprof"><i class="fa fa-user" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Profile</span></a></li>								
 								<li class="<?php if($title=="Calendarview"){echo "active";}?>">
 								<a href="<?=base_url();?>Event/calendarview"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Calendar</span></a></li>
 								<li class="<?php if($title=="Cashier"){echo "active";}?>">

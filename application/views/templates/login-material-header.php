@@ -50,7 +50,7 @@
 		</div>
 	</li>
     <li class="<?php if($title=="Profile"){echo "active";}?>">
-				<a href="<?=base_url();?>Event/profile"><i class="material-icons teal-text">perm_identity</i>Profile</a></li>
+				<a href="<?=base_url();?>Event/materialprof"><i class="material-icons teal-text">perm_identity</i>Profile</a></li>
     <li class="<?php if($title=="Overview"){echo "active";}?>">
 				<a href="<?=base_url();?>Event/overview"><i class="material-icons teal-text">description</i>Overview</a></li>
 	<li class="<?php if($title=="History"){echo "active";}?>">
