@@ -50,6 +50,7 @@ background-color:#fff;
 	background:#fff;
 	
 }
+
 .order-form .row{
 	padding:0px 20px;
 }
@@ -65,3 +66,30 @@ text-align: right;
 position: absolute;
 top: -30px;
 right: 5px;}
+
+.color-orange{
+	color:#ff7043;
+}
+.main-blue{
+	position: absolute;
+top: 50%;
+left: 50%;
+margin-top: -28px;
+margin-left: -28px;
+opacity: 0;
+}
+.grid-element-title{
+	position: absolute;
+bottom: 0;
+left: 0;
+font-size: 1rem;
+margin: 0;
+line-height: 2.8rem;
+padding: 0 10px;
+background-color: rgba(0,0,0,0.5);
+width: 100%;
+color: #fff;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+}
