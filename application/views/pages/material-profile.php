@@ -79,10 +79,10 @@
 		<div id="test2" class="col s12">
 			<ul class="collection">
 					<li class="collection-item avatar">
-					  <img src="images/yuna.jpg" alt="" class="circle">
-					  <span class="title">Title</span>
-					  <p>First Line <br>
-						 Second Line
+					  <img src="<?php echo base_url();?>img/profilepic.jpg" alt="" class="circle">
+					  <span class="title">Crisnil</span>
+					  <p>Barista <br>
+						 Barista Description
 					  </p>
 					  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
 					</li>

@@ -4,8 +4,6 @@
 						</div>
 						<div class="navi">
 							<ul>
-								<li class="<?php if($this->uri->segment(1)=="Home"){echo "active";}?>">
-								<a href="<?=base_url();?>Event/dashboard"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Home</span></a></li>	
 								<li class="<?php if($title=="Overview"){echo "active";}?>">
 								<a href="<?=base_url();?>Event/overview"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Overview</span></a></li>
 								<li class="<?php if($title=="History"){echo "active";}?>">
@@ -17,6 +15,6 @@
 								<li class="<?php if($title=="Cashier"){echo "active";}?>">
 								 <a href="<?=base_url();?>Event/cashier"><i class="fa fa-shopping-cart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Cashier</span></a></li>
 								<li class="<?php if($title=="Settings"){echo "active";}?>">
-								 <a href="<?=base_url();?>Event/settings"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Setting</span></a></li>
+								 <a href="<?=base_url();?>Event/settings"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Settings</span></a></li>
 							</ul>
 						</div>
