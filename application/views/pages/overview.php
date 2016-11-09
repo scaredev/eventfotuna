@@ -1,18 +1,9 @@
-<!-- start row user dashboard -->
+<div class="row">
+	<div class="col s12 m4 l3">
+		<?php $this->load->view('templates/material-nav.php'); ?>
+	</div>	
+	<div class="col s12 m8 l9">
 
-				<div class="row">
-					<div class="col-md-12">
-
-							
-							<form class="form-inline pull-xm-right">
-								<div class="form-group">
-							   <label for="exampleInputName2"><strong>Orders View</strong></label>
-							   
-								<input class="form-control" type="text" placeholder="Search">
-							   </div>	
-								<button class="btn btn-outline-success" type="submit">Search</button>
-							
-							</form>
 							<hr>
 								
 								<table class="table table-condensed table-hover">
@@ -56,8 +47,5 @@
 								</div>
 								
 							
-
-					</div>
-					
-				</div>
-<!-- end user dashboard -->
+	</div><!-- end col s12 m8 l9 -->
+</div><!-- end row -->

@@ -38,9 +38,12 @@
         </script>
 	<script type="text/javascript">
 		$(".button-collapse").sideNav({
-	  closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
-      draggable: true 
-		});
+			menuWidth: 300, // Default is 240
+			edge: 'left', // Choose the horizontal origin
+			closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+			draggable: true});
+			
+		$('.collapsible').collapsible();
 	</script>
 	<script type="text/javascript">
 	$(document).ready(function() {

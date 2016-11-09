@@ -1,3 +1,23 @@
+header, main, footer {
+      padding-left: 300px;
+    }
+
+    @media only screen and (max-width : 992px) {
+      header, main, footer {
+        padding-left: 0;
+      }
+    }
+nav.top-nav a.page-title {
+    line-height: 122px;
+    font-size: 48px;
+}
+nav.top-nav {
+    height: 122px;
+    box-shadow: none;
+}	
+a.button-collapse.top-nav i {
+    font-size: 32px;
+}
 .action-button{
 	text-align:center;
 	margin-top:220px;

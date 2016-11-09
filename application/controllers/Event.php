@@ -132,16 +132,19 @@ class Event extends CI_Controller{
 				$data['errors']= ''; 
 				}
 				 else {
+					$this->load->model('Login_model');
+					$data['user'] = $this->Login_model->getById()->row();  
 					$data['errors']= ''; 
 					$data['links']= '';
-					$this->load->view('templates/admin-header',$data);
-					$this->load->view('pages/overview');
-					$this->load->view('templates/admin-footer');
+					$this->load->view('templates/leftnav-header',$data);
+					$this->load->view('pages/material-overview');
+					$this->load->view('templates/material-footer');
 				 }
-			
-			$this->load->view('templates/admin-header',$data);
-			$this->load->view('pages/overview');
-			$this->load->view('templates/admin-footer');
+			$this->load->model('Login_model');
+			$data['user'] = $this->Login_model->getById()->row();  
+			$this->load->view('templates/leftnav-header',$data);
+			$this->load->view('pages/material-overview');
+			$this->load->view('templates/login-material-footer');
 			}
 			
 	}
