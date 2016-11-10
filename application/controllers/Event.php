@@ -117,10 +117,10 @@ class Event extends CI_Controller{
 				$config['first_link'] = false;
 				$config['last_link'] = false;
 				
-				$config['cur_tag_open'] = '<li class="disabled " ><a class=" btn-primary active grey darken-3 text-white" href="">';
+				$config['cur_tag_open'] = '<li class="disabled light-primary-color" ><a class=" btn-primary active " href="">';
 				$config['cur_tag_close'] = '</a></li>';
-				$config['next_link'] = 'Next';
-				$config['prev_link'] = 'Previous';
+				$config['next_link'] = '<i class="material-icons active">fast_forward</i>';
+				$config['prev_link'] = '<i class="material-icons active">fast_rewind</i>';
 				//
 				//
 				$config['num_links'] = $total_row;

@@ -30,7 +30,7 @@
 									  <td> <span class="bidder">
 											<i class="fa fa-clock-o" aria-hidden="true"></i> <span>10 Bids</span></span>
 											<form id="order-form" data-toggle="validator" role="form" action="<?php echo base_url();?>Bid/submit_bid" method="post">
-												<input  class="bidder" type="hidden" name="order-id" value="<?php echo $orders->orders_id;?>">
+												<input  class="bidder accent-color" type="hidden" name="order-id" value="<?php echo $orders->orders_id;?>">
 												<input class="bidder" type="text" name="prize" placeholder = "enter your prize">
 												<button type="submit" class="bidder" href="#" role="button">Bid</button> </td>
 											</form>	

@@ -1,5 +1,5 @@
 	 
-	 <footer class="page-footer grey darken-3">
+	 <footer class="default-primary-color">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
@@ -61,7 +61,11 @@
     selectYears: 15 ,// Creates a dropdown of 15 years to control year
 	formatSubmit: 'yyyy-mm-dd'
   });</script>
-  
+  <script type="text/javascript">
+	$(document).ready(function(){
+    $('.foldable').collapsible();
+  });
+  </script>
     </body>
 	
   </html>

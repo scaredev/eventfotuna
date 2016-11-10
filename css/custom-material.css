@@ -1,3 +1,13 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+      
 header, main, footer {
       padding-left: 300px;
     }
@@ -17,6 +27,22 @@ nav.top-nav {
 }	
 a.button-collapse.top-nav i {
     font-size: 32px;
+}
+a.button-collapse.top-nav {
+    position: absolute;
+    text-align: center;
+    height: 48px;
+    width: 48px;
+    left: 7.5%;
+    top: 0;
+    float: none;
+    margin-left: 1.5rem;
+    color: #fff;
+    font-size: 36px;
+    z-index: 2;
+}
+a.button-collapse.top-nav.full {
+    
 }
 .action-button{
 	text-align:center;
