@@ -101,7 +101,7 @@ class Event extends CI_Controller{
 				$config["base_url"] = base_url() . "Event/overview";
 				$total_row = $this->Order_model->record_count();
 				$config["total_rows"] = $total_row;
-				$config['full_tag_open'] = '<ul class="pager">';
+				$config['full_tag_open'] = '<ul class="pagination grey-text text-darken-3">';
 				$config['full_tag_close'] = '</ul>';
 				
 				$config ['prev_tag_open'] = ' <li>';
@@ -110,14 +110,14 @@ class Event extends CI_Controller{
 				$config ['next_tag_close'] = '</li>';
 				$config['num_tag_open'] = '<li>';
 				$config['num_tag_close'] = '</li>';
-				$config["per_page"] = 10;
+				$config["per_page"] = 5;
 				$config['use_page_numbers'] = TRUE;
 				
 				
 				$config['first_link'] = false;
 				$config['last_link'] = false;
 				
-				$config['cur_tag_open'] = '<li class="disabled active" ><a class=" btn-primary" href="">';
+				$config['cur_tag_open'] = '<li class="disabled " ><a class=" btn-primary active grey darken-3 text-white" href="">';
 				$config['cur_tag_close'] = '</a></li>';
 				$config['next_link'] = 'Next';
 				$config['prev_link'] = 'Previous';
@@ -144,7 +144,7 @@ class Event extends CI_Controller{
 			$data['user'] = $this->Login_model->getById()->row();  
 			$this->load->view('templates/leftnav-header',$data);
 			$this->load->view('pages/material-overview');
-			$this->load->view('templates/login-material-footer');
+			$this->load->view('templates/material-footer');
 			}
 			
 	}

@@ -1,6 +1,6 @@
 <main>
-	<div class="continer">
-		<table class="responsive-table striped">
+	<div class="container">
+		<table class="highlight">
 			<thead>
 				<tr>
 				<th>#</th>
@@ -35,9 +35,9 @@
 		</table>
 
 		<div class="row">
-			<nav aria-label="...">
+			
 			<?php echo $links;?>
-			</nav>
+			
 		</div>
 	</div>
 </main>
