@@ -31,19 +31,28 @@ a.button-collapse.top-nav i {
 a.button-collapse.top-nav {
     position: absolute;
     text-align: center;
-    height: 48px;
+    height: 122px;
     width: 48px;
-    left: 7.5%;
-    top: 0;
+    left: 0px;
+    top: 0px;
     float: none;
     margin-left: 1.5rem;
     color: #fff;
-    font-size: 36px;
+    font-size: 48px;
     z-index: 2;
+    line-height: 122px;
+}
+.collapsible-override{
+	border:none;
+	box-shadow:none;
 }
 a.button-collapse.top-nav.full {
     
 }
+.ul-wrapper{
+padding:20px 20px;
+}
+
 .action-button{
 	text-align:center;
 	margin-top:220px;

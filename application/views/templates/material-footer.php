@@ -63,7 +63,7 @@
   });</script>
   <script type="text/javascript">
 	$(document).ready(function(){
-    $('.foldable').collapsible();
+    $('.collapsible').collapsible();
   });
   </script>
     </body>
