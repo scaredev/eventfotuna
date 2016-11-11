@@ -6934,8 +6934,10 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .side-nav li.active {
-  background-color: rgba(0, 0, 0, 0.05);
+  backckground-color: rgba(0, 0, 0, 0.05);
+  
 }
+
 
 .side-nav a {
   color: rgba(0, 0, 0, 0.87);

@@ -1,5 +1,5 @@
 	 
-	 <footer class="default-primary-color">
+	 <footer class="">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
@@ -29,6 +29,9 @@
       <script type="text/javascript" src="<?php echo base_url();?>js/materialize.min.js"></script>
 	   <script type="text/javascript">
 	  $('.carousel.carousel-slider').carousel({full_width: true});
+	  </script>
+	    <script type="text/javascript">	  
+		$(".dropdown-button").dropdown();        
 	  </script>
 	  <script type="text/javascript">
 	  

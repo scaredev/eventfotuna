@@ -17,6 +17,30 @@ header, main, footer {
         padding-left: 0;
       }
     }
+.mobile-bar{
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:100%;
+	width:100%;
+	display:inline-block;
+	
+}
+nav.top-nav ul a:hover {
+  background:none;
+}	
+nav.top-nav ul li {
+    line-height: 122px;
+	vertical-align:middle;
+}
+nav.top-nav ul li img{
+    line-height: 122px;
+	vertical-align:middle;
+}
+nav.top-nav ul li i{
+    line-height: 122px;
+	vertical-align:middle;
+}
 nav.top-nav a.page-title {
     line-height: 122px;
     font-size: 48px;
@@ -24,7 +48,19 @@ nav.top-nav a.page-title {
 nav.top-nav {
     height: 122px;
     box-shadow: none;
+}
+.side-nav a {
+    color: #fff;
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 32px;
 }	
+.side-nav li > a > i, .side-nav li > a > [class^="mdi-"], .side-nav li > a > [class*="mdi-"], .side-nav li > a > i.material-icons {
+    color: #fff !important;
+}
 a.button-collapse.top-nav i {
     font-size: 32px;
 }
