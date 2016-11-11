@@ -148,3 +148,8 @@ white-space: nowrap;
 overflow: hidden;
 text-overflow: ellipsis;
 }
+.databits{
+padding: 0px 20px;
+margin-right: 29px;
+
+}

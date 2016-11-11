@@ -2,67 +2,49 @@
 	<div class="ul-wrapper">
 			
 			  <ul class="collapsible collapsible-override" data-collapsible="accordion">
-				<h2>Heading</h2>
-				<li >
-					<div class="collapsible-header">
-					<div class="row valign-wrapper">
-						<div class="col s2">
-						 <i class="material-icons">filter_drama</i>
-						</div>
-						<div class="col s10">
-						 <span class="title">Title</span>
-						  <p>First Line <br>
-							 Second Line
-						  </p>
-						</div>
-					  </div>
-					
-				  </div>
-				  <div class="collapsible-body">
-					<div class="row">
-					<form class="col s12">
-					  <div class="row">
-					     <div class="input-field col s6">
-								<input id="bid" type="text" class="validate">
-								<label for="bid">place bid</label>
-						</div>
-						<div class="input-field col s6">		
-								<button class="btn waves-effect waves-light" type="submit" name="action">Submit
-								<i class="material-icons right">send</i></button>
-						</div>
-					  </div>
-					</form>  
-					</div>
-				  </div>	
-				</li>
 				<?php foreach($results as $orders){?>
 				<li>
-				  <div class="collapsible-header">
-					<span class="new badge" data-badge-caption="Total bidder">4</span>				
-					<i class="material-icons">filter_drama</i>
-					<span class="title"><?php echo $orders->orders_id;?> <?php echo $orders->partytype;?></span>
-					<span class="title"><?php echo $orders->participants;?></span>
-					<span class="title"><?php echo $orders->zipcode;?></span>
-						
+				
+				<div class="collapsible-header">
+						<span class="new badge hide-on-med-and-up" data-badge-caption="Total bidder">4</span>	
+						<i class="material-icons">person_pin</i><?php echo $orders->orders_id;?>: <?php echo $orders->name;?>
+						<div class="right hide-on-small-and-down">
+							<span class="left databits"><i class="material-icons">supervisor_account</i><?php echo $orders->partytype;?></span>
+							<span class="left databits"><i class="material-icons">supervisor_account</i><?php echo $orders->participants;?> participants</span>
+							<span class="left databits"><i class="material-icons">language</i>Party host: <?php echo $orders->party;?></span>
+							<span class="left databits"><i class="material-icons">location_on</i>zip code: <?php echo $orders->zipcode;?></span>
+							
+							<i class="material-icons right tooltipped" data-position="left" data-delay="50" data-tooltip="More detials">more_vert</i>
+							<span class="new badge" data-badge-caption="Total bidder">4</span>	
+						</div>
+				    </div>
+				  <div class="collapsible-body">
+				    <p>More Details</p>
+					<div class="right hide-on-med-and-up">
+							<span class="left databits"><i class="material-icons">supervisor_account</i><?php echo $orders->partytype;?></span>
+							<span class="left databits"><i class="material-icons">supervisor_account</i><?php echo $orders->participants;?> participants</span>
+							<span class="left databits"><i class="material-icons">language</i>Party host: <?php echo $orders->party;?></span>
+							<span class="left databits"><i class="material-icons">location_on</i>zip code: <?php echo $orders->zipcode;?></span>
+					</div>
 					
-				  </div>
-				 <div class="collapsible-body">
-					<div class="row">
-					<form class="col s12">
+					
 					  <div class="row">
-					     <div class="input-field col s6 m2 l2">
-								<input id="bid" type="text" class="validate">
+						<form action="<?php echo base_url();?>Bid/submit_bid" method="post">
+					     <div class="input-field col s6 m4 l4">
+								<input name="order-id" type="hidden" value="<?php echo $orders->orders_id;?>">
+								<input name="prize" id="bid" type="text" class="validate">
 								<label for="bid">place bid</label>
 						</div>
-						<div class="input-field col s4 m2 l2">		
-								<button class="btn waves-effect waves-light" type="submit" name="action">Submit
-								<i class="material-icons right">send</i></button>
+						<div class="input-field col s6 m4 l4">
+							<button class="btn btn-small waves-effect waves-light" type="submit" name="action">Submit
+								<i class="material-icons right">send</i>
+							 </button>
 						</div>
+						</form>  
 					  </div>
-					</form>  
-					</div>
+					
+					
 				  </div>	
-						 
 				</li>
 				
 				  				

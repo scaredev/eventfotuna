@@ -41,29 +41,24 @@ class Event extends CI_Controller{
 				$config = array();
 				$config["base_url"] = base_url() . "Event/history";
 				$total_row = $this->Order_model->bid_count();
-				$config["total_rows"] = $total_row;
-				$config['full_tag_open'] = '<ul class="pager">';
+				$config['total_rows'] = $total_row;
+				$config['per_page']=10;
+				$config['full_tag_open'] = '<ul class="pagination grey-text text-darken-3">';
 				$config['full_tag_close'] = '</ul>';
-				
 				$config ['prev_tag_open'] = ' <li>';
 				$config ['prev_tag_close'] = '</li>';
 				$config ['next_tag_open'] = ' <li>';
 				$config ['next_tag_close'] = '</li>';
 				$config['num_tag_open'] = '<li>';
 				$config['num_tag_close'] = '</li>';
-				$config["per_page"] = 10;
+				$config['page_query_string'] = True;
 				$config['use_page_numbers'] = TRUE;
-				
-				
 				$config['first_link'] = false;
 				$config['last_link'] = false;
-				
-				$config['cur_tag_open'] = '<li class="disabled active" ><a class=" btn-primary" href="">';
+				$config['cur_tag_open'] = '<li class="disabled light-primary-color" ><a class=" btn-primary active " href="">';
 				$config['cur_tag_close'] = '</a></li>';
-				$config['next_link'] = 'Next';
-				$config['prev_link'] = 'Previous';
-				//
-				//
+				$config['next_link'] = '<i class="material-icons active">fast_forward</i>';
+				$config['prev_link'] = '<i class="material-icons active">fast_rewind</i>';
 				$config['num_links'] = $total_row;
 				$this->pagination->initialize($config);
 				$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
@@ -75,23 +70,24 @@ class Event extends CI_Controller{
 				 else {
 					$data['errors']= ''; 
 					$data['links']= '';
-					$this->load->view('templates/admin-header',$data);
-					$this->load->view('pages/history');
-					$this->load->view('templates/admin-footer');
+					$this->load->view('templates/login-material-header',$data);
+					$this->load->view('pages/material-history');
+					$this->load->view('templates/material-footer');
 				 }
-			
-			$this->load->view('templates/admin-header',$data);
-			$this->load->view('pages/history');
-			$this->load->view('templates/admin-footer');
+			$this->load->model('Login_model');
+			$data['user'] = $this->Login_model->getById()->row(); 
+			$this->load->view('templates/login-material-header',$data);
+			$this->load->view('pages/material-history');
+			$this->load->view('templates/material-footer');
 			}
 		
 	}
-	function overview($pages ='overview')
+	function overview()
 	{
 		if($this->session->userdata('logged_in'))
 			{
 			$data ['email']= $this->session->userdata('email'); 
-			$data['title'] = ucfirst($pages); // Capitalize the first letter
+			$data['title'] = ucfirst("overview"); // Capitalize the first letter
 			
 			
 			
@@ -100,30 +96,27 @@ class Event extends CI_Controller{
 				$config = array();
 				$config["base_url"] = base_url() . "Event/overview";
 				$total_row = $this->Order_model->record_count();
-				$config["total_rows"] = $total_row;
+				
+				$config['total_rows'] = $total_row;
+				$config['per_page']=10;
 				$config['full_tag_open'] = '<ul class="pagination grey-text text-darken-3">';
 				$config['full_tag_close'] = '</ul>';
-				
 				$config ['prev_tag_open'] = ' <li>';
 				$config ['prev_tag_close'] = '</li>';
 				$config ['next_tag_open'] = ' <li>';
 				$config ['next_tag_close'] = '</li>';
 				$config['num_tag_open'] = '<li>';
 				$config['num_tag_close'] = '</li>';
-				$config["per_page"] = 5;
+				$config['page_query_string'] = True;
 				$config['use_page_numbers'] = TRUE;
-				
-				
 				$config['first_link'] = false;
 				$config['last_link'] = false;
-				
 				$config['cur_tag_open'] = '<li class="disabled light-primary-color" ><a class=" btn-primary active " href="">';
 				$config['cur_tag_close'] = '</a></li>';
 				$config['next_link'] = '<i class="material-icons active">fast_forward</i>';
 				$config['prev_link'] = '<i class="material-icons active">fast_rewind</i>';
-				//
-				//
 				$config['num_links'] = $total_row;
+				
 				$this->pagination->initialize($config);
 				$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 				

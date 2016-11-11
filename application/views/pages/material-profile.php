@@ -1,8 +1,7 @@
 <main class="grey lighten-3">
   
-<section>
-	<div class="row">
-        <div class="col s12 m12 l12 ">
+
+        <div class="ul-wrapper ">
           <div class="card">
 			<div class="card-content grey-text text-darken-3">
 				<div class="row">
