@@ -57,8 +57,9 @@ class Order_model extends CI_Model
    }
    
    public function bid_count() {
-		
-	return $this->db->count_all('bidding');
+		$this->db->where('barista_id',$this->session->userdata('id'));
+		$this->db->from('bidding');
+	return $this->db->count_all_results();
 	}
 
 	// Fetch data according to per_page limit.

@@ -130,23 +130,23 @@
 					<div class="row">
 						<div class="col s12 m4 l3 center">
 								<img class="responsive-image circle" src="<?php echo base_url();?>img/binoculars.png">
-								<h4>Discover</h4>
-								<p>Search driver listings leaving from your city and get where you need to go.</p>
+								<h4>Mr. Name</h4>
+								<p>CEO</p>
 						</div>
 						<div class="col s12 m4 l3 center">
 								<img class="responsive-image circle" src="<?php echo base_url();?>img/binoculars.png">
-								<h4>Discover</h4>
-								<p>Search driver listings leaving from your city and get where you need to go.</p>
+								<h4>Name</h4>
+								<p>Manager</p>
 						</div>
 						<div class="col s12 m4 l3 center">
 								<img class="responsive-image circle" src="<?php echo base_url();?>img/binoculars.png">
-								<h4>Discover</h4>
-								<p>Search driver listings leaving from your city and get where you need to go.</p>
+								<h4>Ms.Name</h4>
+								<p>Barista</p>
 						</div>
 						<div class="col s12 m4 l3 center">
 								<img class="responsive-image circle" src="<?php echo base_url();?>img/binoculars.png">
-								<h4>Discover</h4>
-								<p>Search driver listings leaving from your city and get where you need to go.</p>
+								<h4>Mr. Name</h4>
+								<p>Barista</p>
 						</div>
 					</div>
 				</div>
@@ -168,57 +168,51 @@
 						  </div>
 						</div>
 						<div class="col s12 m4 l3">
-						  <div class="card blue-grey darken-1">
-							<div class="card-content white-text">
-							  <span class="card-title">Card Title</span>
-							  <p>I am a very simple card. I am good at containing small bits of information.
-							  I am convenient because I require little markup to use effectively.</p>
+						   <div class="card">
+							<div class="card-image waves-effect waves-block waves-light">
+							  <img class="activator" src="<?php echo base_url();?>img/Starbucks-Company-Logo.png">
 							</div>
-							<div class="card-action">
-							  <a href="#">This is a link</a>
-							  <a href="#">This is a link</a>
+							<div class="card-content">
+							  <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+							  <p><a href="#">This is a link</a></p>
+							</div>
+							<div class="card-reveal">
+							  <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+							  <p>Here is some more information about this product that is only revealed once clicked on.</p>
 							</div>
 						  </div>
-						</div>
+						</div>  
 						<div class="col s12 m4 l3">
-						  <div class="card blue-grey darken-1">
-							<div class="card-content white-text">
-							  <span class="card-title">Card Title</span>
-							  <p>I am a very simple card. I am good at containing small bits of information.
-							  I am convenient because I require little markup to use effectively.</p>
+						   <div class="card">
+							<div class="card-image waves-effect waves-block waves-light">
+							  <img class="activator" src="<?php echo base_url();?>img/Starbucks-Company-Logo.png">
 							</div>
-							<div class="card-action">
-							  <a href="#">This is a link</a>
-							  <a href="#">This is a link</a>
+							<div class="card-content">
+							  <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+							  <p><a href="#">This is a link</a></p>
+							</div>
+							<div class="card-reveal">
+							  <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+							  <p>Here is some more information about this product that is only revealed once clicked on.</p>
 							</div>
 						  </div>
-						</div>
+						 </div> 
 						<div class="col s12 m4 l3">
-						  <div class="card blue-grey darken-1">
-							<div class="card-content white-text">
-							  <span class="card-title">Card Title</span>
-							  <p>I am a very simple card. I am good at containing small bits of information.
-							  I am convenient because I require little markup to use effectively.</p>
+						   <div class="card">
+							<div class="card-image waves-effect waves-block waves-light">
+							  <img class="activator" src="<?php echo base_url();?>img/Starbucks-Company-Logo.png">
 							</div>
-							<div class="card-action">
-							  <a href="#">This is a link</a>
-							  <a href="#">This is a link</a>
+							<div class="card-content">
+							  <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+							  <p><a href="#">This is a link</a></p>
 							</div>
-						  </div>
-						</div>
-						<div class="col s12 m4 l3">
-						  <div class="card blue-grey darken-1">
-							<div class="card-content white-text">
-							  <span class="card-title">Card Title</span>
-							  <p>I am a very simple card. I am good at containing small bits of information.
-							  I am convenient because I require little markup to use effectively.</p>
-							</div>
-							<div class="card-action">
-							  <a href="#">This is a link</a>
-							  <a href="#">This is a link</a>
+							<div class="card-reveal">
+							  <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+							  <p>Here is some more information about this product that is only revealed once clicked on.</p>
 							</div>
 						  </div>
 						</div>
+						
 					</div>
 				</div>
 

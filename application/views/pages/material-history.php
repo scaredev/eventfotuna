@@ -11,6 +11,7 @@
 									  <th>Party type</th>
 									  <th>No.of Guest</th>
 									  <th>Location</th>
+									  <th>Bid Amount</th>
 									  <th>Status</th>
 									</tr>
 		</thead>
@@ -25,15 +26,16 @@
 										  <td><?php echo $bids->partytype;?> </td>
 										  <td><?php echo $bids->participants;?> </td>
 										  <td><?php echo $bids->address;?> <br><?php echo $bids->zipcode;?></td>
+										  <td><?php echo $bids->prize;?> </td>
 										  
 											<?php if ($bids->completed != 0){ ?>
 													<?php if ($bids->completed === $bids->barista_id){ ?>
-														<td><?php echo $bids->completed ;?><span class="new badge" data-badge-caption="Win"><i class="material-icons">location_on</i></span></td>
+														<td><div class="valign-wrapper"><div class="chip teal text-primary-color">Win</div></div></td>
 													<?php } else {?>
-														<td><?php echo $bids->completed ;?><span class="new badge orange darken-3" data-badge-caption="Lose"><i class="material-icons">location_on</i></span></td>
+														<td><div class="valign-wrapper"><div class="chip orange darken-4 text-primary-color">Lost</div></div></td>
 													<?php } ?>
 											<?php } else { ?>
-												<td><?php echo $bids->completed ;?><span class="new badge yellow accent-1" data-badge-caption="Pending"><i class="material-icons">location_on</i></span></td>
+												<td><div class="valign-wrapper"><div class="chip orange lighten-2 text-primary-color">Pending</div></div></td>
 											<?php } ?>
 										</tr>
 									  <?php } ?>
