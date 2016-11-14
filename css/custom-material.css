@@ -122,7 +122,11 @@ a.button-collapse.top-nav.full {
 padding:20px 20px;
 }
 
-
+.edit-butt{
+	position: absolute;
+    top: -30px;
+    right: 10px;
+}
 .grid-element-title{
 	position: absolute;
 bottom: 0;

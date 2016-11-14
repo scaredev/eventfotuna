@@ -75,17 +75,23 @@
 					<div class="col s12 m4">
 						<div class="card card-default">
 							<div class="card-content">	
-							<span class="card-title ">Account Settings</span>
+							<span class="card-title ">Password Settings</span>
 								<div class="row">
 									<div class="input-field col s12">
-									  <input id="email" type="email" class="validate">
+									  <input id="email" type="email" class="validate" disabled>
 									  <label for="email">Email</label>
 									</div>
 								</div>					
 								<div class="row">
 									<div class="input-field col s12">
 									  <input id="password" type="password" class="validate">
-									  <label for="password">Password</label>
+									  <label for="password">Old Password</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="input-field col s12">
+									  <input id="password" type="password" class="validate">
+									  <label for="password">New Password</label>
 									</div>
 								</div>
 								
@@ -111,10 +117,10 @@
 					
 
 					<div class="row">
-						<ul class="pager">
-						<li><a class="btn" href="#">Save Changes</a></li>
-						<li><a class="btn"  href="#" type="reset">Cancel</a></li>
-						</ul>
+						<div class="col s12 m6 l6 offset-m3 offset-l3">
+						<a class="btn" href="#">Save Changes</a>
+						<a class="btn"  href="#" type="reset">Cancel</a>
+						</div>
 					</div>
 	</div>
 </main>
