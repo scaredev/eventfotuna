@@ -1,0 +1,106 @@
+.blurring{
+	-webkit-filter: blur(0px) brightness(0.6) contrast(1) grayscale(0.68) hue-rotate(0deg) invert(0.1) opacity(100%) saturate(2.5) sepia(0.37) drop-shadow(0px 0px 5px #000);
+}	
+.action-button{
+	text-align:center;
+	margin-top:220px;
+}
+.large-blue{
+font-size: 18px;
+line-height: 1.5;
+padding: 11px 47px 9px;
+-webkit-transition: background-color .15s ease,border-color .15s ease,color .15s ease;
+-o-transition: background-color .15s ease,border-color .15s ease,color .15s ease;
+transition: background-color .15s ease,border-color .15s ease,color .15s ease;
+border-width: 0;
+letter-spacing: 1.2px;
+min-width: 130px;
+text-transform: uppercase;
+white-space: normal;
+color: #FFF;
+background-color: #2196F3;
+margin: 20px 10px 30px;
+display:inline-block;
+}
+.large-blue:hover{
+color: #2196F3;
+background-color:#fff; 	
+}
+.large-white{
+font-size: 18px;
+line-height: 1.5;
+padding: 11px 47px 9px;
+-webkit-transition: background-color .15s ease,border-color .15s ease,color .15s ease;
+-o-transition: background-color .15s ease,border-color .15s ease,color .15s ease;
+transition: background-color .15s ease,border-color .15s ease,color .15s ease;
+border-width: 0;
+letter-spacing: 1.2px;
+min-width: 130px;
+text-transform: uppercase;
+white-space: normal;
+color: #2196F3;
+background-color:#fff; 
+margin: 20px 10px 30px;
+display:inline-block;
+}
+.large-white:hover{
+color: #2196F3;
+background-color:#fff; 
+}
+
+.order-form{
+	
+	background:#fff;
+	
+}
+
+.order-form .row{
+	padding:0px 20px;
+}
+.login-panel{
+	max-width: 370px;
+margin-left: auto;
+margin-right: auto;
+padding: 10px 10px;
+	
+}
+.edit-butt{
+text-align: right;
+position: absolute;
+top: -30px;
+right: 5px;}
+
+.color-orange{
+	color:#ff7043;
+}
+.main-blue{
+	position: absolute;
+top: 50%;
+left: 50%;
+margin-top: -28px;
+margin-left: -28px;
+opacity: 0;
+}
+.orderform1{
+	
+}
+ .banner-container {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 997px;
+    margin: 0 auto;
+    width: 84%;
+ }
+ .banner-container .banner-img {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-top: 150px;
+    padding-bottom: 100px;
+    position: relative;
+ }
+ .banner-container .banner-img .tagline {
+    position: relative;
+    z-index: 15;
+}

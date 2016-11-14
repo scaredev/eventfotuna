@@ -1,6 +1,13 @@
 <!DOCTYPE html>
   <html>
     <head>
+	 <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <link rel="shortcut icon" type="image/png" href="<?= base_url();?>img/coffee.png"/>
+	
+	<title><?php echo $title; ?></title>
       <!--Import Google Icon Font-->
       <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
@@ -61,7 +68,7 @@
 					<a href="<?=base_url();?>Event/overview"><i class="material-icons active">description</i>Overview</a></li>
 		<li class=" <?php if($title=="History"){echo "light-primary-color active ";}?>">
 					<a href="<?=base_url();?>Event/history"><i class="material-icons active">subject</i>History</a></li>
-		<li class="l  <?php if($title=="Calendarview"){echo "light-primary-color  active ";}?>">
+		<li class="l  <?php if($title=="Calendar"){echo "light-primary-color  active ";}?>">
 					<a href="<?=base_url();?>Event/calendarview"><i class="material-icons active">today</i>Calendar</a></li>
 		<li class="  <?php if($title=="Cashier"){echo "light-primary-color  active ";}?>">
 					<a href="<?=base_url();?>Event/cashier"><i class="material-icons active">shopping_cart</i>Cashier</a></li>
@@ -69,8 +76,7 @@
 		<li class="divider-color "><div class="divider"></div></li>
 	   <li class="  <?php if($title=="Settings"){echo "light-primary-color  active ";}?>">
 					<a href="<?=base_url();?>Event/settings"><i class="material-icons active">settings</i>Settings</a></li>
-		<li class=" <?php if($title=="Settings"){echo "light-primary-color  active ";}?>">
-					<a href="<?=base_url();?>Login/logout"><i class="material-icons active">exit_to_app</i>Logout</a></li>
+		<li class=" "><a href="<?=base_url();?>Login/logout"><i class="material-icons active">exit_to_app</i>Logout</a></li>
 	  </ul>
 
 </header>

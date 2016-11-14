@@ -1,19 +1,31 @@
 <main>
   <div class="parallax-container" style="position:relative;">
-    <div class="parallax"><img src="<?php echo base_url();?>img/coffeecar.jpg">        
+    <div class="parallax "><img class="blurring" src="<?php echo base_url();?>img/coffeecar.jpg">        
 	</div>
-	<div class="action-button">
-		<a href="#order" class="waves-effect btn-large large-blue">
+	<div class="banner-container">
+		<div class="banner-img">
+			<div class="tagline">
+			  <h2>The web framework of your dreams.</h2>
+			  <h3>Built for developers by jellyfish.</h3>
+			  <a href="/get-started" class="button">Get started</a>
+			</div>
+			<img class="light" alt="Beams of light" src="/images/bkgd_light.png">
+			<img class="squid" alt="A cartoon squid holding a tablet, phone, keyboard, and taped-up glasses in his tentacles" src="/images/bkgd_squiddy.png">
+		 </div>
+		<div class="action-button" style="display:none;">
+			<a href="#order" class="waves-effect btn-large large-blue">
+			
+			Order Some Coffee
+		  </a> 
+			
+		  <a class="modal-trigger waves-effect waves-light btn-large large-white" href="#modal1">
+			
+			Register as Barista
+		  </a>      
 		
-		Order Some Coffee
-	  </a> 
-		
-	  <a class="modal-trigger waves-effect waves-light btn-large large-white" href="#modal1">
-		
-		Register as Barista
-	  </a>      
-		
+		</div>
 	</div>
+	
   </div>
 	<!-- modal-->
 		<div id="modal1" class="modal">

@@ -17,6 +17,26 @@ header, main, footer {
         padding-left: 0;
       }
     }
+
+.linear-bg{
+	/* IE10+ */ 
+background-image: -ms-radial-gradient(center, ellipse farthest-corner, #3D2B24 0%, #2B2B2B 100%);
+
+/* Mozilla Firefox */ 
+background-image: -moz-radial-gradient(center, ellipse farthest-corner, #3D2B24 0%, #2B2B2B 100%);
+
+/* Opera */ 
+background-image: -o-radial-gradient(center, ellipse farthest-corner, #3D2B24 0%, #2B2B2B 100%);
+
+/* Webkit (Safari/Chrome 10) */ 
+background-image: -webkit-gradient(radial, center center, 0, center center, 286, color-stop(0, #3D2B24), color-stop(100, #2B2B2B));
+
+/* Webkit (Chrome 11+) */ 
+background-image: -webkit-radial-gradient(center, ellipse farthest-corner, #3D2B24 0%, #2B2B2B 100%);
+
+/* W3C Markup */ 
+background-image: radial-gradient(ellipse farthest-corner at center, #3D2B24 0%, #2B2B2B 100%);
+}	
 .mobile-bar{
 	position:absolute;
 	top:0px;
@@ -102,86 +122,7 @@ a.button-collapse.top-nav.full {
 padding:20px 20px;
 }
 
-.action-button{
-	text-align:center;
-	margin-top:220px;
-}
-.large-blue{
-font-size: 18px;
-line-height: 1.5;
-padding: 11px 47px 9px;
--webkit-transition: background-color .15s ease,border-color .15s ease,color .15s ease;
--o-transition: background-color .15s ease,border-color .15s ease,color .15s ease;
-transition: background-color .15s ease,border-color .15s ease,color .15s ease;
-border-width: 0;
-letter-spacing: 1.2px;
-min-width: 130px;
-text-transform: uppercase;
-white-space: normal;
-color: #FFF;
-background-color: #2196F3;
-margin: 20px 10px 30px;
-display:inline-block;
-}
-.large-blue:hover{
-color: #2196F3;
-background-color:#fff; 	
-}
-.large-white{
-font-size: 18px;
-line-height: 1.5;
-padding: 11px 47px 9px;
--webkit-transition: background-color .15s ease,border-color .15s ease,color .15s ease;
--o-transition: background-color .15s ease,border-color .15s ease,color .15s ease;
-transition: background-color .15s ease,border-color .15s ease,color .15s ease;
-border-width: 0;
-letter-spacing: 1.2px;
-min-width: 130px;
-text-transform: uppercase;
-white-space: normal;
-color: #2196F3;
-background-color:#fff; 
-margin: 20px 10px 30px;
-display:inline-block;
-}
-.large-white:hover{
-color: #2196F3;
-background-color:#fff; 
-}
 
-.order-form{
-	
-	background:#fff;
-	
-}
-
-.order-form .row{
-	padding:0px 20px;
-}
-.login-panel{
-	max-width: 370px;
-margin-left: auto;
-margin-right: auto;
-padding: 10px 10px;
-	
-}
-.edit-butt{
-text-align: right;
-position: absolute;
-top: -30px;
-right: 5px;}
-
-.color-orange{
-	color:#ff7043;
-}
-.main-blue{
-	position: absolute;
-top: 50%;
-left: 50%;
-margin-top: -28px;
-margin-left: -28px;
-opacity: 0;
-}
 .grid-element-title{
 	position: absolute;
 bottom: 0;
@@ -201,4 +142,12 @@ text-overflow: ellipsis;
 padding: 0px 20px;
 margin-right: 29px;
 
+}
+.bid-form button :hover{
+	color:#EB5424;
+	border:1px solid #EB5424;
+}
+/**** Settings CSS***/
+.start-splash-header-content{
+	padding-top: 60px;
 }
