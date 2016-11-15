@@ -1,32 +1,109 @@
 <main>
-  <div class="parallax-container" style="position:relative;">
+<div class="ul-wrapper" style="position:relative;">
+  <div class="parallax-container" >
     <div class="parallax "><img class="blurring" src="<?php echo base_url();?>img/coffeecar.jpg">        
 	</div>
-	<div class="banner-container">
-		<div class="banner-img">
-			<div class="tagline">
-			  <h2>The web framework of your dreams.</h2>
-			  <h3>Built for developers by jellyfish.</h3>
-			  <a href="/get-started" class="button">Get started</a>
-			</div>
-			<img class="light" alt="Beams of light" src="/images/bkgd_light.png">
-			<img class="squid" alt="A cartoon squid holding a tablet, phone, keyboard, and taped-up glasses in his tentacles" src="/images/bkgd_squiddy.png">
-		 </div>
-		<div class="action-button" style="display:none;">
-			<a href="#order" class="waves-effect btn-large large-blue">
+	<div class="row banner-form">
+		<div class="col s12 m8">
+			<section class="banner-img flow-text">
+				<div class="tagline text-primary-color">
+				  <h2>The web framework of your dreams.</h2>
+				 <p>Search driver listings leaving from your city and get where you need to go </p>
+				  <a href="/get-started" class="button">Get started</a>
+				</div>
+				<div class="action-button">
+				<a href="#order" class="waves-effect large-blue">
+				
+				Order Some Coffee
+			  </a> 
+				
+			  <a class="modal-trigger waves-effect waves-light  large-white accent-color" href="#modal1">
+				
+				Register as Barista
+			  </a>      
+			 </div>
 			
-			Order Some Coffee
-		  </a> 
 			
-		  <a class="modal-trigger waves-effect waves-light btn-large large-white" href="#modal1">
-			
-			Register as Barista
-		  </a>      
-		
+			<section>
+		</div>
+		<div class="col s12 m4 hide-on-med-and-down">
+			<section>
+				
+				  <div class="row">
+					<div class="col s12">
+					  <div class="card white default-primary-color">
+						<div class="card-content white-text">
+						  <span class="card-title primary-text-color center ">Quick Order!</span>
+						  	<div class="divider"></div><br/>
+							
+							<ul id="host" class="tabs tabs-fixed-width">
+							<label for="host">Party Host</label>
+								<li class="tab col s3"><a href="#test1">Company</a></li>
+								<li class="tab col s3"><a class="" href="#test2">Private</a></li>
+							</ul>
+							<div id="test1">
+								<div  class="input-field">
+									<select id="party-type">
+									  <option value="" disabled selected>Choose your option</option>
+									  <option value="1">Bryllup</option>
+									  <option value="2">Barnedab</option>
+									  <option value="3">Komfirmation</option>
+									  <option value="3">Uniformation</option>
+									  <option value="3">Fodseldag</option>
+									</select>
+									<label for="party-type">Select Party Type</label>
+								</div>		
+								<div  class="input-field">
+								<input  id="first_name" type="text" class="validate">
+								<label for="first_name">First Name</label>
+								</div>
+								<div  class="input-field">
+								<input  id="zipcode" type="text" class="validate">
+								<label for="first_name">Zip Code</label>
+								</div>
+												
+								
+							</div>
+							<div id="test2" >
+							
+								<div  class="input-field">
+								<input  id="first_name" type="text" class="validate">
+								<label for="first_name">First Name</label>
+								</div>
+								<div  class="input-field">
+								<input  id="zipcode" type="text" class="validate">
+								<label for="first_name">Zip Code</label>
+								</div>
+								<div  class="input-field">
+									<select id="party-type">
+									  <option value="" disabled selected>Choose your option</option>
+									  <option value="1">Conference</option>
+									  <option value="2">Reception</option>
+									  <option value="3">Messe</option>
+									  <option value="3">Promovering</option>
+									  <option value="3">Other...</option>
+									</select>
+									<label for="party-type">Select Party Type</label>
+								</div>				
+							
+							</div>
+						  
+						</div>
+						<div class="card-action">
+						  <a href="#">This is a link</a>
+						  <a href="#">This is a link</a>
+						</div>
+					  </div>
+					</div>
+				  </div>
+            
+			</section>
 		</div>
 	</div>
+</div>  
 	
   </div>
+  
 	<!-- modal-->
 		<div id="modal1" class="modal">
 			<div class="modal-content">
@@ -72,14 +149,16 @@
 			  </div>
         
 			</div>
-			</div>
-			</div>
 			<div class="modal-footer">
-			  
+			  <p>sada</p>
 			</div>
-		
+		</div>
+			
+	</div>
+			
+	<div style="clear:both;"></div>	
 	<!-- -->
-  <div class="section white">
+  <section class= "default-primary-color">
     <div class="row container hide-on-small-only" style="padding: 40px 0px;">
       <div class="col s12 " id="for_passengers">
 		  <div class="col s12 l4 center step">
@@ -95,89 +174,8 @@
 	  <div class="col s12 l4 center step"><div class="col l12 s3"><img class="responsive-image circle" src="https://dcrft8y8615e6.cloudfront.net/assets/car-icon-672ac5eba7a39fe922ad9a0c39e58b65ff08f44ca6125c3a7ca6b02dfad53c97.png" alt="Car icon 672ac5eba7a39fe922ad9a0c39e58b65ff08f44ca6125c3a7ca6b02dfad53c97"></div><div class="col l12 s9"><h4>Go Somewhere</h4><p>Enjoy the trip, make some new friends, and safely arrive at your destination.</p></div></div>
 	  </div>
     </div>
-  </div>
-  <section id="order" style="background-color:#03A9F4;padding:20px 0px;">
-      <div class="row">        
-		<div class="col s12 m6 l6 hide-on-small-and-down">
-			<div class="row">
-				<div class="right-align">
-						<div class="card col s12 m7 l7 offset-m5 offset-l5">
-							<div class="card-image">
-								<div class="valign-wrapper">
-									<div class="valign">	
-									&nbsp;<img class="img" src="<?php echo base_url();?>img/coffeecup.jpg">
-									</div>
-								</div>
-							  <span class="card-title">Card Title</span>
-							</div>					
-						</div>
-				</div>
-            </div>
-        </div>
-		<div class="col s12 m6 l6 ">
-			<div class="row">
-				<div class="col s12 m8 l8 login-panel order-form">
-					<div class="section">
-						<h5 class="center" style="font-style:italic;">ORDER A COFFEE</h5>
-					</div>
-					<div class="row">
-					
-						<div class="col s12 input-field">
-						<div class="switch">
-							
-							<p><i class="material-icons">business</i> Party Host						
-							  
-							</p>  
-							  <input name="group1" type="radio" id="test1" />
-							  <label for="test1">Private</label>
-							  <input name="group1" type="radio" id="test2" />
-							  <label for="test2">Company</label>
-							<br/>
-						  </div>
-						</div>
-					</div>
-					
-					<div class="row">
-						<div class="col s12 input-field">
-							<i class="material-icons prefix">queue_music</i>
-							<select class="initialized">
-							  <option value="" disabled="" selected="">Choose Party Type</option>
-							  <option value="1">Option 1</option>
-							  <option value="2">Option 2</option>
-							  <option value="3">Option 3</option>
-							</select>
-							<label for="icon_prefix">Party Type</label>
-							
-						</div>
-					</div>
-					<div class="row">
-						<div class="col s12 input-field">
-						<i class="material-icons prefix">date_range</i>
-						<input id="eventdate" type="date" class="datepicker" placeholder="Event Date">
-						
-					</div>
-					</div>
-					<div class="row">
-						<div class="col s12 input-field">
-						<i class="material-icons prefix">location_on</i>
-						<input type="text" class="validate" id="location">
-						<label for="location">Zip Code</label>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col s12 input-field">				
-						  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-							<i class="material-icons right">send</i>
-						  </button>
-						</div>
-				</div>
-            </div>
-		</div>
-        </div>
-      </div>
-            
-	</div>
   </section>
+  
    <div class="section white">
     <div class="row container">
       <h2 class="header">More About Us</h2>
