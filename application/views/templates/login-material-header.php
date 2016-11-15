@@ -22,12 +22,12 @@
 <body>
 <header>
 		<ul id="dropdown1" class="dropdown-content">
-		  <li><a href="#!">one</a></li>
-		  <li><a href="#!">two</a></li>
+		  <li><a class="secondary-text-color" href="#!">menuone</a></li>
+		  <li><a class="secondary-text-color" href="#!">menutwo</a></li>
 		  <li class="divider"></li>
-		  <li><a href="#!">three</a></li>
+		  <li><a class="secondary-text-color" href="#!">logout</a></li>
 		</ul>
-		<nav class="top-nav white flow-text">
+		<nav class="top-nav white flow-text hide-on-med-and-down">
 		 <div class=" center">
 		  <div class="nav-wrapper">
 		    <a href="" class="page-title active primary-text-color"><?php echo $title;?></a>
@@ -44,12 +44,22 @@
 			 
 			</ul>
 		  </div>
+		  
+		</div>
+		</nav>
+		<nav class="top-nav flow-text hide-on-med-and-up default-primary-color">
+		 <div class=" center">
+		  <div class="nav-wrapper">
+		    <a href="" class="page-title active text-primary-color  "><?php echo $title;?></a>
+			
+		  </div>
+		  
 		</div>
 		</nav>
 	<div class="divider"></div>
 	<div class="container dark-primary-color">
 		<a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only">
-			<i class="material-icons primary-text-color ">menu</i></a>
+			<i class="material-icons text-primary-color  ">menu</i></a>
 	</div>
 	<ul id="slide-out" class="side-nav fixed dark-primary-color text-primary-color flow-text">
 		<li class="logo">
@@ -62,19 +72,19 @@
 			  <a href="#!email"><span class="email"><?php echo $user->email;?></span></a>
 			</div>
 		</li>
-		<li class="  <?php if($title=="Profile"){echo "light-primary-color active ";}?>">
+		<li class="  <?php if($title=="Profile"){echo "default-primary-color   active ";}?>">
 					<a href="<?=base_url();?>Event/materialprof"><i class="material-icons active">perm_identity</i>Profile</a></li>
-		<li class=" <?php if($title=="Overview"){echo "light-primary-color active ";}?>">
+		<li class=" <?php if($title=="Overview"){echo "default-primary-color   active ";}?>">
 					<a href="<?=base_url();?>Event/overview"><i class="material-icons active">description</i>Overview</a></li>
-		<li class=" <?php if($title=="History"){echo "light-primary-color active ";}?>">
+		<li class=" <?php if($title=="History"){echo "default-primary-color   active ";}?>">
 					<a href="<?=base_url();?>Event/history"><i class="material-icons active">subject</i>History</a></li>
-		<li class="l  <?php if($title=="Calendar"){echo "light-primary-color  active ";}?>">
+		<li class="l  <?php if($title=="Calendar"){echo "default-primary-color    active ";}?>">
 					<a href="<?=base_url();?>Event/calendarview"><i class="material-icons active">today</i>Calendar</a></li>
-		<li class="  <?php if($title=="Cashier"){echo "light-primary-color  active ";}?>">
+		<li class="  <?php if($title=="Cashier"){echo "default-primary-color  active ";}?>">
 					<a href="<?=base_url();?>Event/cashier"><i class="material-icons active">shopping_cart</i>Cashier</a></li>
 		
 		<li class="divider-color "><div class="divider"></div></li>
-	   <li class="  <?php if($title=="Settings"){echo "light-primary-color  active ";}?>">
+	   <li class="  <?php if($title=="Settings"){echo "default-primary-color    active ";}?>">
 					<a href="<?=base_url();?>Event/settings"><i class="material-icons active">settings</i>Settings</a></li>
 		<li class=" "><a href="<?=base_url();?>Login/logout"><i class="material-icons active">exit_to_app</i>Logout</a></li>
 	  </ul>

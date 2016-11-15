@@ -43,7 +43,7 @@ class Event extends CI_Controller{
 				$total_row = $this->Order_model->bid_count();
 				$config['total_rows'] = $total_row;
 				$config['per_page']=5;
-				$config['full_tag_open'] = '<ul class="pagination grey-text text-darken-3">';
+				$config['full_tag_open'] = '<ul class="pagination primary-text-color">';
 				$config['full_tag_close'] = '</ul>';
 				$config ['prev_tag_open'] = ' <li>';
 				$config ['prev_tag_close'] = '</li>';
@@ -54,7 +54,7 @@ class Event extends CI_Controller{
 				$config['use_page_numbers'] = TRUE;
 				$config['first_link'] = false;
 				$config['last_link'] = false;
-				$config['cur_tag_open'] = '<li class="disabled light-primary-color" ><a class=" btn-primary active " href="">';
+				$config['cur_tag_open'] = '<li class=" accent-color" ><a class="text-primary-color btn-primary active " href="">';
 				$config['cur_tag_close'] = '</a></li>';
 				$config['next_link'] = '<i class="material-icons active">fast_forward</i>';
 				$config['prev_link'] = '<i class="material-icons active">fast_rewind</i>';
@@ -98,7 +98,7 @@ class Event extends CI_Controller{
 				
 				$config['total_rows'] = $total_row;
 				$config['per_page']=10;
-				$config['full_tag_open'] = '<ul class="pagination grey-text text-darken-3">';
+				$config['full_tag_open'] = '<ul class="pagination primary-text-color">';
 				$config['full_tag_close'] = '</ul>';
 				$config ['prev_tag_open'] = ' <li>';
 				$config ['prev_tag_close'] = '</li>';
@@ -110,7 +110,7 @@ class Event extends CI_Controller{
 				$config['use_page_numbers'] = TRUE;
 				$config['first_link'] = false;
 				$config['last_link'] = false;
-				$config['cur_tag_open'] = '<li class="disabled light-primary-color" ><a class=" btn-primary active " href="">';
+				$config['cur_tag_open'] = '<li class=" accent-color" ><a class="text-primary-color btn-primary active " href="">';
 				$config['cur_tag_close'] = '</a></li>';
 				$config['next_link'] = '<i class="material-icons active">fast_forward</i>';
 				$config['prev_link'] = '<i class="material-icons active">fast_rewind</i>';

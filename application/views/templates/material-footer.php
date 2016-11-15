@@ -1,5 +1,5 @@
 	 
-	 <footer class="">
+	 <footer class="default-primary-color">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
