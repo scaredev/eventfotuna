@@ -41,13 +41,21 @@
       <div class="row">
         <div class="input-field col s6">
           <textarea name="address" id="textarea1" class="materialize-textarea" length="120" required></textarea>
-          <label for="password">Adress</label>
+          <label for="textarea1">Adress</label>
         </div>
 		<div class="input-field col s6">
           <input name="zipcode" id="zipcode" type="text" class="validate" value="<?php echo $partytype;?>" disabled >
           <label for="zipcode" >Zip Code</label>
         </div>
       </div>
+	  <div class="divider"></div><br/>
+	  <div class="row">
+        <div class="input-field col s12">
+          <textarea name="address" id="textarea2" class="materialize-textarea" length="500" required placeholder="tell us more..."></textarea>
+          <label for="textarea2">More Details and Instructions: </label>
+        </div>
+	  </div>	
+	  
       <div class="row">
         <div class="col s12">
           You are about to send and Order
