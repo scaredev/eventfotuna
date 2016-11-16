@@ -43,11 +43,11 @@ vertical-align: middle;
 background-color:#fff;
 color:#EB5424;
 }
-.large-blue:hover{
+/*.large-blue:hover{
 color: #FFF;
 background-color:#EB5424;
 	
-}
+}*/
 .large-white{
 font-size: 18px;
 line-height: 1.5;
@@ -74,11 +74,11 @@ text-transform: uppercase;
 vertical-align: middle;
 -webkit-tap-highlight-color: transparent;
 }
-.large-white:hover{
+/*.large-white:hover{
 color: #EB5424;
 background-color:#fff; 
 }
-
+*/
 .order-form{
 	
 	background:#fff;

@@ -56,10 +56,39 @@ class login extends CI_Controller
 	
 	function parallax(){
 		
-			$this->load->view('templates/material-header');
-			$this->load->view('pages/material-index');
+		//get the posted values
+          $email = $this->input->post("email");
+          $pass = $this->input->post("password");
+
+          //set validations
+          $this->form_validation->set_rules("email", "Email", "required");
+          $this->form_validation->set_rules("password", "Password", "trim|required");
+
+          if ($this->form_validation->run() == FALSE)
+          {
+               //validation fails
+			
+            $data['errors']='';
+			$data['title'] = ucfirst("Home"); // Capitalize the first letter
+			$this->load->view('templates/material-header',$data);
+			$this->load->view('pages/material-index',$data);
 			$this->load->view('templates/material-footer');
-		
+          }
+          else
+          {
+               //validation succeeds
+             if( $email && $pass && $this->Login_model->validate_user($email,$pass)){
+				 
+				 redirect('Event/overview');
+			 }
+			 else
+                    {
+                         $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Invalid username and password!</div>');
+                         redirect('login/parallax');
+                    }
+               
+               
+          }
 		
 	}
 	

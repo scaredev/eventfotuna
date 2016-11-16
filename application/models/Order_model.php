@@ -8,7 +8,19 @@ class Order_model extends CI_Model
 		 
   
   }
-	
+	function set_order_sess(){
+		
+		$this->session->set_userdata( array(
+            'name'=>$this->input->post("name"),
+            'party'=>$this->input->post("party"),
+			'zipcode'=>$this->input->post("zipcode"),
+            'partytype'=>$this->input->post("partytype")
+            //email-validated
+			)
+		);
+	    return true;
+		
+	}
   
 	function add_order(){
 		
