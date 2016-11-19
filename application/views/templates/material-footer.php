@@ -31,23 +31,7 @@
 	   <script type="text/javascript">
 	  $('.carousel.carousel-slider').carousel({full_width: true});
 	  </script>
-	    <script type="text/javascript">	  
-				
-		  $('.dropdown-button').dropdown({
-			  inDuration: 300,
-			  outDuration: 225,
-			  constrain_width: false, // Does not change width of dropdown to that of the activator
-			  belowOrigin: true, // Displays dropdown below the button
-			  hover: false, // Activate on hover
-			  gutter: 0, // Spacing from edge
-			  
-			  alignment: 'left' // Displays dropdown with edge aligned to the left of button
-			}
-		  );
-               
-	  </script>
-	  
-	  
+	     
 	  <script type="text/javascript">
 	  
     $(document).ready(function(){

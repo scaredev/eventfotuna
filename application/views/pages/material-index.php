@@ -32,11 +32,11 @@
 				  <div class="row">
 					<div class="col s12">
 					  <div class="card white default-primary-color">
-						<div class="card-content white-text">
+						<div class="card-content white-text ">
 						  <span class="card-title primary-text-color center ">Quick Order!</span>
 						  	<div class="divider"></div><br/>
 							<?php echo $this->session->flashdata('msg'); ?>
-							<ul id="host" class="tabs tabs-fixed-width">
+							<ul id="host" class="tabs tabs-fixed-width flow-text">
 							<label for="host">Party Host</label>
 								<li class="tab col s3"><a href="#test1">Company</a></li>
 								<li class="tab col s3"><a class="" href="#test2">Private</a></li>
