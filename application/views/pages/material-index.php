@@ -193,11 +193,11 @@
 							<?php echo $this->session->flashdata('msg'); ?>
 							<ul id="host" class="tabs tabs-fixed-width">
 							<label for="host">Party Host</label>
-								<li class="tab col s3"><a href="#test1">Company</a></li>
-								<li class="tab col s3"><a class="" href="#test2">Private</a></li>
+								<li class="tab col s3"><a href="#testa1">Company</a></li>
+								<li class="tab col s3"><a class="" href="#testa2">Private</a></li>
 							</ul>
 							<br/>
-							<div id="test1">
+							<div id="testa1">
 								<form id="company_form"  role="form" action="<?php echo base_url();?>Order/pre_order" method="post">
 									<div  class="input-field">
 										<select name="partytype" class="primary-text-color" id="party-type">
@@ -223,7 +223,7 @@
 									<button class="btn btn-small " type="submit" href="#">Submit</button>		
 								</form>
 							</div>
-							<div id="test2" >
+							<div id="testa2" >
 								<form id="private_form"  role="form" action="<?php echo base_url();?>Order/pre_order" method="post">
 									<div  class="input-field">
 										<select  name="partytype" class="primary-text-color" id="party-type">
