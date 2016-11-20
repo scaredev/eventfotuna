@@ -32,7 +32,7 @@
 				  <div class="row">
 					<div class="col s12">
 					  <div class="card white default-primary-color">
-						<div class="card-content white-text ">
+						<div class="card-content white-text">
 						  <span class="card-title primary-text-color center ">Quick Order!</span>
 						  	<div class="divider"></div><br/>
 							<?php echo $this->session->flashdata('msg'); ?>
@@ -86,7 +86,7 @@
 									<label for="first_name">First Name</label>
 									</div>
 									<div  class="input-field">
-									<input name="zipcode" id="zipcode" type="text" class="validate primary-text-color"pattern="-?[0-9]*(\.[0-9]+)?" required length="8">
+									<input name="zipcode" id="zipcode" type="text" class="validate primary-text-color" pattern="-?[0-9]*(\.[0-9]+)?" required length="8">
 									<label for="first_name">Zip Code</label>
 									</div>
 									<input  name="party" id="party" type="hidden" value="private">
@@ -113,48 +113,54 @@
   
 	<!-- modal-->
 		<div id="modal1" class="modal modal-fixed-footer">
-			<form class="col s12">  
+			<form class="col s12" id="barista_form"  role="form" action="<?php echo base_url();?>Register/registration" method="post">  
 			<div class="modal-content">
 			
 			  <div class="row">
-				
-				  <div class="row">
-					<div class="input-field col s6">
-					  <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-					  <label for="first_name">First Name</label>
+				<div class="ul-wrapper">
+					<div class="row">
+						<div class="input-field col s6">
+						  <input name="company" placeholder="Your Company" id="first_name" type="text" class="validate" required>
+						  <label for="company">Company</label>
+						</div>
+						<div class="input-field col s6">
+						  <input name="cart-type" placeholder="Cart Type" id="first_name" type="text" class="validate">
+						  <label for="cart-type">CVR</label>
+						</div>
 					</div>
-					<div class="input-field col s6">
-					  <input id="last_name" type="text" class="validate">
-					  <label for="last_name">Last Name</label>
+					<div class="row">
+						<div class="input-field col s6">
+						  <input name="fname"placeholder="YourName" id="first_name" type="text" class="validate" required>
+						  <label for="fname">First Name</label>
+						</div>
+						<div class="input-field col s6">
+						  <input name="mobile" placeholder="xxxxxxxx" id="last_name" type="text" class="validate" pattern="-?[0-9]*(\.[0-9]+)?" length="8" required>
+						  <label for="mobile">mobile number</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+						  <input name="email" placeholder="you@domain.com "id="last_name" type="email" class="validate" required>
+						  <label for="email" data-error="wrong format" data-success="success">Email Address</label>
+						</div>
+						<div class="input-field col s12">
+						  <input placeholder="Placeholder" id="first_name" type="text" class="validate" required length="8" >
+						  <label for="first_name">Password</label>
+						</div>
+						
 					</div>
 				  </div>
-				  <div class="row">
-					<div class="input-field col s12">
-					  <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-					  <label for="disabled">Disabled</label>
-					</div>
-				  </div>
-				  <div class="row">
-					<div class="input-field col s12">
-					  <input id="password" type="password" class="validate">
-					  <label for="password">Password</label>
-					</div>
-				  </div>
-				  <div class="row">
-					<div class="input-field col s12">
-					  <input id="email" type="email" class="validate">
-					  <label for="email">Email</label>
-					</div>
-				  </div>
+				</div>
 				 			
 			  </div>
         
-			</div>
+			
 			<div class="modal-footer">
-			   <button class="btn waves-effect waves-light accent-color" type="submit" name="action">Register
-							<i class="material-icons right">send</i>
-			   </button>
-			</div>
+            <button type="reset" class="modal-action waves-effect waves-red btn-flat ">Reset</button>
+			&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="submit" class="modal-action waves-effect waves-green btn-flat">Agree<i class="material-icons right">send</i></button>
+            </div>
+			
 			</form>
 		</div>
 			

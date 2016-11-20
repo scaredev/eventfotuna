@@ -1,36 +1,28 @@
-<body>
+<main>
 <div class="container">
      <div class="row">
-          <div class="col-lg-6 col-sm-6">
-               <h1>Welcome Barista</h1>
+          <div class="col s12 m4 l4 offset-m4 offset-l4">
+               <h1 class="flow-text center">Welcome Barista</h1>
           </div>
-          <div class="col-lg-6 col-sm-6">
-               
-               <ul class="nav nav-pills pull-right" style="margin-top:20px">
-                    <li class="active"><a href="#">Login</a></li>
-                    <li><a href="#">Signup</a></li>
-               </ul>
-               
-          </div>
+         
      </div>
 </div>
-<hr/>
 
 <div class="container">
      <div class="row">
-          <div class="col-lg-4 col-sm-4 well">
+          <div class="col s12 m4 l4 offset-m4 offset-l4">
           <?php 
           $attributes = array("class" => "form-horizontal", "id" => "loginform", "name" => "loginform");
           echo form_open("login/loginform", $attributes);?>
           <fieldset style="padding:40px 40px;border-radius:5px;">
                <legend>Login</legend>
                <div  class="input-field">
-									<input name="name" id="first_name" type="text" class="validate primary-text-color" required>
-									<label for="first_name">Email</label>
+									<input name="email" id="email" type="email" class="validate primary-text-color" required>
+									<label for="email"for="email" data-error="wrong format" data-success="success">Email</label>
 									</div>
 									<div  class="input-field">
-									<input  name="zipcode" id="zipcode" type="text" class="validate primary-text-color" required>
-									<label for="first_name">Password</label>
+									<input  name="password" id="password" type="text" class="validate primary-text-color" required>
+									<label for="password">Password</label>
 									</div>
                               
                <div class="form-group">
@@ -44,4 +36,4 @@
           <?php echo $this->session->flashdata('msg'); ?>
           </div>
      </div>
-</div>
+</main>
