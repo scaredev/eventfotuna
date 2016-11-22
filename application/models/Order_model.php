@@ -11,7 +11,7 @@ class Order_model extends CI_Model
 	function set_order_sess(){
 		
 		$this->session->set_userdata( array(
-            'name'=>$this->input->post("name"),
+            'fname'=>$this->input->post("fname"),
             'party'=>$this->input->post("party"),
 			'zipcode'=>$this->input->post("zipcode"),
             'partytype'=>$this->input->post("partytype")
@@ -27,13 +27,13 @@ class Order_model extends CI_Model
 		$trans_id =strtoupper(uniqid());
 		
 		$order = array(
-		'party'=>$this->input->post('eventtype'),
-		'partytype'=>$this->input->post('event'),
-		'zipcode'=>$this->input->post('zip'),
-		'name'=>$this->input->post('inputname'),
-		'email'=>$this->input->post('inputemail'),
+		'party'=>$this->input->post('party'),
+		'partytype'=>$this->input->post('partytype'),
+		'zipcode'=>$this->input->post('zipcode'),
+		'name'=>$this->input->post('fname'),
+		'email'=>$this->input->post('email'),
 		'tel'=>$this->input->post('tel'),
-		'eventdate'=>$this->input->post('date-time'),
+		'eventdate'=>$this->input->post('eventdate_submit'),
 		'participants'=>$this->input->post('participants'),
 		'address'=> $this->input->post('address'),
 		'completed'=>"0",
@@ -41,22 +41,32 @@ class Order_model extends CI_Model
 		'transaction_id'=>$trans_id
 		);
 		
-		$this->db->insert('orders',$order);
-		return;
+		if ($this->db->insert('orders',$order))
+		{
+		return true;}
+		else{
+			return false;
+		}
 	}
 	
 	
 	public function record_count() {
-		   $this->db->where('completed',0);
-	return $this->db->count_all('orders');
+		   
+		   $this->db->select('*');
+		   $this->db->from('orders');
+		   $this->db->join('bidding', 'bidding.barista_id != '.$this->session->userdata('id'));
+		   $this->db->where('completed',2);
+	return $this->db->count_all_results();
 	}
 
 	// Fetch data according to per_page limit.
 	public function fetch_data($limit, $start) {
-		
-        $this->db->limit($limit, $start);
+		$this->db->limit($limit, $start);
+		$this->db->select('*');
 		$this->db->from('orders');
-		$this->db->where('completed',0);
+		$this->db->join('bidding', 'bidding.barista_id !='.$this->session->userdata('id'));
+		$this->db->where('completed',2);
+		$this->db->order_by('orderdate', 'desc');
 	    $query = $this->db->get();
 
         if ($query->num_rows() > 0) {

@@ -33,7 +33,7 @@ class Event extends CI_Controller{
 	function history($pages = 'history')
 	{
 		if($this->session->userdata('logged_in')){
-			$data ['email']= $this->session->userdata('email'); 
+			
 			$data['title'] = ucfirst("history"); // Capitalize the first letter
 			
 		if ($query = $this->Order_model->bid_count())
@@ -51,7 +51,7 @@ class Event extends CI_Controller{
 				$config ['next_tag_close'] = '</li>';
 				$config['num_tag_open'] = '<li>';
 				$config['num_tag_close'] = '</li>';
-				$config['use_page_numbers'] = TRUE;
+				$config['use_page_numbers'] = False;
 				$config['first_link'] = false;
 				$config['last_link'] = false;
 				$config['cur_tag_open'] = '<li class=" accent-color" ><a class="text-primary-color btn-primary active " href="">';
@@ -59,10 +59,11 @@ class Event extends CI_Controller{
 				$config['next_link'] = '<i class="material-icons active">fast_forward</i>';
 				$config['prev_link'] = '<i class="material-icons active">fast_rewind</i>';
 				$config['num_links'] = $total_row;
-				$this->pagination->initialize($config);
-				$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
 				
-				$data['results'] = $this->Order_model->fetch_bid_data($config['per_page'],$page);       
+				$this->pagination->initialize($config);
+				$offset = $this->uri->segment(3);
+				
+				$data['results'] = $this->Order_model->fetch_bid_data($config['per_page'],$offset);       
 				$data['links'] = $this->pagination->create_links();
 				$data['errors']= ''; 
 				}
@@ -85,7 +86,7 @@ class Event extends CI_Controller{
 	{
 		if($this->session->userdata('logged_in'))
 			{
-			$data ['email']= $this->session->userdata('email'); 
+			
 			$data['title'] = ucfirst("overview"); // Capitalize the first letter
 			
 			
@@ -107,7 +108,7 @@ class Event extends CI_Controller{
 				$config['num_tag_open'] = '<li>';
 				$config['num_tag_close'] = '</li>';
 				$config['page_query_string'] = True;
-				$config['use_page_numbers'] = TRUE;
+				$config['use_page_numbers'] =True;
 				$config['first_link'] = false;
 				$config['last_link'] = false;
 				$config['cur_tag_open'] = '<li class=" accent-color" ><a class="text-primary-color btn-primary active " href="">';
@@ -117,7 +118,7 @@ class Event extends CI_Controller{
 				$config['num_links'] = $total_row;
 				
 				$this->pagination->initialize($config);
-				$page = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
+				$page = $this->uri->segment(3);
 				
 				$data['results'] = $this->Order_model->fetch_data($config['per_page'],$page);       
 				$data['links'] = $this->pagination->create_links();
@@ -144,7 +145,7 @@ class Event extends CI_Controller{
 	function calendarview ()
 	{
 		if($this->session->userdata('logged_in')){
-			$data ['email']= $this->session->userdata('email'); 
+			
 			$data['title'] = ucfirst("Calendar"); // Capitalize the first letter
 		$this->load->model('Login_model');
 		$data['user'] = $this->Login_model->getById()->row();  	
@@ -212,7 +213,7 @@ class Event extends CI_Controller{
 	function profile($page = 'profile')
 	{
 		if($this->session->userdata('logged_in')){
-			$data ['email']= $this->session->userdata('email'); 
+			
 			$data['title'] = ucfirst("profile"); // Capitalize the first letter
 			
 			$this->load->model('Login_model');
@@ -227,7 +228,7 @@ class Event extends CI_Controller{
 	function materialprof()
 	{
 		if($this->session->userdata('logged_in')){
-			$data ['email']= $this->session->userdata('email'); 
+			
 			$data['title'] = ucfirst("profile"); // Capitalize the first letter
 			
 			$this->load->model('Login_model');

@@ -1,19 +1,19 @@
 <main>
 <div class="container">
-	<h3>Order Confirmation</h3>
+	<h3>Order Details</h3>
 	<p style="margin-bottom:20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Confecta res esset. Negat esse eam, inquit, propter se expetendam. Is ita vivebat, ut nulla tam exquisita ...</p>
 	<div class="divider"></div>	
 <br/><br/>	
 	<div class="row">
-    <form class="col s12">
+    <form class="col s12" action="<?php echo base_url();?>Order/submit_order" method="post">
       <div class="row">
         <div class="input-field col s6">
-          <input name="party" id="last_name" type="text" value="<?php echo $party;?>"class="validate" disabled>
+          <input name="party" id="last_name" type="text" value="<?php echo $party;?>"class="validate">
           <label for="last_name">Party Host</label>
         </div>
         <div class="input-field col s6">
           <select name="partytype" id="party-type">
-			 <option value="" disabled selected><?php echo $partytype;?></option>
+			 <option value="<?php echo $partytype;?>" selected><?php echo $partytype;?></option>
 		  </select>
 		<label for="party-type">Party Type</label>
         </div>
@@ -30,7 +30,7 @@
       </div>
       <div class="row">
         <div class="input-field col s6">
-          <input name="participanats" id="participanats" type="text" class="validate"pattern="-?[0-9]*(\.[0-9]+)?" required>
+          <input name="participants" id="participanats" type="text" class="validate"pattern="-?[0-9]*(\.[0-9]+)?" required>
           <label for="participants" data-error="not a number">No. of Participants</label>
         </div>
 		<div class="input-field col s6">
@@ -44,15 +44,17 @@
           <label for="textarea1">Adress</label>
         </div>
 		<div class="input-field col s6">
-          <input name="zipcode" id="zipcode" type="text" class="validate" value="<?php echo $partytype;?>" disabled >
+		  <input name="fname" id="zipcode" type="hidden" class="validate" value="<?php echo $fname;?>">
+          <input name="zipcode" id="zipcode" type="text" class="validate" value="<?php echo $zip;?>">
           <label for="zipcode" >Zip Code</label>
         </div>
       </div>
 	  <div class="divider"></div><br/>
+	  <h5>More Details and Special instructions:</h5>
 	  <div class="row">
         <div class="input-field col s12">
           <textarea name="address" id="textarea2" class="materialize-textarea" length="500" required placeholder="tell us more..."></textarea>
-          <label for="textarea2">More Details and Instructions: </label>
+          <label for="textarea2">Details and Instructions: </label>
         </div>
 	  </div>	
 	  
@@ -60,7 +62,7 @@
         <div class="col s12">
           You are about to send and Order
           <div class="input-field">
-            <button class="chip btn btn-flat waves-effect waves-light accent-color text-primary-color" type="submit" name="action">Submit
+            <button class="chip btn btn-flat waves-effect waves-light accent-color text-primary-color" type="submit" name="submit">Submit
 				<i class="material-icons right">send</i>
 			</button>
 			<button class="chip btn btn-flat waves-effect waves-light accent-color text-primary-color" type="reset" name="action">Reset

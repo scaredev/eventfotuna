@@ -18,9 +18,10 @@ class Order extends CI_Controller{
 		  
     }
 	function pre_order(){
+		
 		if($this->Order_model->set_order_sess())
 		{
-		$data ['name']= $this->session->userdata('name');	
+		$data ['fname']= $this->session->userdata('fname');	
 		$data ['party']= $this->session->userdata('party');	
 		$data ['partytype']= $this->session->userdata('partytype');	
 		$data ['zip']= $this->session->userdata('zipcode');	
@@ -35,15 +36,31 @@ class Order extends CI_Controller{
 		}
 		
 	}
-	function submit_order($page='thankyou')
+	function submit_order()
 		{
-		$data ['email'] = $this->input->post("inputemail");	
+		$data ['email'] = $this->input->post("email");	
 		
-			$this->Order_model->add_order();	
-		
-		$data['title'] = ucfirst($page); // Capitalize the first letter
-		$this->load->view('templates/header',$data);
-		$this->load->view('pages/'.$page);
-		$this->load->view('templates/footer');
+		if($this->Order_model->add_order())
+			     
+     {
+      echo "<script>
+            alert('Your Request was sent.');
+            </script>";
+           
+       }
+     else
+    {
+      echo "<script>
+            alert('Opps Something went wrong!.');
+            window.location.href='" . base_url() ."'
+            </script>";
+            
+      exit();
+    }
+			
+		$data['title'] = ucfirst("thankyou"); // Capitalize the first letter
+		$this->load->view('templates/material-header',$data);
+		$this->load->view('pages/thankyou',$data);
+		$this->load->view('templates/material-footer');
 	}
 }	
