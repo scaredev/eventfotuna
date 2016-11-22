@@ -15,6 +15,8 @@ class Register extends CI_Controller
 		  $this->load->helper('string');
           //load the login model
           $this->load->model('Register_model');
+		  $this->load->library('email');
+		  $this->load->library('encrypt');
      }
 
 public function registration()
@@ -22,10 +24,30 @@ public function registration()
  
    if($this->Register_model->add_user())
    {  
-	  
-      redirect('Event/Thankyou');
+	  //email part
+		$this->load->helper('typography');
+       //Format email content using an HTML file
+          $code ['email']= $this->session->userdata('email_verification_code'); 
+		  $message = 'Dear User,\nPlease click on below URL or paste into your browser to verify your Email Address\n\n http://www.yourdomain.com/Login/verify".$code."\n"."\n\nThanks\nAdmin Team';
+		  
+		  $this->email->set_newline("\r\n");
+		  $this->email->from('emailservs@gmail.com'); // change it to yours
+		  $this->email->to('cacuyado@gmail.com');// change it to yours
+		  $this->email->subject('Email Verification');
+		  $this->email->message($message);
+		 
+            
+         if($this->email->send())
+             {
+              redirect('Event/Thankyou');  
+             }
+         else
+        {
+         show_error($this->email->print_debugger());
+        }
+      
    }else{
-   redirect('Register/Error');
+   redirect('Register/ErrorRegistration');
    }
   
  }
@@ -42,6 +64,16 @@ public function registration()
  function sendVerificationEmail(){  
   $this->Register_model->sendVerificatinEmail("yashwantchavan@technicalkeeda.com","13nRGi7UDv4CkE7JHP1o");
   $this->load->view('index.php', $data);   
+ }
+ 
+ 
+ function ErrorRegistration()
+ {	 
+	 $data ['email']= $this->session->userdata('email'); 
+			$data['title'] = ucfirst("Registration"); // Capitalize the first letter
+			$this->load->view('templates/material-header',$data);
+			$this->load->view('pages/error_reg');
+			$this->load->view('templates/material-footer');
  }
  
 }

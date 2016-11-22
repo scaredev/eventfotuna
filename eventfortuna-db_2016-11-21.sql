@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Oct 28, 2016 at 12:34 AM
+-- Generation Time: Nov 21, 2016 at 01:19 PM
 -- Server version: 5.6.33
 -- PHP Version: 7.0.11
 
@@ -47,7 +47,9 @@ INSERT INTO `bidding` (`bid_id`, `order_id`, `barista_id`, `prize`, `bid_complet
 (6, 2, 2, 400, '3'),
 (7, 4, 2, 600, '0'),
 (8, 3, 0, 700, '0'),
-(9, 7, 0, 0, '');
+(9, 7, 0, 0, ''),
+(10, 3, 2, 500, '0'),
+(11, 4, 2, 0, '0');
 
 -- --------------------------------------------------------
 
@@ -64,7 +66,7 @@ CREATE TABLE `orders` (
   `name` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
   `tel` varchar(20) NOT NULL,
-  `eventdate` datetime NOT NULL,
+  `eventdate` date NOT NULL,
   `timeinterval` varchar(20) NOT NULL,
   `participants` int(11) NOT NULL,
   `address` varchar(100) NOT NULL,
@@ -78,13 +80,13 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`orders_id`, `transaction_id`, `party`, `partytype`, `zipcode`, `name`, `email`, `tel`, `eventdate`, `timeinterval`, `participants`, `address`, `orderdate`, `completed`, `winner_id`) VALUES
-(1, '3f35020cd12d1780ad69b81c88540a54', 'company', 'Barnedab', 6340, 'Richard', 'cacuyado@gmail.com', '4122509', '2016-10-22 14:16:00', '', 100, '5', '2016-10-22 06:16:40', '2', 0),
-(2, 'd64d897b856575e02ffbd61039a4bd46', 'company', 'Barnedab', 6340, 'Paul', 'cacuyado@gmail.com', '4122509', '2016-10-22 14:27:00', '', 0, 's', '2016-10-22 06:27:18', '3', 0),
-(3, '580B09CDF1C74', 'private', 'Messe', 6340, 'Cande', 'cacuyado@gmail.com', '4122509', '2016-10-22 14:40:00', '', 200, 'tagbilaran', '2016-10-22 06:40:13', '0', 0),
-(4, '3f35020cd12d1780ad69b81c88540a54', 'company', 'Barnedab', 6340, 'Richard', 'cacuyado@gmail.com', '4122509', '2016-10-22 14:16:00', '', 100, '5', '2016-10-22 06:16:40', '0', 0),
-(5, '58122E5AA351C', 'private', 'Promovering', 6300, 'Riza', 'riza@gmail.com', '4228050', '2016-10-28 00:41:00', '', 90, 'Tawala', '2016-10-27 16:42:02', '0', 0),
-(6, '58122EA652260', 'private', 'Promovering', 6300, 'Riza', 'riza@gmail.com', '4228050', '2016-10-28 00:41:00', '', 90, 'Tawala', '2016-10-27 16:43:18', '0', 0),
-(7, '58122ED756B93', 'private', 'Promovering', 6300, 'Riza', 'riza@gmail.com', '4228050', '2016-10-28 00:41:00', '', 90, 'Tawala', '2016-10-27 16:44:07', '0', 0);
+(1, '3f35020cd12d1780ad69b81c88540a54', 'company', 'Barnedab', 6340, 'Richard', 'cacuyado@gmail.com', '4122509', '2016-10-22', '', 100, '5', '2016-10-22 06:16:40', '2', 0),
+(2, 'd64d897b856575e02ffbd61039a4bd46', 'company', 'Barnedab', 6340, 'Paul', 'cacuyado@gmail.com', '4122509', '2016-10-22', '', 0, 's', '2016-10-22 06:27:18', '3', 0),
+(3, '580B09CDF1C74', 'private', 'Messe', 6340, 'Cande', 'cacuyado@gmail.com', '4122509', '2016-10-22', '', 200, 'tagbilaran', '2016-10-22 06:40:13', '0', 0),
+(4, '3f35020cd12d1780ad69b81c88540a54', 'company', 'Barnedab', 6340, 'Richard', 'cacuyado@gmail.com', '4122509', '2016-10-22', '', 100, '5', '2016-10-22 06:16:40', '0', 0),
+(5, '58122E5AA351C', 'private', 'Promovering', 6300, 'Riza', 'riza@gmail.com', '4228050', '2016-10-28', '', 90, 'Tawala', '2016-10-27 16:42:02', '0', 0),
+(6, '58122EA652260', 'private', 'Promovering', 6300, 'Riza', 'riza@gmail.com', '4228050', '2016-10-28', '', 90, 'Tawala', '2016-10-27 16:43:18', '0', 0),
+(7, '58122ED756B93', 'private', 'Promovering', 6300, 'Riza', 'riza@gmail.com', '4228050', '2016-10-28', '', 90, 'Tawala', '2016-10-27 16:44:07', '0', 0);
 
 -- --------------------------------------------------------
 
@@ -108,17 +110,22 @@ CREATE TABLE `user` (
   `services` text NOT NULL,
   `cart_pictures` text NOT NULL,
   `completed` int(11) NOT NULL,
-  `mobile` int(11) NOT NULL
+  `mobile` int(11) NOT NULL,
+  `email_verification_code` varchar(45) NOT NULL,
+  `active` varchar(1) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `fname`, `lname`, `email`, `password`, `company`, `logo`, `company_address`, `about_company`, `about_person`, `profile_pic`, `cart_type`, `services`, `cart_pictures`, `completed`, `mobile`) VALUES
-(1, 'Crisnil', 'Acuyado', 'ca@design4web.ph', 'e10c68790a06d578073cc7ee8f979ccd', 'Lorem Ipsum', '', '3472 Florida st. Makati City', 'Lorem ipsum dolor sit amet, exerci euismod ponderum no vix. Ex omnium erroribus consectetuer duo, graece omittam eleifend in sea, mea at quidam omnium conclusionemque. Sit cu agam case pertinacia, te sale facilis mediocritatem vel. Amet signiferumque id est, nam dicit voluptatum te, mundi everti ut usu.', 'Lorem ipsum dolor sit amet, exerci euismod ponderum no vix. Ex omnium erroribus consectetuer duo, graece omittam eleifend in sea, mea at quidam omnium conclusionemque. Sit cu agam case pertinacia, te sale facilis mediocritatem vel. Amet signiferumque id est, nam dicit voluptatum te, mundi everti ut usu.', '', 'Roller', 'on ice,', '', 0, 0),
-(2, '', '', 'cacuyado@gmail.com', 'e10c68790a06d578073cc7ee8f979ccd', 'Scaredev', '', '', '', '', '', 'car', '', '', 0, 2147483647),
-(3, '', '', 'cacuyado@cec.edu.ph', 'e10c68790a06d578073cc7ee8f979ccd', 'Scaredev', '', '', '', '', '', 'cart', '', '', 0, 2147483647);
+INSERT INTO `user` (`user_id`, `fname`, `lname`, `email`, `password`, `company`, `logo`, `company_address`, `about_company`, `about_person`, `profile_pic`, `cart_type`, `services`, `cart_pictures`, `completed`, `mobile`, `email_verification_code`, `active`) VALUES
+(1, 'Crisnil', 'Acuyado', 'ca@design4web.ph', 'e10c68790a06d578073cc7ee8f979ccd', 'Lorem Ipsum', '', '3472 Florida st. Makati City', 'Lorem ipsum dolor sit amet, exerci euismod ponderum no vix. Ex omnium erroribus consectetuer duo, graece omittam eleifend in sea, mea at quidam omnium conclusionemque. Sit cu agam case pertinacia, te sale facilis mediocritatem vel. Amet signiferumque id est, nam dicit voluptatum te, mundi everti ut usu.', 'Lorem ipsum dolor sit amet, exerci euismod ponderum no vix. Ex omnium erroribus consectetuer duo, graece omittam eleifend in sea, mea at quidam omnium conclusionemque. Sit cu agam case pertinacia, te sale facilis mediocritatem vel. Amet signiferumque id est, nam dicit voluptatum te, mundi everti ut usu.', '', 'Roller', 'on ice,', '', 0, 0, '', ''),
+(2, '', '', 'cacuyado@gmail.com', 'e10c68790a06d578073cc7ee8f979ccd', 'Scaredev', '', '', '', '', '', 'car', '', '', 0, 2147483647, '', ''),
+(3, '', '', 'cacuyado@domain1.com', 'e10c68790a06d578073cc7ee8f979ccd', 'Scaredev', '', '', '', '', '', 'cart', '', '', 0, 2147483647, '', ''),
+(4, 'zekiel', '', 'cacuyado@domain.com', 'd41d8cd98f00b204e9800998ecf8427e', 'scardev', '', '', '', '', '', 'cac', '', '', 0, 1234567, '', ''),
+(9, 'crisnil', '', 'cacuyado@cec.edu.ph', 'd41d8cd98f00b204e9800998ecf8427e', 'scardev', '', '', '', '', '', 'casca', '', '', 0, 45454, 'tFZwX4QvIl073cT2Ry6q', ''),
+(14, 'asd', '', 'cacuyado@yahoo.com', 'd41d8cd98f00b204e9800998ecf8427e', 'asd', '', '', '', '', '', 'asd', '', '', 0, 5454, 'kHvt3REuyxVFDBnbGZga', '');
 
 --
 -- Indexes for dumped tables
@@ -151,7 +158,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `bidding`
 --
 ALTER TABLE `bidding`
-  MODIFY `bid_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `bid_id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `orders`
 --
@@ -161,7 +168,7 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

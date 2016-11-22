@@ -6,7 +6,7 @@ class Register_model extends CI_Model
      {
           // Call the Model constructor
           parent::__construct();
-		 
+		  
      }
 
 
@@ -36,28 +36,10 @@ class Register_model extends CI_Model
 		'log_in'=>TRUE
 		);
 		 $this->session->set_userdata($sess_data);
-		 //email part
-		$config = Array(
-    'protocol' => 'smtp',
-    'smtp_host' => 'ssl://smtp.googlemail.com',
-    'smtp_port' => 465,
-    'smtp_user' => 'cacuyado@cec.edu.ph',
-    'smtp_pass' => 'ZEAlot07!',
-    'mailtype'  => 'html', 
-    'charset'   => 'iso-8859-1'
-);
-		  $message = 'Dear User,\nPlease click on below URL or paste into your browser to verify your Email Address\n\n http://www.yourdomain.com/Login/verify".$code."\n"."\n\nThanks\nAdmin Team';
-		  $this->load->library('email', $config);
-		  $this->email->set_newline("\r\n");
-		  $this->email->from('coffee@gmail.com'); // change it to yours
-		  $this->email->to($data->email);// change it to yours
-		  $this->email->subject('Email Verification');
-		  $this->email->message($message);
-		  $this->email->send();
-			  
 		 return true;
-		}
-  }
+	  }
+ }  
 }
+
 
 
