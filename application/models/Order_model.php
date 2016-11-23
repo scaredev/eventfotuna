@@ -54,18 +54,17 @@ class Order_model extends CI_Model
 		   
 		   $this->db->select('*');
 		   $this->db->from('orders');
-		   $this->db->join('bidding', 'bidding.barista_id != '.$this->session->userdata('id'));
-		   $this->db->where('completed',2);
+		   $this->db->where('completed',0);
 	return $this->db->count_all_results();
 	}
 
 	// Fetch data according to per_page limit.
 	public function fetch_data($limit, $start) {
+	
 		$this->db->limit($limit, $start);
 		$this->db->select('*');
-		$this->db->from('orders');
-		$this->db->join('bidding', 'bidding.barista_id !='.$this->session->userdata('id'));
-		$this->db->where('completed',2);
+		$this->db->from('orders');		
+		$this->db->where('completed',0);
 		$this->db->order_by('orderdate', 'desc');
 	    $query = $this->db->get();
 

@@ -17,6 +17,7 @@ class Register extends CI_Controller
           $this->load->model('Register_model');
 		  $this->load->library('email');
 		  $this->load->library('encrypt');
+		  $this->load->helper('typography');
      }
 
 public function registration()
@@ -25,7 +26,7 @@ public function registration()
    if($this->Register_model->add_user())
    {  
 	  //email part
-		$this->load->helper('typography');
+		
        //Format email content using an HTML file
           $code ['email']= $this->session->userdata('email_verification_code'); 
 		  $message = 'Dear User,\nPlease click on below URL or paste into your browser to verify your Email Address\n\n http://www.yourdomain.com/Login/verify".$code."\n"."\n\nThanks\nAdmin Team';
@@ -51,6 +52,13 @@ public function registration()
    }
   
  }
+ function registration2(){
+	$data['title'] = ucfirst("Registration"); // Capitalize the first letter
+			$this->load->view('templates/material-header',$data);
+			$this->load->view('pages/regform2');
+			$this->load->view('templates/material-footer');
+ }
+ 
  function verify($verificationText=NULL){  
   $noRecords = $this->Register_model->verifyEmailAddress($verificationText);  
   if ($noRecords > 0){

@@ -14,6 +14,7 @@ class Bid_model extends CI_Model
 		$this->db->where('email', $this->session->userdata('email'));
 		$this->db->limit(1);
 		$bidder = $this->db->get('user')->row();
+		
 		//if id is unique we want just one row to be returned
 		
 		
