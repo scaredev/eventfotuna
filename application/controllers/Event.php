@@ -269,5 +269,6 @@ class Event extends CI_Controller{
 				   redirect('Login');
 		}
 	}
+	
   
 }	

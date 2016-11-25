@@ -12,6 +12,7 @@ class Register_model extends CI_Model
 
  function add_user(){
 	  $code = random_string('alnum',20);
+	  
 	  $data=array(
 		'company'=>$this->input->post('company'),
 		'email'=>$this->input->post('email'),
@@ -34,11 +35,23 @@ class Register_model extends CI_Model
 		$sess_data= $data;
 		$sess_data= array(
 		'log_in'=>TRUE
+		
 		);
 		 $this->session->set_userdata($sess_data);
 		 return true;
 	  }
  }  
+ 
+	 function verifyEmailAddress($verificationcode){  
+		$data = array(
+				   'active' => A  
+				);
+	 
+		$this->db->from('user');
+		$this->db->where('email_verification_code',$this->uri->segment(3));
+		$this->db->update('user', $data); 
+		return $this->db->affected_rows(); 
+	 }
 }
 
 

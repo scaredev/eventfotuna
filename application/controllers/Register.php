@@ -51,26 +51,26 @@ public function registration()
  
    if($this->Register_model->add_user())
    {  
+		
 	  //email part
 		
        //Format email content using an HTML file
-          $code ['email']= $this->session->userdata('email_verification_code'); 
-		  $message = 'Dear User,\nPlease click on below URL or paste into your browser to verify your Email Address\n\n http://www.yourdomain.com/Login/verify".$code."\n"."\n\nThanks\nAdmin Team';
+          $data ['email']= $this->session->userdata('email'); 
+		  $data['code']=$this->session->userdata('email_verification_code');
+
+		  $message=$this->load->view('templates/mail_template',$data,TRUE);
+		 
 		  
 		  $this->email->set_newline("\r\n");
-		  $this->email->from('do_not_reply@event.design4web.dk','Post Master' ); // change it to yours
-		  $this->email->to('cacuyado@gmail.com');// change it to yours
+		  $this->email->from('do_not_reply@event.design4web.dk','Registration Verification @ EventFortuna' ); // change it to yours
+		  $this->email->to($this->input->post('email'));// change it to yours
 		  $this->email->subject('Email Verification');
 		  $this->email->message($message);
 		 
             
          if($this->email->send())
              {
-			 echo "<script>
-            alert('Your Request was sent.');
-			
-            </script>";
-              redirect('Event/Thankyou'); 
+			 redirect('Register/thankyou'); 
 			exit();
              }
          else
@@ -98,9 +98,14 @@ public function registration()
    $error = array( 'error' => "Sorry Unable to Verify Your Email!"); 
   }
   $data['errormsg'] = $error; 
-  $this->load->view('index.php', $data);   
+  $data['title'] = ucfirst("Registration"); // Capitalize the first letter
+			$this->load->view('templates/material-header',$data);
+			$this->load->view('pages/email_verified',$data);
+			$this->load->view('templates/material-footer');
  }
+ 
  function sendVerificationEmail(){  
+ 
   $this->Register_model->sendVerificatinEmail("yashwantchavan@technicalkeeda.com","13nRGi7UDv4CkE7JHP1o");
   $this->load->view('index.php', $data);   
  }
@@ -112,6 +117,13 @@ public function registration()
 			$data['title'] = ucfirst("Registration"); // Capitalize the first letter
 			$this->load->view('templates/material-header',$data);
 			$this->load->view('pages/error_reg');
+			$this->load->view('templates/material-footer');
+ }
+ function thankyou (){
+ 
+	$data['title'] = ucfirst("Registration Complete"); // Capitalize the first letter
+			$this->load->view('templates/material-header',$data);
+			$this->load->view('pages/email_verified',$data);
 			$this->load->view('templates/material-footer');
  }
  
