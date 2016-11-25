@@ -7,8 +7,8 @@
 			<img src="<?php echo base_url();?>img/success-icon.png" alt="..." class="img-rounded icon_pic">
 			<h1>Thank You ..!</h1>
 			
-<p class="mensahe">Thank you for registering, Pls check your email for verification</p>
+<p class="mensahe"><?php echo $errormsg ;?></p>
 </p>
-			<a class="homebutt" href="<?php echo base_url();?>" >BACK TO HOME</a>
+			<a class="homebutt" href="<?php echo base_url();?>" >You may now login to Eventfortuna</a>
    </div>
 </main>   

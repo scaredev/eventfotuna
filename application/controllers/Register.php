@@ -90,12 +90,13 @@ public function registration()
 			$this->load->view('templates/material-footer');
  }
  
- function verify($verificationText=NULL){  
-  $noRecords = $this->Register_model->verifyEmailAddress($verificationText);  
+ function verify($verificationText=NULL){
+	 
+  $noRecords = $this->Register_model->verifyEmail($verificationText);  
   if ($noRecords > 0){
-   $error = array( 'success' => "Email Verified Successfully!"); 
+   $error = "Email Verified Successfully!"; 
   }else{
-   $error = array( 'error' => "Sorry Unable to Verify Your Email!"); 
+   $error = "Sorry Unable to Verify Your Email!"; 
   }
   $data['errormsg'] = $error; 
   $data['title'] = ucfirst("Registration"); // Capitalize the first letter

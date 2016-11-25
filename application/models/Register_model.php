@@ -32,23 +32,26 @@ class Register_model extends CI_Model
     }
 	else{
 		$this->db->insert('user',$data);	
-		$sess_data= $data;
-		$sess_data= array(
-		'log_in'=>TRUE
 		
-		);
-		 $this->session->set_userdata($sess_data);
+		 $this->session->set_userdata($data);
 		 return true;
 	  }
- }  
+ }
+	function verifyEmailAddress($verificationcode){  
+	  $sql = "update trn_user set active_status='A' WHERE email_verification_code=?";
+	  $this->db->query($sql, array($verificationcode));
+	  return $this->db->affected_rows(); 
+	 }
  
-	 function verifyEmailAddress($verificationcode){  
+	 function verifyEmail($verificationcode){ 
+	 
+	    $value= 1;
 		$data = array(
-				   'active' => A  
+				   'active' => $value  
 				);
 	 
 		$this->db->from('user');
-		$this->db->where('email_verification_code',$this->uri->segment(3));
+		$this->db->where('email_verification_code',$this->uri->segment(2));
 		$this->db->update('user', $data); 
 		return $this->db->affected_rows(); 
 	 }

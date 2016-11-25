@@ -75,7 +75,8 @@ class login extends CI_Controller
           else
           {
                //validation succeeds
-             if( $email && $pass && $this->Login_model->validate_user($email,$pass)){
+			   $active=1;
+             if( $email && $pass && $active && $this->Login_model->validate_user($email,$pass,$active)){
 				 
 				 redirect('Event/overview');
 			 }

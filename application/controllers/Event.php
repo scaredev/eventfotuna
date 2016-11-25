@@ -27,8 +27,8 @@ class Event extends CI_Controller{
 			$this->load->view('pages/'.$pages);
 			$this->load->view('templates/admin-footer');
 		}else{
-				   redirect('Login');
-		}
+				 redirect('Login/loginform');
+			}
 	}
 	function history($pages = 'history')
 	{
@@ -79,6 +79,8 @@ class Event extends CI_Controller{
 			$this->load->view('templates/login-material-header',$data);
 			$this->load->view('pages/material-history');
 			$this->load->view('templates/material-footer');
+			}else{
+				 redirect('Login/loginform');
 			}
 		
 	}
@@ -88,8 +90,6 @@ class Event extends CI_Controller{
 			{
 			
 			$data['title'] = ucfirst("overview"); // Capitalize the first letter
-			
-			
 			
 				if ($query = $this->Order_model->record_count())
 			 {
@@ -107,8 +107,8 @@ class Event extends CI_Controller{
 				$config ['next_tag_close'] = '</li>';
 				$config['num_tag_open'] = '<li>';
 				$config['num_tag_close'] = '</li>';
-				$config['page_query_string'] = True;
-				$config['use_page_numbers'] =True;
+				
+				$config['use_page_numbers'] =False;
 				$config['first_link'] = false;
 				$config['last_link'] = false;
 				$config['cur_tag_open'] = '<li class=" accent-color" ><a class="text-primary-color btn-primary active " href="">';
@@ -118,9 +118,9 @@ class Event extends CI_Controller{
 				$config['num_links'] = $total_row;
 				
 				$this->pagination->initialize($config);
-				$page = $this->uri->segment(3);
+				$offset = $this->uri->segment(3);
 				
-				$data['results'] = $this->Order_model->fetch_data($config['per_page'],$page);       
+				$data['results'] = $this->Order_model->fetch_data($config['per_page'],$offset);       
 				$data['links'] = $this->pagination->create_links();
 				$data['errors']= ''; 
 				}
@@ -138,6 +138,9 @@ class Event extends CI_Controller{
 			$this->load->view('templates/login-material-header',$data);
 			$this->load->view('pages/material-overview');
 			$this->load->view('templates/material-footer');
+			}
+			else{
+				 redirect('Login/parallax');
 			}
 			
 	}
@@ -205,7 +208,9 @@ class Event extends CI_Controller{
 			$this->load->view('pages/material-calendar',$data);
 			$this->load->view('templates/material-footer');
 		}else{
-				   redirect('Login');
+				
+				 redirect('Login/loginform');
+			
 		}
 	}
 	//https://maps-generator.com
@@ -251,8 +256,8 @@ class Event extends CI_Controller{
 			$this->load->view('pages/material-casheir');
 			$this->load->view('templates/material-footer');
 		}else{
-				   redirect('Login');
-		}
+				 redirect('Login/loginform');
+			}
 	}
 	function settings($page = 'settings')
 	{   
@@ -266,8 +271,8 @@ class Event extends CI_Controller{
 			$this->load->view('pages/material-settings');
 			$this->load->view('templates/material-footer');
 		}else{
-				   redirect('Login');
-		}
+				 redirect('Login/loginform');
+			}
 	}
 	
   

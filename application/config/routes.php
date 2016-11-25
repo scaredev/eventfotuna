@@ -52,5 +52,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'Login/parallax';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['verify/(:any)'] = "/Login/verify/$1";
-$route['materialprof/(:any)'] = "/Event/materialprof/$1";
+$route['verify/(:any)'] = "/Register/verify/$1";

@@ -51,20 +51,20 @@ class Order_model extends CI_Model
 	
 	
 	public function record_count() {
-		   
+		   $val = 0;
 		   $this->db->select('*');
 		   $this->db->from('orders');
-		   $this->db->where('completed',0);
+		   $this->db->where('completed',$val);
 	return $this->db->count_all_results();
 	}
 
 	// Fetch data according to per_page limit.
 	public function fetch_data($limit, $start) {
-	
+	    $val = 0;
 		$this->db->limit($limit, $start);
 		$this->db->select('*');
 		$this->db->from('orders');		
-		$this->db->where('completed',0);
+		$this->db->where('completed',$val);
 		$this->db->order_by('orderdate', 'desc');
 	    $query = $this->db->get();
 

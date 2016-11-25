@@ -20,21 +20,25 @@ class Login_model extends CI_Model
      // }
     }
 	function valid(){
-        
+	 
+      $this->db->from('user'); 
       $this->db->where('email', $this->input->post('email'));
       $this->db->where('password', md5($this->input->post('password')));
+	  
       $query = $this->db->get('user');
       if($query->num_rows > 0){
+		  $this->set_session();
           return true;
       }
     }
 	
-	function validate_user( $email, $password ) {
+	function validate_user( $email, $password,$active ) {
 	
 
     $this->db->from('user');
     $this->db->where('email',$email );
     $this->db->where( 'password', md5($password) );
+	$this->db->where('active',$active );
     $login = $this->db->get()->result();
 
     
