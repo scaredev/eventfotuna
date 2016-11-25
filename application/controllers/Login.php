@@ -40,13 +40,14 @@ class login extends CI_Controller
           else
           {
                //validation succeeds
-             if( $email && $pass && $this->Login_model->validate_user($email,$pass)){
+             $active=1;
+             if( $email && $pass && $active && $this->Login_model->validate_user($email,$pass,$active)){
 				 
 				 redirect('Event/overview');
 			 }
 			 else
                     {
-                         $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Invalid username and password!</div>');
+                         $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Invalid Credentials or Email not verified!</div>');
                          redirect('login/index');
                     }
                
@@ -55,8 +56,13 @@ class login extends CI_Controller
      }
 	function loginform(){
 		
+		if($this->session->userdata('logged_in')){
+			
+			redirect('Event/overview');
+		}else{
+		
 		$email = $this->input->post("email");
-          $pass = $this->input->post("password");
+        $pass = $this->input->post("password");
 
           //set validations
           $this->form_validation->set_rules("email", "Email", "required");
@@ -82,12 +88,13 @@ class login extends CI_Controller
 			 }
 			 else
                     {
-                         $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Invalid username and password!</div>');
+                         $this->session->set_flashdata('msg', '<div class="alert alert-danger text-center">Invalid Credentials or Email not verified!</div>');
                          redirect('login/loginform');
                     }
                
                
           }
+		} 
      }
 		
 	

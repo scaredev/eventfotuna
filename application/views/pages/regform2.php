@@ -42,7 +42,7 @@
 						  <label for="email" data-error="wrong format" data-success="success">Email Address</label>
 						</div>
 						<div class="input-field col s12">
-						  <input placeholder="Placeholder" id="first_name" type="password" class="validate" required length="8" >
+						  <input name="password" placeholder="Placeholder" id="first_name" type="password" class="validate" required length="8" >
 						  <label for="first_name">Password</label>
 						</div>
 						

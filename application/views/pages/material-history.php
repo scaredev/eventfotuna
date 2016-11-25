@@ -1,6 +1,6 @@
 <main>
 	<div class="ul-wrapper">
-		
+		<?php echo $errors;?>
 
 
       <table class="responsive-table highlight">

@@ -124,7 +124,7 @@ public function registration()
  
 	$data['title'] = ucfirst("Registration Complete"); // Capitalize the first letter
 			$this->load->view('templates/material-header',$data);
-			$this->load->view('pages/email_verified',$data);
+			$this->load->view('pages/regsuccess',$data);
 			$this->load->view('templates/material-footer');
  }
  

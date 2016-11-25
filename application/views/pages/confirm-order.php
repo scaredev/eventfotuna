@@ -24,7 +24,7 @@
 		  <label for="email" data-error="not an email" data-success="right" >Email</label>
         </div>
 		<div class="input-field col s6">
-          <input name="tel" id="first_name" type="text" class="validate primary-text-color" pattern="-?[0-9]*(\.[0-9]+)?" required length="8">
+          <input name="tel" id="tel" type="text" class="validate primary-text-color" pattern="-?[0-9]*(\.[0-9]+)?" required length="8">
 		  <label for="tel" data-error="not a number">Tel#</label>
         </div>
       </div>

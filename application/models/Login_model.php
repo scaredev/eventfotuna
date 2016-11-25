@@ -32,12 +32,12 @@ class Login_model extends CI_Model
       }
     }
 	
-	function validate_user( $email, $password,$active ) {
+	function validate_user( $email, $pass,$active ) {
 	
 
     $this->db->from('user');
     $this->db->where('email',$email );
-    $this->db->where( 'password', md5($password) );
+    $this->db->where( 'password', md5($pass) );
 	$this->db->where('active',$active );
     $login = $this->db->get()->result();
 

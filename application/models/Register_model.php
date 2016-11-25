@@ -16,7 +16,7 @@ class Register_model extends CI_Model
 	  $data=array(
 		'company'=>$this->input->post('company'),
 		'email'=>$this->input->post('email'),
-		'password'=>md5($this->input->post('password')),
+		'password'=> md5($this->input->post('password')),
 		'mobile'=>$this->input->post('mobile'),
 		'cart_type'=>$this->input->post('cart-type'),
 		'fname'=>$this->input->post('fname'),

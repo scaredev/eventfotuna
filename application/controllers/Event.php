@@ -68,17 +68,17 @@ class Event extends CI_Controller{
 				$data['errors']= ''; 
 				}
 				 else {
-					$data['errors']= ''; 
+					$data['errors']= 'No records Found'; 
 					$data['links']= '';
-					$this->load->view('templates/login-material-header',$data);
-					$this->load->view('pages/material-history');
-					$this->load->view('templates/material-footer');
+					
 				 }
+				 
 			$this->load->model('Login_model');
 			$data['user'] = $this->Login_model->getById()->row(); 
 			$this->load->view('templates/login-material-header',$data);
 			$this->load->view('pages/material-history');
 			$this->load->view('templates/material-footer');
+			
 			}else{
 				 redirect('Login/loginform');
 			}
@@ -125,13 +125,11 @@ class Event extends CI_Controller{
 				$data['errors']= ''; 
 				}
 				 else {
-					$this->load->model('Login_model');
-					$data['user'] = $this->Login_model->getById()->row();  
-					$data['errors']= ''; 
+					
+					$data['errors']= 'No records Found'; 
 					$data['links']= '';
-					$this->load->view('templates/login-material-header',$data);
-					$this->load->view('pages/material-overview');
-					$this->load->view('templates/material-footer');
+					
+					
 				 }
 			$this->load->model('Login_model');
 			$data['user'] = $this->Login_model->getById()->row();  
@@ -139,6 +137,7 @@ class Event extends CI_Controller{
 			$this->load->view('pages/material-overview');
 			$this->load->view('templates/material-footer');
 			}
+			
 			else{
 				 redirect('Login/parallax');
 			}

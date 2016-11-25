@@ -21,7 +21,7 @@
 									<label for="email"for="email" data-error="wrong format" data-success="success">Email</label>
 									</div>
 									<div  class="input-field">
-									<input  name="password" id="password" type="text" class="validate primary-text-color" required>
+									<input  name="password" id="password" type="password" class="validate primary-text-color" required>
 									<label for="password">Password</label>
 									</div>
                               

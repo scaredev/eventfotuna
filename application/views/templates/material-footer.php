@@ -26,8 +26,12 @@
         </footer>
 	 
 	 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="<?php echo base_url();?>js/materialize.min.js"></script>
+     <script type="text/javascript" src="<?php echo base_url();?>js/materialize.min.js"></script>
+	  <script type="text/javascript">
 	  
+	  $(document).ready(function() {
+      $('input#tel, input#zipcode, input#zipcode2, input#mobile').characterCounter();});
+	</script>
 	   <script type="text/javascript">
 	  $('.carousel.carousel-slider').carousel({full_width: true});
 	  </script>
