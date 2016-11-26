@@ -43,7 +43,7 @@
 						</div>
 						<div class="input-field col s12">
 						  <input name="password" placeholder="Placeholder" id="first_name" type="password" class="validate" required length="8" >
-						  <label for="first_name">Password</label>
+						  <label for="password">Password</label>
 						</div>
 						
 					</div>
@@ -52,7 +52,7 @@
 				<div class="modal-footer">
             <button type="reset" class="modal-action waves-effect waves-red btn-flat ">Reset</button>
 			&nbsp;&nbsp;&nbsp;&nbsp;
-            <button type="submit" class="modal-action waves-effect waves-green btn-flat">Agree<i class="material-icons right">send</i></button>
+            <button type="submit" class="modal-action waves-effect waves-green btn-flat">Register<i class="material-icons right">send</i></button>
             </div>
 			
 			</form>
