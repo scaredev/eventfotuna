@@ -63,7 +63,7 @@ public function registration()
 		  
 		  $this->email->set_newline("\r\n");
 		  $this->email->from('do_not_reply@event.design4web.dk','Registration Verification @ EventFortuna' ); // change it to yours
-		  $this->email->to($this->session->userdata('email'));// change it to yours
+		  $this->email->to($this->input->post('email'));// change it to yours
 		  $this->email->subject('Email Verification');
 		  $this->email->message($message);
 		 

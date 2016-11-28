@@ -10,11 +10,13 @@ class Order_model extends CI_Model
   }
 	function set_order_sess(){
 		
+		
 		$this->session->set_userdata( array(
             'fname'=>$this->input->post("fname"),
             'party'=>$this->input->post("party"),
 			'zipcode'=>$this->input->post("zipcode"),
-            'partytype'=>$this->input->post("partytype")
+            'partytype'=>$this->input->post("partytype"),
+			'transaction_id'=> strtoupper(uniqid())
             //email-validated
 			)
 		);
@@ -23,8 +25,7 @@ class Order_model extends CI_Model
 	}
   
 	function add_order(){
-		
-		$trans_id =strtoupper(uniqid());
+			
 		
 		$order = array(
 		'party'=>$this->input->post('party'),
@@ -37,13 +38,14 @@ class Order_model extends CI_Model
 		'participants'=>$this->input->post('participants'),
 		'address'=> $this->input->post('address'),
 		'completed'=>"0",
-		'winner_id'=>"",	
-		'transaction_id'=>$trans_id
+		'winner_id'=>"0",	
+		'transaction_id'=>$this->session->userdata('transaction_id')	
 		);
 		
-		if ($this->db->insert('orders',$order))
-		{
-		return true;}
+		if ($this->db->insert('orders',$order)){
+			
+		return true;
+		}	
 		else{
 			return false;
 		}

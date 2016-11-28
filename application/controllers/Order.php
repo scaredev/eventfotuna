@@ -29,7 +29,10 @@ class Order extends CI_Controller{
 		$this->load->view('templates/material-header',$data);
 		$this->load->view('pages/confirm-order',$data);
 		$this->load->view('templates/material-footer');	
-		}else{
+		
+		}else
+		
+		{
 		
 		$this->session->set_flashdata('msg', '<span class="card-title primary-text-color">Oder Cannot be Process!<span>');
                          redirect('login/parallax');
@@ -38,16 +41,38 @@ class Order extends CI_Controller{
 	}
 	function submit_order()
 		{
-		$data ['email'] = $this->input->post("email");	
-		
+				
 		if($this->Order_model->add_order())
 			     
-     {
-      echo "<script>
-            alert('Your Request was sent.');
-            </script>";
-           
-       }
+    {  
+		
+	  //email part
+		
+       //Format email content using an HTML file
+          $data ['email']= $this->session->userdata('email'); 
+		  $data['code']=$this->session->userdata('transaction_id');
+
+		  $message=$this->load->view('templates/mail_template',$data,TRUE);
+		 
+		  
+		  $this->email->set_newline("\r\n");
+		  $this->email->from('do_not_reply@event.design4web.dk','Registration Verification @ EventFortuna' ); // change it to yours
+		  $this->email->to($this->input->post('email'));// change it to yours
+		  $this->email->subject('Email Verification');
+		  $this->email->message($message);
+		 
+            
+         if($this->email->send())
+             {
+			 redirect('Register/thankyou'); 
+			exit();
+             }
+         else
+        {
+         show_error($this->email->print_debugger());
+        }
+      
+   }
      else
     {
       echo "<script>
