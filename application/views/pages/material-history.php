@@ -21,7 +21,7 @@
 									  <?php foreach($results as $bids){?>
 									  
 										<tr class="">
-										  <td><?php echo $bids->name;?> </td>
+										  <td><?php echo $bids->fname;?> </td>
 										  <td><?php echo $bids->party;?> </td>
 										  <td><?php echo $bids->partytype;?> </td>
 										  <td><?php echo $bids->participants;?> </td>

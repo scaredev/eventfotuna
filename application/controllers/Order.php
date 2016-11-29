@@ -66,7 +66,7 @@ class Order extends CI_Controller{
           $data ['email']= $this->input->post('email'); 
 		  $data['code']=$code;
 
-		  $message=$this->load->view('templates/mail_template',$data,TRUE);
+		  $message=$this->load->view('templates/mail_order_template',$data,TRUE);
 		 
 		  
 		  $this->email->set_newline("\r\n");
