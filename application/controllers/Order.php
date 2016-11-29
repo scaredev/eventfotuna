@@ -15,42 +15,56 @@ class Order extends CI_Controller{
           $this->load->library('form_validation');
           //load the login model
           $this->load->model('Order_model');
+		  $this->load->library('email');
+		  $this->load->library('encrypt');
+		  $this->load->helper('typography');
 		  
     }
 	function pre_order(){
+		$data = array(
+            'fname'=>$this->input->post("fname"),
+            'party'=>$this->input->post("party"),
+			'zipcode'=>$this->input->post("zipcode"),
+            'partytype'=>$this->input->post("partytype")
+            //email-validated
+		);
 		
-		if($this->Order_model->set_order_sess())
-		{
-		$data ['fname']= $this->session->userdata('fname');	
-		$data ['party']= $this->session->userdata('party');	
-		$data ['partytype']= $this->session->userdata('partytype');	
-		$data ['zip']= $this->session->userdata('zipcode');	
 		$data['title'] = ucfirst("Order confirmation"); // Capitalize the first letter
 		$this->load->view('templates/material-header',$data);
 		$this->load->view('pages/confirm-order',$data);
 		$this->load->view('templates/material-footer');	
 		
-		}else
-		
-		{
-		
-		$this->session->set_flashdata('msg', '<span class="card-title primary-text-color">Oder Cannot be Process!<span>');
-                         redirect('login/parallax');
-		}
 		
 	}
 	function submit_order()
 		{
-				
-		if($this->Order_model->add_order())
+			
+	$code = strtoupper(uniqid());
+	
+	$order = array(
+		'party'=>$this->input->post('party'),
+		'partytype'=>$this->input->post('partytype'),
+		'zipcode'=>$this->input->post('zipcode'),
+		'fname'=>$this->input->post('fname'),
+		'email'=>$this->input->post('email'),
+		'tel'=>$this->input->post('tel'),
+		'eventdate'=>$this->input->post('eventdate_submit'),
+		'participants'=>$this->input->post('participants'),
+		'address'=> $this->input->post('address'),
+		'completed'=>"0",
+		'winner_id'=>"0",	
+		'transaction_id'=>$code	
+		);	
+		
+		if($this->Order_model->add_order($order))
 			     
     {  
 		
 	  //email part
 		
        //Format email content using an HTML file
-          $data ['email']= $this->session->userdata('email'); 
-		  $data['code']=$this->session->userdata('transaction_id');
+          $data ['email']= $this->input->post('email'); 
+		  $data['code']=$code;
 
 		  $message=$this->load->view('templates/mail_template',$data,TRUE);
 		 
@@ -62,17 +76,13 @@ class Order extends CI_Controller{
 		  $this->email->message($message);
 		 
             
-         if($this->email->send())
-             {
-			 redirect('Register/thankyou'); 
-			exit();
-             }
-         else
-        {
+         if($this->email->send()){
+			echo "Email Sent";   }
+         else   {
          show_error($this->email->print_debugger());
-        }
+				}
       
-   }
+    }
      else
     {
       echo "<script>
@@ -82,10 +92,5 @@ class Order extends CI_Controller{
             
       exit();
     }
-			
-		$data['title'] = ucfirst("thankyou"); // Capitalize the first letter
-		$this->load->view('templates/material-header',$data);
-		$this->load->view('pages/thankyou',$data);
-		$this->load->view('templates/material-footer');
 	}
 }	

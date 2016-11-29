@@ -16,7 +16,6 @@ class Order_model extends CI_Model
             'party'=>$this->input->post("party"),
 			'zipcode'=>$this->input->post("zipcode"),
             'partytype'=>$this->input->post("partytype"),
-			'transaction_id'=> strtoupper(uniqid())
             //email-validated
 			)
 		);
@@ -24,29 +23,15 @@ class Order_model extends CI_Model
 		
 	}
   
-	function add_order(){
+	function add_order($order){
 			
-		
-		$order = array(
-		'party'=>$this->input->post('party'),
-		'partytype'=>$this->input->post('partytype'),
-		'zipcode'=>$this->input->post('zipcode'),
-		'name'=>$this->input->post('fname'),
-		'email'=>$this->input->post('email'),
-		'tel'=>$this->input->post('tel'),
-		'eventdate'=>$this->input->post('eventdate_submit'),
-		'participants'=>$this->input->post('participants'),
-		'address'=> $this->input->post('address'),
-		'completed'=>"0",
-		'winner_id'=>"0",	
-		'transaction_id'=>$this->session->userdata('transaction_id')	
-		);
 		
 		if ($this->db->insert('orders',$order)){
 			
 		return true;
 		}	
 		else{
+			
 			return false;
 		}
 	}

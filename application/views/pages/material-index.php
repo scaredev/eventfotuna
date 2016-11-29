@@ -57,7 +57,7 @@
 										<label for="party-type">Select Party Type</label>
 									</div>		
 									<div  class="input-field">
-									<input name="name" id="first_name" type="text" class="validate primary-text-color" required>
+									<input name="fname" id="first_name" type="text" class="validate primary-text-color" required>
 									<label for="first_name">First Name</label>
 									</div>
 									<div  class="input-field">
@@ -82,7 +82,7 @@
 										<label for="party-type">Select Party Type</label>
 									</div>		
 									<div  class="input-field">
-									<input name="name" id="first_name2" type="text" class="validate primary-text-color">
+									<input name="fname" id="first_name2" type="text" class="validate primary-text-color">
 									<label for="first_name2">First Name</label>
 									</div>
 									<div  class="input-field">
@@ -218,7 +218,7 @@
 										<label for="party-type">Select Party Type</label>
 									</div>		
 									<div  class="input-field">
-									<input name="name" id="first_name" type="text" class="validate primary-text-color" required>
+									<input name="fname" id="first_name" type="text" class="validate primary-text-color" required>
 									<label for="first_name">First Name</label>
 									</div>
 									<div  class="input-field">
@@ -243,7 +243,7 @@
 										<label for="party-type">Select Party Type</label>
 									</div>		
 									<div  class="input-field">
-									<input name="name" id="first_name" type="text" class="validate primary-text-color">
+									<input name="fname" id="first_name" type="text" class="validate primary-text-color">
 									<label for="first_name">First Name</label>
 									</div>
 									<div  class="input-field">

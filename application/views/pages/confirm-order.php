@@ -45,7 +45,7 @@
         </div>
 		<div class="input-field col s6">
 		  <input name="fname" id="zipcode" type="hidden" class="validate" value="<?php echo $fname;?>">
-          <input name="zipcode" id="zipcode" type="text" class="validate" value="<?php echo $zip;?>">
+          <input name="zipcode" id="zipcode" type="text" class="validate" value="<?php echo $zipcode;?>">
           <label for="zipcode" >Zip Code</label>
         </div>
       </div>

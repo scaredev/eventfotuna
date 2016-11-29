@@ -5,8 +5,8 @@
  $config['protocol'] = "smtp";
  $config['smtp_host'] = "smtp.gmail.com";
  $config['smtp_port'] = 465;
- $config['smtp_user'] = "emailservs@gmail.com";
- $config['smtp_pass'] = "asusk43u";
+ $config['smtp_user'] = "cacuyado@cec.edu.ph";
+ $config['smtp_pass'] = "ZEAlot007!";
  $config['mailtype'] = "html";
  $config['charset'] = "iso-8859-1";
  $config['wordwrap'] = TRUE;
