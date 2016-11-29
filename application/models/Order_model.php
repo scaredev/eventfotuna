@@ -35,7 +35,18 @@ class Order_model extends CI_Model
 			return false;
 		}
 	}
-	
+	 function verifyOrder(){ 
+	 
+	    $value= 1;
+		$data = array(
+				   'active' => $value  
+				);
+	 
+		$this->db->from('user');
+		$this->db->where('transaction_id',$this->uri->segment(2));
+		$this->db->update('user', $data); 
+		return $this->db->affected_rows(); 
+	 }
 	
 	public function record_count() {
 		   $val = 0;

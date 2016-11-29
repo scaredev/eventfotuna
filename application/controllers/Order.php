@@ -93,4 +93,19 @@ class Order extends CI_Controller{
       exit();
     }
 	}
+	
+	function verify($verificationText=NULL){
+	 
+  $noRecords = $this->Order_model->verifyOrder($verificationText);  
+  if ($noRecords > 0){
+   $error = "Email Verified Successfully!"; 
+  }else{
+   $error = "Sorry Unable to Verify Your Email!"; 
+  }
+  $data['errormsg'] = $error; 
+  $data['title'] = ucfirst("Registration"); // Capitalize the first letter
+			$this->load->view('templates/material-header',$data);
+			$this->load->view('pages/email_verified',$data);
+			$this->load->view('templates/material-footer');
+ }
 }	
