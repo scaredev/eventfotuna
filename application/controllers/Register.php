@@ -48,15 +48,16 @@ if( $this->email->send()){
 
 public function registration()
  {
- 
-   if($this->Register_model->add_user())
+   $code = random_string('alnum',20);
+   
+   if($this->Register_model->add_user($code))
    {  
 		
 	  //email part
 		
        //Format email content using an HTML file
-          $data ['email']= $this->session->userdata('email'); 
-		  $data['code']=$this->session->userdata('email_verification_code');
+          $data['email']= $this->session->userdata('email'); 
+		  $data['code']=$code;
 
 		  $message=$this->load->view('templates/mail_template',$data,TRUE);
 		 
@@ -70,15 +71,18 @@ public function registration()
             
          if($this->email->send())
              {
+			$this->session->sess_destroy();
 			 redirect('Register/thankyou'); 
 			exit();
              }
          else
         {
+		$this->session->sess_destroy();
          show_error($this->email->print_debugger());
         }
       
    }else{
+   $this->session->sess_destroy();
    redirect('Register/ErrorRegistration');
    }
   

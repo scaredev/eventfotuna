@@ -35,7 +35,7 @@
 						<div class="card-content white-text">
 						  <span class="card-title primary-text-color center ">Quick Order!</span>
 						  	<div class="divider"></div><br/>
-							<?php echo $this->session->flashdata('msg'); ?>
+						
 							<ul id="host" class="tabs tabs-fixed-width flow-text">
 							<label for="host">Party Host</label>
 								<li class="tab col s3"><a href="#test1">Company</a></li>
@@ -196,7 +196,7 @@
 						<div class="card-content white-text">
 						  <span class="card-title primary-text-color center ">Quick Order!</span>
 						  	<div class="divider"></div><br/>
-							<?php echo $this->session->flashdata('msg'); ?>
+							
 							<ul id="host" class="tabs tabs-fixed-width">
 							<label for="host">Party Host</label>
 								<li class="tab col s3"><a href="#testa1">Company</a></li>

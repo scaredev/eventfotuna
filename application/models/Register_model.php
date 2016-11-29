@@ -10,8 +10,8 @@ class Register_model extends CI_Model
      }
 
 
- function add_user(){
-	  $code = random_string('alnum',20);
+ function add_user($code){
+	  
 	  
 	  $data=array(
 		'company'=>$this->input->post('company'),
