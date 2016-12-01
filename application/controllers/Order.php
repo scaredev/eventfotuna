@@ -57,12 +57,14 @@ class Order extends CI_Controller{
 		);	
 		
 		if($this->Order_model->add_order($order))
-			     
     {  
 		
 	  //email part
 		
        //Format email content using an HTML file
+	      
+		  $data['orders']= $this->Order_model->get_orderby_id($code);
+		  $data['insert_id']=$insert_id;
           $data ['email']= $this->input->post('email'); 
 		  $data['code']=$code;
 
@@ -77,7 +79,12 @@ class Order extends CI_Controller{
 		 
             
          if($this->email->send()){
-			echo "Email Sent";   }
+			 
+			$this->load->view('templates/material-header',$data);
+			$this->load->view('pages/thankyou',$data);
+			$this->load->view('templates/material-footer');
+
+		}
          else   {
          show_error($this->email->print_debugger());
 				}
@@ -94,18 +101,20 @@ class Order extends CI_Controller{
     }
 	}
 	
-	function verify($verificationText=NULL){
-	 
-  $noRecords = $this->Order_model->verifyOrder($verificationText);  
-  if ($noRecords > 0){
-   $error = "Email Verified Successfully!"; 
-  }else{
-   $error = "Sorry Unable to Verify Your Email!"; 
+ function myorder(){
+   $data['title'] = ucfirst("Bidders");  
+   $data['results'] = $this->Order_model->trackOrder();
+   $data['orders'] = $this->Order_model->track_orderby_id($code)->row(); 
+   $data['errors']= ''; 
+   
+  if ($data > 0){
+		$this->load->view('templates/material-header',$data);
+		$this->load->view('pages/bidders_overview',$data);
+		$this->load->view('templates/material-footer');
+	
+    }else{
+	echo "No bidder yet";
   }
-  $data['errormsg'] = $error; 
-  $data['title'] = ucfirst("Registration"); // Capitalize the first letter
-			$this->load->view('templates/material-header',$data);
-			$this->load->view('pages/email_verified',$data);
-			$this->load->view('templates/material-footer');
+  
  }
 }	

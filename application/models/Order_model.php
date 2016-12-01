@@ -25,7 +25,6 @@ class Order_model extends CI_Model
   
 	function add_order($order){
 			
-		
 		if ($this->db->insert('orders',$order)){
 			
 		return true;
@@ -35,18 +34,31 @@ class Order_model extends CI_Model
 			return false;
 		}
 	}
-	 function verifyOrder(){ 
+	
+	 function trackOrder(){ 
 	 
-	    $value= 1;
-		$data = array(
-				   'active' => $value  
-				);
-	 
-		$this->db->from('user');
-		$this->db->where('transaction_id',$this->uri->segment(2));
-		$this->db->update('user', $data); 
-		return $this->db->affected_rows(); 
+	    $this->db->select('*');	 
+		$this->db->from('bidding');
+		$this->db->where('bid_completed',0);
+		$this->db->where('order_id',$this->uri->segment(2));
+		$this->db->join('user','user.user_id = bidding.barista_id');
+		$this->db->limit(3);
+		$this->db->order_by('prize','asc');
+		$query = $this->db->get();
+
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+        }
 	 }
+	 
+	function track_orderby_id($code){
+		$this->db->where('bid_completed',0);
+		$this->db->where('transaction_id',$code);
+		return $this->db->get('orders');
+	}
 	
 	public function record_count() {
 		   $val = 0;
@@ -82,6 +94,7 @@ class Order_model extends CI_Model
 	}
 
 	// Fetch data according to per_page limit.
+	
 	public function fetch_bid_data($limit, $start) {
         $this->db->limit($limit, $start);
 		

@@ -22,7 +22,7 @@
 					 <div class="left ">
 					 <p>More Details: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
                        </p><br/>
-					
+							<span class="left databits"><i class="material-icons">location_on</i>zip code: <?php echo $items->transaction_id;?></span>
 							<span class="left databits"><i class="material-icons">supervisor_account</i><?php echo $items->partytype;?></span>
 							<span class="left databits"><i class="material-icons">supervisor_account</i><?php echo $items->participants;?> participants</span>
 							<span class="left databits"><i class="material-icons">language</i>Party host: <?php echo $items->party;?></span>
@@ -33,6 +33,7 @@
 						<div class="container">
 						<form class="bid-form" action="<?php echo base_url();?>Bid/submit_bid" method="post">
 							 <div class="input-field col s6 m4 l4">
+									<input name="trans-id" type="hidden" value="<?php echo $items->transaction_id;?>">
 									<input name="order-id" type="hidden" value="<?php echo $items->orders_id;?>">
 									<input name="prize" id="bid" type="text"  pattern="-?[0-9]*(\.[0-9]+)?" required class="validate">
 									<label for="bid" data-error="not a number" ata-success="correct">place bid</label>

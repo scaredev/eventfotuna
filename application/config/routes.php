@@ -53,3 +53,4 @@ $route['default_controller'] = 'Login/parallax';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['verify/(:any)'] = "/Register/verify/$1";
+$route['myorder/(:num)/(:any)'] = "/Order/myorder/$1";
