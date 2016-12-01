@@ -41,6 +41,7 @@ class Order_model extends CI_Model
 		$this->db->from('bidding');
 		$this->db->where('bid_completed',0);
 		$this->db->where('order_id',$this->uri->segment(2));
+		$this->db->where('transaction_id',$this->uri->segment(3));
 		$this->db->join('user','user.user_id = bidding.barista_id');
 		$this->db->limit(3);
 		$this->db->order_by('prize','asc');
@@ -56,6 +57,7 @@ class Order_model extends CI_Model
 	 
 	function track_orderby_id(){
 		
+		$this->db->where('transaction_id',$this->uri->segment(3));
 		$this->db->where('orders_id',$this->uri->segment(2));
 		return $this->db->get('orders');
 	}

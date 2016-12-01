@@ -1,6 +1,7 @@
 <main>
 	<div class="container">
 	<div class="ul-wrapper">
+	<?php if( !empty($results) ) { ?>
 		<?php echo $errors;?>
     <h4>Hi <?php echo $orders->fname;?>, Your OrderId: <?php echo $orders->transaction_id;?></h4>
     <p>List of bidders for your Upcomming Event, Order last: <?php echo $orders->orderdate;?></p>
@@ -8,7 +9,7 @@
 	<p>Parytype: <?php echo $orders->partytype;?></p>
 	<p>Event Date: <?php echo $orders->eventdate;?></p>
 	<p>Address: <?php echo $orders->address; ?></p>
-	
+	<?php } ?>
 	
       <table class="responsive-table highlight">
         <thead>
