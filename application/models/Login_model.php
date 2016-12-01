@@ -61,8 +61,7 @@ class Login_model extends CI_Model
             'name'=> $this->details->fname . ' ' . $this->details->lname,
             'email'=>$this->details->email,
             'avatar'=>$this->details->fname,
-            //eemail-validated
-			
+			'admin'=>$this->details->admin,
             'completed'=>$this->details->completed,
             'logged_in'=>true
         )

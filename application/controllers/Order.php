@@ -63,8 +63,7 @@ class Order extends CI_Controller{
 		
        //Format email content using an HTML file
 	      
-		  $data['orders']= $this->Order_model->get_orderby_id($code);
-		  $data['insert_id']=$insert_id;
+		  $data['orders']= $this->Order_model->track_orderby_id($code);
           $data ['email']= $this->input->post('email'); 
 		  $data['code']=$code;
 

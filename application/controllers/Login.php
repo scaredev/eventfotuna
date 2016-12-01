@@ -42,8 +42,13 @@ class login extends CI_Controller
                //validation succeeds
              $active=1;
              if( $email && $pass && $active && $this->Login_model->validate_user($email,$pass,$active)){
-				 
-				 redirect('Event/overview');
+				
+				if ($this->session->userdata('admin')){
+					redirect('Admin/dashboard');
+				}
+				else{
+					redirect('Event/overview');
+				}
 			 }
 			 else
                     {
@@ -84,7 +89,12 @@ class login extends CI_Controller
 			   $active=1;
              if( $email && $pass && $active && $this->Login_model->validate_user($email,$pass,$active)){
 				 
-				 redirect('Event/overview');
+				if ($this->session->userdata('admin')){
+					redirect('Admin/dashboard');
+				}
+				else{
+					redirect('Event/overview');
+				}
 			 }
 			 else
                     {

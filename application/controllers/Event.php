@@ -20,19 +20,19 @@ class Event extends CI_Controller{
 	function dashboard($pages = 'dashboard')
 	{
 		
-		if($this->session->userdata('logged_in')){
+		if($this->session->userdata('logged_in') && $this->session->userdata('admin != 1')){
 			$data ['email']= $this->session->userdata('email'); 
 			$data['title'] = ucfirst($pages); // Capitalize the first letter
 			$this->load->view('templates/admin-header',$data);
 			$this->load->view('pages/'.$pages);
 			$this->load->view('templates/admin-footer');
 		}else{
-				 redirect('Login/loginform');
+				 redirect('Login/logout');
 			}
 	}
 	function history($pages = 'history')
 	{
-		if($this->session->userdata('logged_in')){
+		if($this->session->userdata('logged_in') && $this->session->userdata('admin != 1')){
 			
 			$data['title'] = ucfirst("history"); // Capitalize the first letter
 			
@@ -80,13 +80,13 @@ class Event extends CI_Controller{
 			$this->load->view('templates/material-footer');
 			
 			}else{
-				 redirect('Login/loginform');
+				 redirect('Login/logout');
 			}
 		
 	}
 	function overview()
 	{
-		if($this->session->userdata('logged_in'))
+		if($this->session->userdata('logged_in') &&  $this->session->userdata('admin !=1'))
 			{
 			
 			$data['title'] = ucfirst("overview"); // Capitalize the first letter
@@ -139,14 +139,14 @@ class Event extends CI_Controller{
 			}
 			
 			else{
-				 redirect('Login/parallax');
+				 redirect('Login/logout');
 			}
 			
 	}
 	
 	function calendarview ()
 	{
-		if($this->session->userdata('logged_in')){
+		if($this->session->userdata('logged_in') && $this->session->userdata('admin != 1')){
 			
 			$data['title'] = ucfirst("Calendar"); // Capitalize the first letter
 		$this->load->model('Login_model');
@@ -208,7 +208,7 @@ class Event extends CI_Controller{
 			$this->load->view('templates/material-footer');
 		}else{
 				
-				 redirect('Login/loginform');
+				 redirect('Login/logout');
 			
 		}
 	}
@@ -226,7 +226,7 @@ class Event extends CI_Controller{
 			$this->load->view('pages/'.$page);
 			$this->load->view('templates/admin-footer');
 		}else{
-				   redirect('Login');
+				  redirect('Login/logout');
 		}
 	}
 	function materialprof()
@@ -241,12 +241,12 @@ class Event extends CI_Controller{
 			$this->load->view('pages/material-profile');
 			$this->load->view('templates/material-footer');
 		}else{
-				   redirect('Login');
+				  redirect('Login/logout');
 		}
 	}
 	function cashier($page = 'cashier')
 	{
-		if($this->session->userdata('logged_in')){
+		if($this->session->userdata('logged_in') && $this->session->userdata('admin != 1')){
 			$this->load->model('Login_model'); 
 			$data['user'] = $this->Login_model->getById()->row();  
 			$data ['email']= $this->session->userdata('email'); 
@@ -255,7 +255,7 @@ class Event extends CI_Controller{
 			$this->load->view('pages/material-casheir');
 			$this->load->view('templates/material-footer');
 		}else{
-				 redirect('Login/loginform');
+				 redirect('Login/logout');
 			}
 	}
 	function settings($page = 'settings')
@@ -270,7 +270,7 @@ class Event extends CI_Controller{
 			$this->load->view('pages/material-settings');
 			$this->load->view('templates/material-footer');
 		}else{
-				 redirect('Login/loginform');
+				redirect('Login/logout');
 			}
 	}
 	
