@@ -103,8 +103,8 @@ class Order extends CI_Controller{
 	
  function myorder(){
    $data['title'] = ucfirst("Bidders");  
-   $data['results'] = $this->Order_model->trackOrder();
-   $data['orders'] = $this->Order_model->track_orderby_id($code)->row(); 
+   $data['results'] = $this->Order_model->trackBidders();
+   $data['orders'] = $this->Order_model->track_orderby_id()->row(); 
    $data['errors']= ''; 
    
   if ($data > 0){

@@ -35,7 +35,7 @@ class Order_model extends CI_Model
 		}
 	}
 	
-	 function trackOrder(){ 
+	 function trackBidders(){ 
 	 
 	    $this->db->select('*');	 
 		$this->db->from('bidding');
@@ -54,9 +54,9 @@ class Order_model extends CI_Model
         }
 	 }
 	 
-	function track_orderby_id($code){
-		$this->db->where('bid_completed',0);
-		$this->db->where('transaction_id',$code);
+	function track_orderby_id(){
+		
+		$this->db->where('orders_id',$this->uri->segment(2));
 		return $this->db->get('orders');
 	}
 	

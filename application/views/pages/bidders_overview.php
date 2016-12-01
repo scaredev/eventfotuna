@@ -2,19 +2,24 @@
 	<div class="container">
 	<div class="ul-wrapper">
 		<?php echo $errors;?>
-
-    <p>List of bidders for your Upcomming Event <?php $orders->partytype;?></p>
+    <h4>Hi <?php echo $orders->fname;?>, Your OrderId: <?php echo $orders->transaction_id;?></h4>
+    <p>List of bidders for your Upcomming Event, Order last: <?php echo $orders->orderdate;?></p>
+	<p>With the following details: </br> Total number of expected guest: <?php echo $orders->participants;?></p>
+	<p>Parytype: <?php echo $orders->partytype;?></p>
+	<p>Event Date: <?php echo $orders->eventdate;?></p>
+	<p>Address: <?php echo $orders->address; ?></p>
+	
 	
       <table class="responsive-table highlight">
         <thead>
 									<tr>
 									  <th>Bidder</th>
 									  <th>Company</th>
-									  <th>Products</th>
+									  <th>Contact</th>
 									  <th>Cart</th>
+									  <th>Services</th>
 									  <th>Bid Prize</th>
-									  <th></th>
-									  <th>Status</th>
+									  <th><div class="chip accent-color">Action</div></th>
 									</tr>
 		</thead>
 
@@ -25,17 +30,17 @@
 										<tr class="">
 										  <td><?php echo $bids->fname;?> </td>
 										  <td><?php echo $bids->company;?> </td>
-										  <td><?php echo $bids->services;?> </td>
+										  <td><?php echo $bids->mobile;?> </td>
 										  <td><?php echo $bids->cart_type;?></td>
-										  <td><?php echo $bids->prize;?></td>
+										  <td><?php echo $bids->services?></td>
 										  <td><?php echo $bids->prize;?> </td>
 										  
 											<?php if ($bids->completed != 0){ ?>
-													<?php if ($bids->completed === $bids->barista_id){ ?>
+													
 														<td><div class="valign-wrapper"><div class="chip teal text-primary-color">Win</div></div></td>
-													<?php } else {?>
+													
 														<td><div class="valign-wrapper"><div class="chip orange darken-4 text-primary-color">Lost</div></div></td>
-													<?php } ?>
+													
 											<?php } else { ?>
 												<td><div class="valign-wrapper"><button class="btn_flat chip orange lighten-2 text-primary-color">Pending</button></div></td>
 											<?php } ?>
