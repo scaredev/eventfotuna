@@ -4,7 +4,8 @@ class Admin extends CI_Controller{
  
 	public function __construct()
     {
-        parent::__construct();		
+        parent::__construct();	
+        		
 		$this->load->helper(array('form','url'));		
           $this->load->library('session');
           $this->load->helper('html');
@@ -17,15 +18,23 @@ class Admin extends CI_Controller{
 		 
 		  
     }
+	
 	function dashboard($pages = 'dashboard')
 	{		
-			$data ['email']= "cacuyado@gmail.com" ;
-			$data ['user']= "crisnil" ;
+		if($this->session->userdata('logged_in') && ($this->session->userdata('admin') == 1)){
+		$data = array(
+				'email'=> "cacuyado@gmail",
+				'user'=> "crisnil",
+				'company'=> "scardev"
+		);
 			$data ['company']= "scaredev" ;
 			$data['title'] = ucfirst($pages); // Capitalize the first letter
-			$this->load->view('templates/material-header',$data);
+			$this->load->view('templates/admin-material-header',$data);
 			$this->load->view('admin/dashboard');
 			$this->load->view('templates/material-footer');
-		
+		}
+		else{
+			redirect('Login/logout');
+		}
 	}
 }

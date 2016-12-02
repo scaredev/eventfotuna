@@ -20,7 +20,7 @@ class Event extends CI_Controller{
 	function dashboard($pages = 'dashboard')
 	{
 		
-		if($this->session->userdata('logged_in') && $this->session->userdata('admin != 1')){
+		if($this->session->userdata('logged_in')){
 			$data ['email']= $this->session->userdata('email'); 
 			$data['title'] = ucfirst($pages); // Capitalize the first letter
 			$this->load->view('templates/admin-header',$data);
@@ -32,7 +32,7 @@ class Event extends CI_Controller{
 	}
 	function history($pages = 'history')
 	{
-		if($this->session->userdata('logged_in') && $this->session->userdata('admin != 1')){
+		if($this->session->userdata('logged_in') && ($this->session->userdata('admin')!= 1)){
 			
 			$data['title'] = ucfirst("history"); // Capitalize the first letter
 			
@@ -86,7 +86,7 @@ class Event extends CI_Controller{
 	}
 	function overview()
 	{
-		if($this->session->userdata('logged_in') &&  $this->session->userdata('admin !=1'))
+		if($this->session->userdata('logged_in') && ($this->session->userdata('admin')!= 1))
 			{
 			
 			$data['title'] = ucfirst("overview"); // Capitalize the first letter
@@ -146,7 +146,7 @@ class Event extends CI_Controller{
 	
 	function calendarview ()
 	{
-		if($this->session->userdata('logged_in') && $this->session->userdata('admin != 1')){
+		if($this->session->userdata('logged_in') && ($this->session->userdata('admin')!= 1)){
 			
 			$data['title'] = ucfirst("Calendar"); // Capitalize the first letter
 		$this->load->model('Login_model');
@@ -216,7 +216,7 @@ class Event extends CI_Controller{
 	
 	function profile($page = 'profile')
 	{
-		if($this->session->userdata('logged_in')){
+		if($this->session->userdata('logged_in') && ($this->session->userdata('admin')!= 1)){
 			
 			$data['title'] = ucfirst("profile"); // Capitalize the first letter
 			
@@ -231,7 +231,7 @@ class Event extends CI_Controller{
 	}
 	function materialprof()
 	{
-		if($this->session->userdata('logged_in')){
+		if($this->session->userdata('logged_in') && ($this->session->userdata('admin')!= 1)){
 			
 			$data['title'] = ucfirst("profile"); // Capitalize the first letter
 			
@@ -246,7 +246,7 @@ class Event extends CI_Controller{
 	}
 	function cashier($page = 'cashier')
 	{
-		if($this->session->userdata('logged_in') && $this->session->userdata('admin != 1')){
+		if($this->session->userdata('logged_in') && ($this->session->userdata('admin')!= 1)){
 			$this->load->model('Login_model'); 
 			$data['user'] = $this->Login_model->getById()->row();  
 			$data ['email']= $this->session->userdata('email'); 
@@ -260,7 +260,7 @@ class Event extends CI_Controller{
 	}
 	function settings($page = 'settings')
 	{   
-		if($this->session->userdata('logged_in')){
+		if($this->session->userdata('logged_in') && ($this->session->userdata('admin')!= 1)){
 			
 			$this->load->model('Login_model');
 			$data['user'] = $this->Login_model->getById()->row();  

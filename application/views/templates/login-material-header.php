@@ -15,7 +15,7 @@
 	  <link type="text/css" rel="stylesheet" href="<?php echo base_url();?>css/materialize.css"  media="screen,projection"/>
 	    <link type="text/css" rel="stylesheet" href="<?php echo base_url();?>css/custom-material.css"  media="screen,projection"/>
 	  <link type="text/css" rel="stylesheet" href="<?php echo base_url();?>css/palette.css"  media="screen,projection"/>	
-	<link type="text/css" rel="stylesheet" href="<?php echo base_url();?>css/style.css"  media="screen,projection"/>	
+	
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -73,13 +73,13 @@
 			  <a href="#!email"><span class="email"><?php echo $user->email;?></span></a>
 			</div>
 		</li>
-		<li class="  <?php if($title=="Profile"){echo "default-primary-color   active ";}?>">
+		<li class=" <?php if($title=="Profile"){echo "default-primary-color   active ";}?>">
 					<a href="<?=base_url();?>Event/materialprof"><i class="material-icons active">perm_identity</i>Profile</a></li>
 		<li class=" <?php if($title=="Overview"){echo "default-primary-color   active ";}?>">
 					<a href="<?=base_url();?>Event/overview"><i class="material-icons active">description</i>Overview</a></li>
 		<li class=" <?php if($title=="History"){echo "default-primary-color   active ";}?>">
 					<a href="<?=base_url();?>Event/history"><i class="material-icons active">subject</i>History</a></li>
-		<li class="l  <?php if($title=="Calendar"){echo "default-primary-color    active ";}?>">
+		<li class="<?php if($title=="Calendar"){echo "default-primary-color    active ";}?>">
 					<a href="<?=base_url();?>Event/calendarview"><i class="material-icons active">today</i>Calendar</a></li>
 		<li class="  <?php if($title=="Cashier"){echo "default-primary-color  active ";}?>">
 					<a href="<?=base_url();?>Event/cashier"><i class="material-icons active">shopping_cart</i>Cashier</a></li>
