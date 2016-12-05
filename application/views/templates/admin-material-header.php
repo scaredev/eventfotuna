@@ -73,19 +73,20 @@
 			</div>
 		</li>
 		<li class="  <?php if($title=="Profile"){echo "default-primary-color   active ";}?>">
-					<a href="<?=base_url();?>Admin/barista"><i class="material-icons active">perm_identity</i>Barista</a></li>
+					<a href="<?=base_url();?>Admin/dashboard"><i class="material-icons active">perm_identity</i>Dashboard</a></li>
+		<li class="  <?php if($title=="Profile"){echo "default-primary-color   active ";}?>">
+					<a href="<?=base_url();?>Admin/show_barista"><i class="material-icons active">perm_identity</i>Barista</a></li>
 		<li class=" <?php if($title=="Overview"){echo "default-primary-color   active ";}?>">
-					<a href="<?=base_url();?>Admin/customers"><i class="material-icons active">description</i>Customers</a></li>
-		<li class=" <?php if($title=="History"){echo "default-primary-color   active ";}?>">
-					<a href="<?=base_url();?>Admin/bids"><i class="material-icons active">subject</i>Bids</a></li>
+					<a href="<?=base_url();?>Admin/show_costumers"><i class="material-icons active">description</i>Customers</a></li>
+		
 		<li class="l  <?php if($title=="Calendar"){echo "default-primary-color    active ";}?>">
-					<a href="<?=base_url();?>Admin/logs"><i class="material-icons active">today</i>Logs</a></li>
+					<a href="<?=base_url();?>Admin/show_closed_bidding"><i class="material-icons active">today</i>Logs</a></li>
 		<li class="  <?php if($title=="Cashier"){echo "default-primary-color  active ";}?>">
-					<a href="<?=base_url();?>Admin/orderview"><i class="material-icons active">shopping_cart</i>Orderview</a></li>
+					<a href="<?=base_url();?>Admin/show_orders"><i class="material-icons active">shopping_cart</i>Orderview</a></li>
 		
 		<li class="divider-color "><div class="divider"></div></li>
 	   <li class="  <?php if($title=="Settings"){echo "default-primary-color    active ";}?>">
-					<a href="<?=base_url();?>Admin/account"><i class="material-icons active">settings</i>Account</a></li>
+					<a href="<?=base_url();?>Admin/accounts"><i class="material-icons active">settings</i>Account</a></li>
 		<li class=" "><a href="<?=base_url();?>Login/logout"><i class="material-icons active">exit_to_app</i>Logout</a></li>
 	  </ul>
 
