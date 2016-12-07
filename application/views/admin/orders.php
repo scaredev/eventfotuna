@@ -1,42 +1,42 @@
 <main>
-<div class="row">
-	<div class="container">
-	
-	  <ul class="collection">
-		<li class="collection-item avatar">
-		  <img src="images/yuna.jpg" alt="" class="circle">
-		  <span class="title">Title</span>
-		  <p>First Line <br>
-			 Second Line
-		  </p>
-		  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-		</li>
-		<li class="collection-item avatar">
-		  <i class="material-icons circle">folder</i>
-		  <span class="title">Title</span>
-		  <p>First Line <br>
-			 Second Line
-		  </p>
-		  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-		</li>
-		<li class="collection-item avatar">
-		  <i class="material-icons circle green">insert_chart</i>
-		  <span class="title">Title</span>
-		  <p>First Line <br>
-			 Second Line
-		  </p>
-		  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-		</li>
-		<li class="collection-item avatar">
-		  <i class="material-icons circle red">play_arrow</i>
-		  <span class="title">Title</span>
-		  <p>First Line <br>
-			 Second Line
-		  </p>
-		  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-		</li>
-	  </ul>
-            
-	</div>
-</div>				
+	<div class="row">
+		<div class="ul-wrapper">
+			<div class="ul-wrapper">
+				<?php echo $errors;?>
+					<table class="responsive-table highlight">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Email</th>
+								<th>Type</th>
+								<th>Contact</th>
+								<th>Address</th>
+								<th>Order Status</th>
+								
+							</tr>
+						</thead>
+						<tbody>
+							<?php if( !empty($results) ) { ?>
+								<?php foreach($results as $persons){?>
+									<tr class="">
+									<td><?php echo $persons->fname;?> </td>
+									<td><?php echo $persons->email;?> </td>
+									<td><?php echo $persons->party;?> </td>
+									<td><?php echo $persons->tel;?> </td>
+									<td><?php echo $persons->address;?></td>
+									<?php if ($persons->completed == 0){ ?>
+									<td><div class="valign-wrapper"><div class="chip green darken-4 text-primary-color">Open</div></div></td>
+									<?php } else { ?>
+									<td><div class="valign-wrapper"><div class="chip red lighten-2 text-primary-color">Closed</div></div></td>
+									<?php } ?>
+								<?php } ?>
+							<?php } ?>
+							</tr>
+						</tbody>
+					</table>
+			<div class="container center">
+				<?php echo $links;?>
+			</div>
+		</div>
+	</div>				
 </main>
