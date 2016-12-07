@@ -127,6 +127,11 @@ padding:20px 20px;
     top: -30px;
     right: 10px;
 }
+.add-butt{
+	position: absolute;
+    bottom: -30px;
+    right: 10px;
+}
 .grid-element-title{
 	position: absolute;
 bottom: 0;

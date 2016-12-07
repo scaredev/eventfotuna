@@ -35,56 +35,113 @@
 					<!-- modal-->
 					<div id="modal2" class="modal">
 						<div class="modal-content">
-						  
-						  <div class="row">
-							<form class="col s12">
-							  <div class="row">
-								<div class="input-field col s6">
-								  <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-								  <label for="first_name">First Name</label>
-								</div>
-								<div class="input-field col s6">
-								  <input id="last_name" type="text" class="validate">
-								  <label for="last_name">Last Name</label>
-								</div>
-							  </div>
-							  <div class="row">
-								<div class="input-field col s12">
-								  <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-								  <label for="disabled">Disabled</label>
-								</div>
-							  </div>
-							  <div class="row">
-								<div class="input-field col s12">
-								  <input id="password" type="password" class="validate">
-								  <label for="password">Password</label>
-								</div>
-							  </div>
-							  <div class="row">
-								<div class="input-field col s12">
-								  <input id="email" type="email" class="validate">
-								  <label for="email">Email</label>
-								</div>
-							  </div>
-							  <div class="row">
-								<div class="col s12">
-								  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-										<i class="material-icons right">send</i>
-								  </button>
-								</div>
-							  </div>
-							</form>
-						  </div>
-					
-						</div>
-					</div>
-					
-							<div class="modal-footer">
 							  
-							</div>
-						
-				<!-- -->
-				<ul class="tabs">
+							 <form class="col s12" id="barista_form"  role="form" action="<?php echo base_url();?>Profile/update" method="post">  
+							
+								<div class="ul-wrapper">	
+									<div class="row">
+										<div class="file-field input-field col s6">
+										  <div class="btn">
+											<span>Logo</span>
+											<input type="file">
+										  </div>
+										  <div class="file-path-wrapper">
+											<input name="userfile" class="file-path validate" type="text">
+										  </div>
+										</div>
+										<div class="file-field input-field col s6">
+										  <div class="btn">
+											<span>Profile Pic</span>
+											<input type="file">
+										  </div>
+										  <div class="file-path-wrapper">
+											<input name="userfile" class="file-path validate" type="text">
+										  </div>
+										</div>
+									</div>
+							  
+									<div class="row">
+										<div class="input-field col s6">
+										  <input name="company" placeholder="Your Company" id="first_name" type="text" class="validate" required>
+										  <label for="company">Company</label>
+										</div>
+										<div class="input-field col s6">
+										  <input name="cart-type" placeholder="Cart Type" id="first_name" type="text" class="validate">
+										  <label for="cart-type">CVR</label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="input-field col s3">
+										  <input name="fname"placeholder="YourName" id="first_name" type="text" class="validate" required>
+										  <label for="fname">First Name</label>
+										</div>
+										<div class="input-field col s3">
+										  <input name="fname"placeholder="YourName" id="first_name" type="text" class="validate" required>
+										  <label for="fname">Last Name</label>
+										</div>
+										<div class="input-field col s6">
+										  <input name="mobile" placeholder="xxxxxxxx" id="last_name" type="text" class="validate" pattern="-?[0-9]*(\.[0-9]+)?" length="8" required>
+										  <label for="mobile">mobile number</label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="input-field col s12">
+										  <i class="material-icons prefix">mode_edit</i>
+										  <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+										  <label for="icon_prefix2">About Our Company</label>
+										</div>
+									  </div>
+									<div class="row">
+										<div class="input-field col s12">
+										  <i class="material-icons prefix">mode_edit</i>
+										  <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
+										  <label for="icon_prefix2">About your self</label>
+										</div>
+									  </div>
+									<div class="row">
+										<div class="input-field col s3">
+										  <input name="fname"placeholder="YourName" id="first_name" type="text" class="validate" required>
+										  <label for="fname">Cart Type1</label>
+										</div>
+										<div class="input-field col s3">
+										  <input name="fname"placeholder="YourName" id="first_name" type="text" class="validate" required>
+										  <label for="fname">Cart Type2</label>
+										</div>
+										<div class="input-field col s3">
+										  <input name="mobile" placeholder="xxxxxxxx" id="last_name" type="text" class="validate" pattern="-?[0-9]*(\.[0-9]+)?" length="8" required>
+										  <label for="mobile">Cart Type3</label>
+										</div>
+										<div class="input-field col s3">
+										  <input name="mobile" placeholder="xxxxxxxx" id="last_name" type="text" class="validate" pattern="-?[0-9]*(\.[0-9]+)?" length="8" required>
+										  <label for="mobile">Cart Type4</label>
+										</div>
+									</div>
+									<div class="row">
+										<div class="input-field col s12">
+										  <input name="email" placeholder="you@domain.com "id="last_name" type="email" class="validate" required>
+										  <label for="email" data-error="wrong format" data-success="success">Email Address</label>
+										</div>
+										<div class="input-field col s12">
+										  <input name="password" placeholder="Placeholder" id="first_name" type="password" class="validate" required length="8" >
+										  <label for="password">Password</label>
+										</div>
+										
+									</div>
+								  
+								
+									<div class="modal-footer">
+										<button type="reset" class="modal-action waves-effect waves-red btn-flat ">Reset</button>
+										&nbsp;&nbsp;&nbsp;&nbsp;
+										<button type="submit" class="modal-action waves-effect waves-green btn-flat">Register<i class="material-icons right">send</i></button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>		
+					<!-- -->
+				</div>	
+				
+				<ul class="tabs center">
 					<li class="tab col s3"><a class="active grey-text text-darken-3" href="#test1">Products</a></li>
 					<li class="tab col s3"><a  class="grey-text text-darken-3" href="#test2">Staff</a></li>
 					<li class="tab col s3"><a class="grey-text text-darken-3" href="#test3">Cart</a></li>
@@ -215,7 +272,9 @@
 						
 					</div>
 				</div>
-
+				<span class="add-butt">
+						   <a class="btn-floating btn-large waves-effect waves-light red tooltipped modal-trigger" href="#modal2" data-position="bottom" data-delay="50" data-tooltip="Edit Profile"><i class="material-icons">mode_edit</i></a>
+				</span>
             </div>  
 			 
 			 
