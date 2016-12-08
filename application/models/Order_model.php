@@ -116,10 +116,10 @@ class Order_model extends CI_Model
         return false;
    }
    
-   function getOrderById() 
+   function getOrderId($code) 
     {     
-        $this->db->where('email',$this->session->userdata('email'));
-        return $this->db->get('user');
+        $this->db->where('transaction_id',$code);
+        return $this->db->get('orders');
 	
 	}
   

@@ -15,7 +15,7 @@ class Register_model extends CI_Model
 	  
 	  $data=array(
 		'company'=>$this->input->post('company'),
-		'email'=>$this->input->post('email'),
+		'user_email'=>$this->input->post('email'),
 		'password'=> md5($this->input->post('password')),
 		'mobile'=>$this->input->post('mobile'),
 		'cart_type'=>$this->input->post('cart-type'),
@@ -24,7 +24,7 @@ class Register_model extends CI_Model
 	  );
 	 
 	 $this->db->from('user');
-     $this->db->where('email',$this->input->post('email'));
+     $this->db->where('user_email',$this->input->post('email'));
 	 $login = $this->db->get()->result();
 
     if ( is_array($login) && count($login) == 1 ) {

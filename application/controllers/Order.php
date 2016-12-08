@@ -45,8 +45,8 @@ class Order extends CI_Controller{
 		'party'=>$this->input->post('party'),
 		'partytype'=>$this->input->post('partytype'),
 		'zipcode'=>$this->input->post('zipcode'),
-		'fname'=>$this->input->post('fname'),
-		'email'=>$this->input->post('email'),
+		'costumer_fname'=>$this->input->post('fname'),
+		'costumer_email'=>$this->input->post('email'),
 		'tel'=>$this->input->post('tel'),
 		'eventdate'=>$this->input->post('eventdate_submit'),
 		'participants'=>$this->input->post('participants'),
@@ -63,17 +63,17 @@ class Order extends CI_Controller{
 		
        //Format email content using an HTML file
 	      
-		  $data['orders']= $this->Order_model->track_orderby_id($code);
+		  $data['orders']= $this->Order_model->getOrderId($code)->row();
           $data ['email']= $this->input->post('email'); 
 		  $data['code']=$code;
-
+		  $data['title'] = ucfirst("Order Details");   
 		  $message=$this->load->view('templates/mail_order_template',$data,TRUE);
 		 
 		  
 		  $this->email->set_newline("\r\n");
-		  $this->email->from('do_not_reply@event.design4web.dk','Registration Verification @ EventFortuna' ); // change it to yours
+		  $this->email->from('do_not_reply@event.design4web.dk','Order Verification @ EventFortuna' ); // change it to yours
 		  $this->email->to($this->input->post('email'));// change it to yours
-		  $this->email->subject('Email Verification');
+		  $this->email->subject('Order Details');
 		  $this->email->message($message);
 		 
             
