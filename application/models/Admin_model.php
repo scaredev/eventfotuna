@@ -9,11 +9,14 @@ class Admin_model extends CI_Model
 		  
      }
 	
+	
+	 
 	 function fetch_latest_user() {
 	    
 		$this->db->limit(5);
 		$this->db->select('*');
-		$this->db->from('user');		
+		$this->db->from('user');
+		$this->db->order_by('reg_date','desc');
 	    $query = $this->db->get();
 
         if ($query->num_rows() > 0) {
@@ -24,6 +27,7 @@ class Admin_model extends CI_Model
         }
         return false;
 	 }	
+	 
 		
 	 function fetch_latest_orders() {
 	    
@@ -59,7 +63,21 @@ class Admin_model extends CI_Model
         }
         return false;
    }
-
+   
+	function closed_count() {
+		  
+		   $this->db->select('*');
+		   $this->db->from('orders');
+		   $this->db->where('completed !=',0);
+	return $this->db->count_all_results();
+	}
+	function open_count() {
+		  
+		   $this->db->select('*');
+		   $this->db->from('orders');
+		    $this->db->where('completed',0);
+	return $this->db->count_all_results();
+	}
 	function user_count() {
 		  
 		   $this->db->select('*');

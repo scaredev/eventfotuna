@@ -23,12 +23,20 @@ class Admin extends CI_Controller{
 	function dashboard($pages = 'dashboard')
 	{		
 		if($this->session->userdata('logged_in') && ($this->session->userdata('admin') == 1)){
-		
+		    $data = array(
+			'orders_count'=> $this->Admin_model->orders_count(),
+			'barista_count'=> $this->Admin_model->user_count(),
+			'open_count'=> $this->Admin_model->open_count(),
+			'closed_count'=> $this->Admin_model->closed_count()
+			);
 			$data['user'] = $this->Login_model->getById()->row(); 
 			$data['title'] = ucfirst($pages); // Capitalize the first letter
 			$data['barista']=$this->Admin_model->fetch_latest_user();
+			
 			$data['orders']= $this->Admin_model->fetch_latest_orders();
 			$data['closed']= $this->Admin_model->fetch_closed_orders();
+			
+			
 			$this->load->view('templates/admin-material-header',$data);
 			$this->load->view('admin/dashboard');
 			$this->load->view('templates/material-footer');
@@ -141,7 +149,7 @@ class Admin extends CI_Controller{
 	function show_orders(){
 		
 		if($this->session->userdata('logged_in') && ($this->session->userdata('admin') == 1)){
-			$data['title'] = ucfirst("Barista");
+			$data['title'] = ucfirst("Orders");
 			$data['user'] = $this->Login_model->getById()->row();
 		if ($query = $this->Admin_model->orders_count())
 			 {
@@ -191,7 +199,7 @@ class Admin extends CI_Controller{
 	function show_bidding(){
 		
 		if($this->session->userdata('logged_in') && ($this->session->userdata('admin') == 1)){
-			$data['title'] = ucfirst("Barista");
+			$data['title'] = ucfirst("Bidding");
 			$data['user'] = $this->Login_model->getById()->row();
 		if ($query = $this->Admin_model->count_all_bids())
 			 {

@@ -10,7 +10,7 @@
 								<th>Costumer Name</th>
 								<th>Costumer Email</th>
 								<th>Event Type</th>
-								<th>Total Bidders</th>
+								<th>Barista Bidder</th>
 								<th>Winner</th>
 								<th>Order Status</th>
 								
@@ -24,9 +24,9 @@
 									<td><?php echo $bids->costumer_fname;?> </td>
 									<td><?php echo $bids->costumer_email;?> </td>
 									<td><?php echo $bids->party;?> </td>
-									<td><?php echo $bids->tel;?> </td>
+									<td><?php echo $bids->fname;?> </td>
 									<td><?php echo $bids->bid_completed;?></td>
-									<?php if ($bids->completed == 0){ ?>
+									<?php if ($bids->bid_completed == 0){ ?>
 									<td><div class="valign-wrapper"><div class="chip green darken-4 text-primary-color">Open</div></div></td>
 									<?php } else { ?>
 									<td><div class="valign-wrapper"><div class="chip red lighten-2 text-primary-color">Closed</div></div></td>

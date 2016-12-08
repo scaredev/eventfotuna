@@ -3,9 +3,9 @@
 		<div class="row">
                             <div class="col s12 m6 l3">
                                 <div class="card">
-                                    <div class="card-content  green white-text">
+                                    <div class="card-content  green white-text center">
                                         <p class="card-stats-title"><i class="mdi-social-group-add"></i> Clients</p>
-                                        <h4 class="card-stats-number">566</h4>
+                                        <h4 class="card-stats-number"><?php echo $orders_count;?></h4>
                                         <p class="card-stats-compare"><i class="mdi-hardware-keyboard-arrow-up"></i> 15% <span class="green-text text-lighten-5">from yesterday</span>
                                         </p>
                                     </div>
@@ -16,9 +16,9 @@
                             </div>
                             <div class="col s12 m6 l3">
                                 <div class="card">
-                                    <div class="card-content pink lighten-1 white-text">
+                                    <div class="card-content pink lighten-1 white-text center">
                                         <p class="card-stats-title"><i class="mdi-editor-insert-drive-file"></i> Barista</p>
-                                        <h4 class="card-stats-number">1806</h4>
+                                        <h4 class="card-stats-number"><?php echo $barista_count;?></h4>
                                         <p class="card-stats-compare"><i class="mdi-hardware-keyboard-arrow-down"></i> 3% <span class="deep-purple-text text-lighten-5">from last month</span>
                                         </p>
                                     </div>
@@ -29,9 +29,9 @@
                             </div>
                             <div class="col s12 m6 l3">
                                 <div class="card">
-                                    <div class="card-content blue-grey white-text">
+                                    <div class="card-content blue-grey white-text center">
                                         <p class="card-stats-title"><i class="mdi-action-trending-up"></i> Open Orders</p>
-                                        <h4 class="card-stats-number">$806.52</h4>
+                                        <h4 class="card-stats-number"><?php echo $open_count;?></h4>
                                         <p class="card-stats-compare"><i class="mdi-hardware-keyboard-arrow-up"></i> 80% <span class="blue-grey-text text-lighten-5">from yesterday</span>
                                         </p>
                                     </div>
@@ -42,9 +42,9 @@
                             </div>
                             <div class="col s12 m6 l3">
                                 <div class="card">
-                                    <div class="card-content purple white-text">
+                                    <div class="card-content purple white-text center">
                                         <p class="card-stats-title"><i class="mdi-editor-attach-money"></i>Closed Orders</p>
-                                        <h4 class="card-stats-number">$8990.63</h4>
+                                        <h4 class="card-stats-number"><?php echo $closed_count;?></h4>
                                         <p class="card-stats-compare"><i class="mdi-hardware-keyboard-arrow-up"></i> 70% <span class="purple-text text-lighten-5">last month</span>
                                         </p>
                                     </div>
@@ -107,7 +107,7 @@
 					  <tr>
 						<td><?php echo $close->costumer_fname;?></td>
 						<td><?php echo $close->party; ?></td>
-						<td><?php echo $close->winner_id;?></td>
+						<td><?php echo $close->completed;?></td>
 					  </tr>
 						<?php } ?>
 					<?php } ?>	 
@@ -128,40 +128,26 @@
               <span class="card-title">New Costumers</span>
               <p>I am a very simple card. I am good at containing small bits of information.
               I am convenient because I require little markup to use effectively.</p>
-			  <ul class="collection">
-					<li class="collection-item avatar">
-					  <img src="images/yuna.jpg" alt="" class="circle">
-					  <span class="title">Title</span>
-					  <p>First Line <br>
-						 Second Line
-					  </p>
-					  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-					</li>
-					<li class="collection-item avatar">
-					  <i class="material-icons circle">folder</i>
-					  <span class="title">Title</span>
-					  <p>First Line <br>
-						 Second Line
-					  </p>
-					  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-					</li>
-					<li class="collection-item avatar">
-					  <i class="material-icons circle green">insert_chart</i>
-					  <span class="title">Title</span>
-					  <p>First Line <br>
-						 Second Line
-					  </p>
-					  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-					</li>
-					<li class="collection-item avatar">
-					  <i class="material-icons circle red">play_arrow</i>
-					  <span class="title">Title</span>
-					  <p>First Line <br>
-						 Second Line
-					  </p>
-					  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-					</li>
-				  </ul>
+			   <table  class="striped">
+					<thead>
+					<tr>
+						  <th data-field="id">Costumer Name</th>
+						  <th data-field="name">Email</th>
+						  <th data-field="price">Zipcode</th>
+					  </tr>
+					</thead>
+					<tbody>
+					<?php if( !empty($orders) ) { ?>
+						<?php foreach($orders as $order){?>
+					  <tr>
+						<td><?php echo $order->costumer_fname;?></td>
+						<td><?php echo $order->costumer_email; ?></td>
+						<td><?php echo $order->zipcode;?></td>
+					  </tr>
+						<?php } ?>
+					<?php } ?>	 
+					</tbody>
+				  </table>
             </div>
             <div class="card-action">
               <a href="#">This is a link</a>
@@ -176,40 +162,26 @@
               <span class="card-title">New Barista</span>
               <p>I am a very simple card. I am good at containing small bits of information.
               I am convenient because I require little markup to use effectively.</p>
-			  <ul class="collection">
-					<li class="collection-item avatar">
-					  <img src="images/yuna.jpg" alt="" class="circle">
-					  <span class="title">Title</span>
-					  <p>First Line <br>
-						 Second Line
-					  </p>
-					  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-					</li>
-					<li class="collection-item avatar">
-					  <i class="material-icons circle">folder</i>
-					  <span class="title">Title</span>
-					  <p>First Line <br>
-						 Second Line
-					  </p>
-					  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-					</li>
-					<li class="collection-item avatar">
-					  <i class="material-icons circle green">insert_chart</i>
-					  <span class="title">Title</span>
-					  <p>First Line <br>
-						 Second Line
-					  </p>
-					  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-					</li>
-					<li class="collection-item avatar">
-					  <i class="material-icons circle red">play_arrow</i>
-					  <span class="title">Title</span>
-					  <p>First Line <br>
-						 Second Line
-					  </p>
-					  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-					</li>
-				  </ul>
+			  <table  class="striped">
+					<thead>
+					<tr>
+						  <th data-field="id">Company Name</th>
+						  <th data-field="name">Barista</th>
+						  <th data-field="price">Contact</th>
+					  </tr>
+					</thead>
+					<tbody>
+					<?php if( !empty($barista) ) { ?>
+						<?php foreach($barista as $bar){?>
+					  <tr>
+						<td><?php echo $bar->company;?></td>
+						<td><?php echo $bar->fname; ?></td>
+						<td><?php echo $bar->mobile?></td>
+					  </tr>
+						<?php } ?>
+					<?php } ?>	 
+					</tbody>
+				  </table>
             </div>
             <div class="card-action">
               <a href="#">This is a link</a>
