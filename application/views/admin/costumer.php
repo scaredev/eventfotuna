@@ -19,8 +19,8 @@
 							<?php if( !empty($results) ) { ?>
 								<?php foreach($results as $persons){?>
 									<tr class="">
-									<td><?php echo $persons->fname;?> </td>
-									<td><?php echo $persons->email;?> </td>
+									<td><?php echo $persons->costumer_fname;?> </td>
+									<td><?php echo $persons->costumer_email;?> </td>
 									<td><?php echo $persons->party;?> </td>
 									<td><?php echo $persons->tel;?> </td>
 									<td><?php echo $persons->address;?></td>

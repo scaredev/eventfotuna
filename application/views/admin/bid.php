@@ -7,7 +7,8 @@
 						<thead>
 							<tr>
 								<th>Transaction code</th>
-								<th>Costumer</th>
+								<th>Costumer Name</th>
+								<th>Costumer Email</th>
 								<th>Event Type</th>
 								<th>Total Bidders</th>
 								<th>Winner</th>
@@ -20,7 +21,8 @@
 								<?php foreach($results as $bids){?>
 									<tr class="">
 									<td><?php echo $bids->transaction_id;?> </td>
-									<td><?php echo $bids->orders.email;?> </td>
+									<td><?php echo $bids->costumer_fname;?> </td>
+									<td><?php echo $bids->costumer_email;?> </td>
 									<td><?php echo $bids->party;?> </td>
 									<td><?php echo $bids->tel;?> </td>
 									<td><?php echo $bids->address;?></td>

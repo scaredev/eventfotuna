@@ -22,7 +22,7 @@
 									<td><?php echo $persons->user_id;?> </td>
 									<td><?php echo $persons->company;?> </td>
 									<td><?php echo $persons->fname;?> </td>
-									<td><?php echo $persons->email;?> </td>
+									<td><?php echo $persons->user_email;?> </td>
 									<td><?php echo $persons->company_address;?></td>
 									<td>
 									<?php if($persons->active == 1){

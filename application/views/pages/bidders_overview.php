@@ -3,7 +3,7 @@
 	<div class="ul-wrapper">
 	<?php if( !empty($results) ) { ?>
 		<?php echo $errors;?>
-    <h4>Hi <?php echo $orders->fname;?>, Your OrderId: <?php echo $orders->transaction_id;?></h4>
+    <h4>Hi <?php echo $orders->costumer_fname;?>, Your OrderId: <?php echo $orders->transaction_id;?></h4>
     <p>List of bidders for your Upcomming Event, Order last: <?php echo $orders->orderdate;?></p>
 	<p>With the following details: </br> Total number of expected guest: <?php echo $orders->participants;?></p>
 	<p>Parytype: <?php echo $orders->partytype;?></p>
@@ -34,7 +34,7 @@
 										  <td><?php echo $bids->mobile;?> </td>
 										  <td><?php echo $bids->cart_type;?></td>
 										  <td><?php echo $bids->services?></td>
-										  <td><?php echo $bids->prize;?> </td>
+										  <td><?php echo $bids->bid_prize;?> </td>
 										  
 											<?php if ($bids->completed != 0){ ?>
 													

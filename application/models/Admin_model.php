@@ -68,8 +68,8 @@ class Admin_model extends CI_Model
 		$this->db->limit($limit, $start);
 		$this->db->select('*');
 		$this->db->from('bidding');
-	    $this->db->join('orders','bidding.order_id = orders.orders_id');
-		$this->db->join('user','user.user_id = bidding.barista_id');
+	    $this->db->join('orders','bidding.bid_order_id = orders.orders_id');
+		$this->db->join('user','user.user_id = bidding.bid_barista_id');
 	    $query = $this->db->get();
 
         if ($query->num_rows() > 0) {

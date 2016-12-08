@@ -33,7 +33,7 @@
 		    <a href="" class="page-title active primary-text-color"><?php echo $title;?></a>
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 			 <li>				
-				<a href=""><span class="email primary-text-color"><?php echo $user->email;?></a>	
+				<a href=""><span class="email primary-text-color"><?php echo $user->user_email;?></a>	
 			</li>
 			 <li><a href=""class="primary-text-color"><i class="large material-icons primary-text-color ">notifications</i></a></li>
 			 <li>
@@ -69,7 +69,7 @@
 			  </div>
 			  <a href="#!user" class="tooltipped" data-position="right" data-delay="50" data-tooltip="Logo" ><img class="circle" src="<?php echo base_url();?>img/binoculars.png"></a>
 			  <a href="#!name"><span class="name"><?php echo $user->company;?></span></a>
-			  <a href="#!email"><span class="email"><?php echo $user->email;?></span></a>
+			  <a href="#!email"><span class="email"><?php echo $user->user_email;?></span></a>
 			</div>
 		</li>
 		<li class="  <?php if($title=="Profile"){echo "default-primary-color   active ";}?>">
