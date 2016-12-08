@@ -60,40 +60,26 @@
             <div class="card-content">
               <span class="card-title">Latest Open Orders</span>
               <p>Lorem isda.</p>
-				<ul class="collection">
-					<li class="collection-item avatar">
-					  <img src="images/yuna.jpg" alt="" class="circle">
-					  <span class="title">Title</span>
-					  <p>First Line <br>
-						 Second Line
-					  </p>
-					  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-					</li>
-					<li class="collection-item avatar">
-					  <i class="material-icons circle">folder</i>
-					  <span class="title">Title</span>
-					  <p>First Line <br>
-						 Second Line
-					  </p>
-					  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-					</li>
-					<li class="collection-item avatar">
-					  <i class="material-icons circle green">insert_chart</i>
-					  <span class="title">Title</span>
-					  <p>First Line <br>
-						 Second Line
-					  </p>
-					  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-					</li>
-					<li class="collection-item avatar">
-					  <i class="material-icons circle red">play_arrow</i>
-					  <span class="title">Title</span>
-					  <p>First Line <br>
-						 Second Line
-					  </p>
-					  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-					</li>
-				  </ul>
+				  <table  class="striped">
+					<thead>
+					<tr>
+						  <th data-field="id">Costumer Name</th>
+						  <th data-field="name">Party Ttype</th>
+						  <th data-field="price">Participants</th>
+					  </tr>
+					</thead>
+					<tbody>
+					<?php if( !empty($orders) ) { ?>
+						<?php foreach($orders as $order){?>
+					  <tr>
+						<td><?php echo $order->costumer_fname;?></td>
+						<td><?php echo $order->party; ?></td>
+						<td><?php echo $order->participants;?></td>
+					  </tr>
+						<?php } ?>
+					<?php } ?>	 
+					</tbody>
+				  </table>
             </div>
             <div class="card-action">
               <a href="#">This is a link</a>
@@ -107,40 +93,26 @@
               <span class="card-title">Latest Closed Orders</span>
               <p>I am a very simple card. I am good at containing small bits of information.
               I am convenient because I require little markup to use effectively.</p>
-				<ul class="collection">
-					<li class="collection-item avatar">
-					  <img src="images/yuna.jpg" alt="" class="circle">
-					  <span class="title">Title</span>
-					  <p>First Line <br>
-						 Second Line
-					  </p>
-					  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-					</li>
-					<li class="collection-item avatar">
-					  <i class="material-icons circle">folder</i>
-					  <span class="title">Title</span>
-					  <p>First Line <br>
-						 Second Line
-					  </p>
-					  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-					</li>
-					<li class="collection-item avatar">
-					  <i class="material-icons circle green">insert_chart</i>
-					  <span class="title">Title</span>
-					  <p>First Line <br>
-						 Second Line
-					  </p>
-					  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-					</li>
-					<li class="collection-item avatar">
-					  <i class="material-icons circle red">play_arrow</i>
-					  <span class="title">Title</span>
-					  <p>First Line <br>
-						 Second Line
-					  </p>
-					  <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-					</li>
-				  </ul>
+				 <table  class="striped">
+					<thead>
+					<tr>
+						  <th data-field="id">Costumer Name</th>
+						  <th data-field="name">Party Ttype</th>
+						  <th data-field="price">Barista</th>
+					  </tr>
+					</thead>
+					<tbody>
+					<?php if( !empty($closed) ) { ?>
+						<?php foreach($closed as $close){?>
+					  <tr>
+						<td><?php echo $close->costumer_fname;?></td>
+						<td><?php echo $close->party; ?></td>
+						<td><?php echo $close->winner_id;?></td>
+					  </tr>
+						<?php } ?>
+					<?php } ?>	 
+					</tbody>
+				  </table>
             </div>
             <div class="card-action">
               <a href="#">This is a link</a>

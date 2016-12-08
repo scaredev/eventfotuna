@@ -26,6 +26,9 @@ class Admin extends CI_Controller{
 		
 			$data['user'] = $this->Login_model->getById()->row(); 
 			$data['title'] = ucfirst($pages); // Capitalize the first letter
+			$data['barista']=$this->Admin_model->fetch_latest_user();
+			$data['orders']= $this->Admin_model->fetch_latest_orders();
+			$data['closed']= $this->Admin_model->fetch_closed_orders();
 			$this->load->view('templates/admin-material-header',$data);
 			$this->load->view('admin/dashboard');
 			$this->load->view('templates/material-footer');
@@ -239,13 +242,10 @@ class Admin extends CI_Controller{
 	function accounts(){
 		
 		if($this->session->userdata('logged_in') && ($this->session->userdata('admin') == 1)){
-		$data = array(
-				'email'=> "cacuyado@gmail",
-				'user'=> "crisnil",
-				'company'=> "scardev"
-		);
+			
+			$data['user'] = $this->Login_model->getById()->row();
 			$data ['company']= "scaredev" ;
-			$data['title'] = ucfirst('accounts listing'); // Capitalize the first letter
+			$data['title'] = ucfirst('account settings'); // Capitalize the first letter
 			$this->load->view('templates/admin-material-header',$data);
 			$this->load->view('admin/accounts_listing');
 			$this->load->view('templates/material-footer');

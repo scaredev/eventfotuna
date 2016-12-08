@@ -8,8 +8,59 @@ class Admin_model extends CI_Model
           parent::__construct();
 		  
      }
+	
+	 function fetch_latest_user() {
+	    
+		$this->db->limit(5);
+		$this->db->select('*');
+		$this->db->from('user');		
+	    $query = $this->db->get();
 
-	public function user_count() {
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+        return false;
+	 }	
+		
+	 function fetch_latest_orders() {
+	    
+		$this->db->limit(5);
+		$this->db->select('*');
+		$this->db->from('orders');	
+		$this->db->where('completed',0)	;
+		$this->db->order_by('orderdate','desc');
+	    $query = $this->db->get();
+
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+        return false;
+   }
+    function fetch_closed_orders() {
+	    
+		$this->db->limit(5);
+		$this->db->select('*');
+		$this->db->from('orders');	
+		$this->db->where('completed !=', 0)	;
+		$this->db->order_by('orderdate','desc');
+	    $query = $this->db->get();
+
+        if ($query->num_rows() > 0) {
+            foreach ($query->result() as $row) {
+                $data[] = $row;
+            }
+            return $data;
+        }
+        return false;
+   }
+
+	function user_count() {
 		  
 		   $this->db->select('*');
 		   $this->db->from('user');
@@ -17,7 +68,7 @@ class Admin_model extends CI_Model
 	}
 
 	// Fetch data according to per_page limit.
-	public function fetch_user($limit, $start) {
+	 function fetch_user($limit, $start) {
 	    
 		$this->db->limit($limit, $start);
 		$this->db->select('*');
@@ -32,7 +83,7 @@ class Admin_model extends CI_Model
         }
         return false;
    }
-   public function orders_count() {
+    function orders_count() {
 		  
 		   $this->db->select('*');
 		   $this->db->from('orders');
@@ -40,7 +91,7 @@ class Admin_model extends CI_Model
 	}
 
 	// Fetch data according to per_page limit.
-	public function fetch_orders($limit, $start) {
+	 function fetch_orders($limit, $start) {
 	    
 		$this->db->limit($limit, $start);
 		$this->db->select('*');
@@ -55,7 +106,7 @@ class Admin_model extends CI_Model
         }
         return false;
    }
-   public function count_all_bids() {
+    function count_all_bids() {
 		  
 		   $this->db->select('*');
 		   $this->db->from('bidding');
@@ -63,7 +114,7 @@ class Admin_model extends CI_Model
 	}
 
 	// Fetch data according to per_page limit.
-	public function fetch_all_biddings($limit, $start) {
+	 function fetch_all_biddings($limit, $start) {
 	    
 		$this->db->limit($limit, $start);
 		$this->db->select('*');

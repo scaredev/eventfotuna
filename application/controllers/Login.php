@@ -60,7 +60,13 @@ class login extends CI_Controller
 		
 		if($this->session->userdata('logged_in')){
 			
-			redirect('Event/overview');
+			if ($this->session->userdata('admin')){
+					redirect('Admin/dashboard');
+				}
+				else{
+					redirect('Event/overview');
+				}
+	
 		}else{
 		
 		$email = $this->input->post("email");

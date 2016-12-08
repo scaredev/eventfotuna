@@ -25,7 +25,7 @@
 									<td><?php echo $bids->costumer_email;?> </td>
 									<td><?php echo $bids->party;?> </td>
 									<td><?php echo $bids->tel;?> </td>
-									<td><?php echo $bids->address;?></td>
+									<td><?php echo $bids->bid_completed;?></td>
 									<?php if ($bids->completed == 0){ ?>
 									<td><div class="valign-wrapper"><div class="chip green darken-4 text-primary-color">Open</div></div></td>
 									<?php } else { ?>
