@@ -19,9 +19,9 @@
 											cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 											proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br/>
 					  <a class="grey-text text-darken-3" href="#" style="margin-right: 20px;"><i class="material-icons">location_on</i> <?php echo $user->company_address;?></a>
-					  <a class="grey-text text-darken-3" href="#" style="margin-right: 20px;"><i class="material-icons">email</i> <?php echo $user->email;?></a>
+					  <a class="grey-text text-darken-3" href="#" style="margin-right: 20px;"><i class="material-icons">email</i> <?php echo $user->user_email;?></a>
 					  <a class="grey-text text-darken-3" href="#" style="margin-right: 20px;"><i class="material-icons">call</i> <?php echo $user->mobile;?></a>
-					  <a class="grey-text text-darken-3" href="#"><i class="material-icons">language</i><?php echo $user->email;?></a>
+					  <a class="grey-text text-darken-3" href="#"><i class="material-icons">language</i><?php echo $user->user_email;?></a>
 						  
 					  
 					</div>

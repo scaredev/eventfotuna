@@ -11,7 +11,7 @@ class Bid_model extends CI_Model
 	function add_bid(){
 		
 		$this->db->select('user_id');
-		$this->db->where('email', $this->session->userdata('email'));
+		$this->db->where('user_email', $this->session->userdata('email'));
 		$this->db->limit(1);
 		$bidder = $this->db->get('user')->row();
 		
@@ -19,10 +19,10 @@ class Bid_model extends CI_Model
 		
 		
 		$bid = array(
-		'order_id'=>$this->input->post('order-id'),
+		'bid_order_id'=>$this->input->post('order-id'),
 		'transaction_id'=>$this->input->post('trans-id'),
-		'barista_id'=>$bidder->user_id,
-		'prize'=>$this->input->post('prize'),
+		'bid_barista_id'=>$bidder->user_id,
+		'bid_prize'=>$this->input->post('prize'),
 		'bid_completed' => "0"
 		);
 		

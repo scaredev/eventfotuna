@@ -21,15 +21,15 @@
 									  <?php foreach($results as $bids){?>
 									  
 										<tr class="">
-										  <td><?php echo $bids->fname;?> </td>
+										  <td><?php echo $bids->costumer_fname;?> </td>
 										  <td><?php echo $bids->party;?> </td>
 										  <td><?php echo $bids->partytype;?> </td>
 										  <td><?php echo $bids->participants;?> </td>
 										  <td><?php echo $bids->address;?> <br><?php echo $bids->zipcode;?></td>
-										  <td><?php echo $bids->prize;?> </td>
+										  <td><?php echo $bids->bid_prize;?> </td>
 										  
 											<?php if ($bids->completed != 0){ ?>
-													<?php if ($bids->completed === $bids->barista_id){ ?>
+													<?php if ($bids->completed === $bids->bid_barista_id){ ?>
 														<td><div class="valign-wrapper"><div class="chip teal text-primary-color">Win</div></div></td>
 													<?php } else {?>
 														<td><div class="valign-wrapper"><div class="chip orange darken-4 text-primary-color">Lost</div></div></td>

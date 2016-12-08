@@ -8,7 +8,7 @@
 				
 				<div class="collapsible-header ">
 						<span class="new badge hide-on-med-and-up" data-badge-caption="Total bidder">4</span>	
-						<i class="material-icons secondary-text-color">person_pin</i><?php echo $items->orders_id;?>: <?php echo $items->fname;?>
+						<i class="material-icons secondary-text-color">person_pin</i><?php echo $items->orders_id;?>: <?php echo $items->costumer_fname;?>
 						<div class="right hide-on-small-and-down">
 							
 						<span class="left databits"><i class="material-icons secondary-text-color">supervisor_account</i><?php echo $items->participants;?> participants</span>

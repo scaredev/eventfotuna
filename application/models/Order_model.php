@@ -40,11 +40,11 @@ class Order_model extends CI_Model
 	    $this->db->select('*');	 
 		$this->db->from('bidding');
 		$this->db->where('bid_completed',0);
-		$this->db->where('order_id',$this->uri->segment(2));
+		$this->db->where('bid_order_id',$this->uri->segment(2));
 		$this->db->where('transaction_id',$this->uri->segment(3));
-		$this->db->join('user','user.user_id = bidding.barista_id');
+		$this->db->join('user','user.user_id = bidding.bid_barista_id');
 		$this->db->limit(3);
-		$this->db->order_by('prize','asc');
+		$this->db->order_by('bid_prize','asc');
 		$query = $this->db->get();
 
         if ($query->num_rows() > 0) {
@@ -90,7 +90,7 @@ class Order_model extends CI_Model
    }
    
    public function bid_count() {
-		$this->db->where('barista_id',$this->session->userdata('id'));
+		$this->db->where('bid_barista_id',$this->session->userdata('id'));
 		$this->db->from('bidding');
 	return $this->db->count_all_results();
 	}
@@ -102,8 +102,8 @@ class Order_model extends CI_Model
 		
 		$this->db->select('*');
 		$this->db->from('bidding');
-		$this->db->join('orders', 'orders.orders_id = bidding.order_id');
-		$this->db->where('barista_id',$this->session->userdata('id'));
+		$this->db->join('orders', 'orders.orders_id = bidding.bid_order_id');
+		$this->db->where('bid_barista_id',$this->session->userdata('id'));
 		$query = $this->db->get();
 				
 

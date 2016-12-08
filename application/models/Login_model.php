@@ -36,7 +36,7 @@ class Login_model extends CI_Model
 	
 
     $this->db->from('user');
-    $this->db->where('email',$email );
+    $this->db->where('user_email',$email );
     $this->db->where( 'password', md5($pass) );
 	$this->db->where('active',$active );
     $login = $this->db->get()->result();
@@ -59,7 +59,7 @@ class Login_model extends CI_Model
     $this->session->set_userdata( array(
             'id'=>$this->details->user_id,
             'name'=> $this->details->fname . ' ' . $this->details->lname,
-            'email'=>$this->details->email,
+            'email'=>$this->details->user_email,
             'avatar'=>$this->details->fname,
 			'admin'=>$this->details->admin,
             'completed'=>$this->details->completed,
@@ -69,7 +69,7 @@ class Login_model extends CI_Model
 }
 	function getById() 
     {     
-        $this->db->where('email',$this->session->userdata('email'));
+        $this->db->where('user_email',$this->session->userdata('email'));
         return $this->db->get('user');
 	
 	}
