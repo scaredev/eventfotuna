@@ -63,7 +63,7 @@ class Admin_model extends CI_Model
 	}
 
 	// Fetch data according to per_page limit.
-	public function fetch_all_bidding($limit, $start) {
+	public function fetch_all_biddings($limit, $start) {
 	    
 		$this->db->limit($limit, $start);
 		$this->db->select('*');

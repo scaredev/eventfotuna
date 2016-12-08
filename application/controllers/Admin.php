@@ -228,7 +228,7 @@ class Admin extends CI_Controller{
 				 }
 		
 			$this->load->view('templates/admin-material-header',$data);
-			$this->load->view('admin/barista',$data);
+			$this->load->view('admin/bid',$data);
 			$this->load->view('templates/material-footer');
 			
 			}else{

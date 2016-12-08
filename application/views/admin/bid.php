@@ -19,8 +19,8 @@
 							<?php if( !empty($results) ) { ?>
 								<?php foreach($results as $bids){?>
 									<tr class="">
-									<td><?php echo $bids->fname;?> </td>
-									<td><?php echo $bids->email;?> </td>
+									<td><?php echo $bids->transaction_id;?> </td>
+									<td><?php echo $bids->orders.email;?> </td>
 									<td><?php echo $bids->party;?> </td>
 									<td><?php echo $bids->tel;?> </td>
 									<td><?php echo $bids->address;?></td>
