@@ -22,7 +22,7 @@
 						  <label for="company">Company</label>
 						</div>
 						<div class="input-field col s6">
-						  <input name="cart-type" placeholder="Cart Type" id="first_name" type="text" class="validate">
+						  <input name="cart-type" placeholder="Cart Type" id="first_name" type="text" class="validate" pattern="-?[0-9]*(\.[0-9]+)?" length="8" maxlength="8" required>
 						  <label for="cart-type">CVR</label>
 						</div>
 					</div>
@@ -32,7 +32,7 @@
 						  <label for="fname">First Name</label>
 						</div>
 						<div class="input-field col s6">
-						  <input name="mobile" placeholder="xxxxxxxx" id="last_name" type="text" class="validate" pattern="-?[0-9]*(\.[0-9]+)?" length="8" required>
+						  <input name="mobile" placeholder="xxxxxxxx" id="last_name" type="text" class="validate" pattern="-?[0-9]*(\.[0-9]+)?" length="8" maxlength="8" required>
 						  <label for="mobile">mobile number</label>
 						</div>
 					</div>
@@ -42,7 +42,7 @@
 						  <label for="email" data-error="wrong format" data-success="success">Email Address</label>
 						</div>
 						<div class="input-field col s12">
-						  <input name="password" placeholder="Placeholder" id="first_name" type="password" class="validate" required length="8" >
+						  <input name="password" placeholder="Placeholder" id="first_name" type="password" class="validate" required minlength="8" >
 						  <label for="password">Password</label>
 						</div>
 						

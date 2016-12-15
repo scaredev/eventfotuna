@@ -17,7 +17,7 @@ class Register extends CI_Controller
           $this->load->model('Register_model');
 		  $this->load->library('email');
 		  $this->load->library('encrypt');
-		  $this->load->helper('typography');
+		  $this->load->helper('typography'); 
      }
 	 
 function testmail(){

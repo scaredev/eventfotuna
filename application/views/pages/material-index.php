@@ -46,7 +46,7 @@
 								<form id="company_form"  role="form" action="<?php echo base_url();?>Order/pre_order" method="post" class="primary-text-color">
 									<div  class="input-field">
 										<select name="partytype" class="primary-text-color" id="party-type">
-
+										 <option value="" disabled selected>Select Party Type</option>
 										  <option value="Bryllup">Bryllup</option>
 										  <option value="Barnedab">Barnedab</option>
 										  <option value="Komfirmation">Komfirmation</option>
@@ -54,14 +54,14 @@
 										  <option value="Fodseldag">Fodseldag</option>
 										   <option value="Other...">Other...</option>
 										</select>
-										<label for="party-type">Select Party Type</label>
+										<label for="party-type">Party Type</label>
 									</div>		
 									<div  class="input-field">
 									<input name="fname" id="first_name" type="text" class="validate primary-text-color" required>
 									<label for="first_name">First Name</label>
 									</div>
 									<div  class="input-field">
-									<input  name="zipcode" id="zipcode" type="text" class="validate primary-text-color" pattern="-?[0-9]*(\.[0-9]+)?" length="8" required>
+									<input  name="zipcode" id="zipcode" type="text" class="validate primary-text-color" pattern="-?[0-9]*(\.[0-9]+)?" length="8" maxlength="8" required>
 									<label for="zipcode">Zip Code</label>
 									</div>
 									<input  name="party" id="party" type="hidden" value="company">
@@ -72,21 +72,21 @@
 								<form id="private_form"  role="form" action="<?php echo base_url();?>Order/pre_order" method="post" class="primary-text-color">
 									<div  class="input-field">
 										<select  name="partytype" class="primary-text-color" id="party-type">
-										 
+										  <option value="" disabled selected>Select Party Type</option>
 										  <option value="Conference">Conference</option>
 										  <option value="Reception">Reception</option>
 										  <option value="Messe">Messe</option>
 										  <option value="Promovering">Promovering</option>
 										  <option value="Other...">Other...</option>
 										</select>
-										<label for="party-type">Select Party Type</label>
+										<label for="party-type">Party Type</label>
 									</div>		
 									<div  class="input-field">
 									<input name="fname" id="first_name2" type="text" class="validate primary-text-color">
 									<label for="first_name2">First Name</label>
 									</div>
 									<div  class="input-field">
-									<input name="zipcode" id="zipcode2" type="text" class="validate primary-text-color" pattern="-?[0-9]*(\.[0-9]+)?" length="8" required>
+									<input name="zipcode" id="zipcode2" type="text" class="validate primary-text-color" pattern="-?[0-9]*(\.[0-9]+)?" length="8" maxlength="8" required>
 									<label for="zipcode2">Zip Code</label>
 									</div>
 									<input  name="party" id="party" type="hidden" value="private">
@@ -124,7 +124,7 @@
 						  <label for="company">Company</label>
 						</div>
 						<div class="input-field col s6">
-						  <input name="cart-type" placeholder="Cart Type" id="first_name" type="text" class="validate">
+						  <input name="cart-type" placeholder="Cart Type" id="first_name" type="text" class="validate" pattern="-?[0-9]*(\.[0-9]+)?" required length="8" maxlength="8">
 						  <label for="cart-type">CVR</label>
 						</div>
 					</div>
@@ -134,7 +134,7 @@
 						  <label for="fname">First Name</label>
 						</div>
 						<div class="input-field col s6">
-						  <input name="mobile" placeholder="xxxxxxxx" id="mobile" type="text" class="validate" pattern="-?[0-9]*(\.[0-9]+)?" length="8" required>
+						  <input name="mobile" placeholder="xxxxxxxx" id="mobile" type="text" class="validate" pattern="-?[0-9]*(\.[0-9]+)?" required length="8" maxlength="8">
 						  <label for="mobile">mobile number</label>
 						</div>
 					</div>
@@ -144,7 +144,7 @@
 						  <label for="email" data-error="wrong format" data-success="success">Email Address</label>
 						</div>
 						<div class="input-field col s12">
-						  <input name="password" placeholder="Placeholder" id="password" type="password" class="validate" required length="8" >
+						  <input name="password" placeholder="Placeholder" id="password" type="password" class="validate" required minlength="8" >
 						  <label for="first_name">Password</label>
 						</div>
 						
@@ -204,10 +204,10 @@
 							</ul>
 							<br/>
 							<div id="testa1">
-								<form id="company_form"  role="form" action="<?php echo base_url();?>Order/pre_order" method="post">
+								<form id="company_form"  role="form" action="<?php echo base_url();?>Order/pre_order" method="post" class="primary-text-color">
 									<div  class="input-field">
 										<select name="partytype" class="primary-text-color" id="party-type">
-										  <option value="" disabled selected>Choose your option</option>
+
 										  <option value="Bryllup">Bryllup</option>
 										  <option value="Barnedab">Barnedab</option>
 										  <option value="Komfirmation">Komfirmation</option>
@@ -222,18 +222,18 @@
 									<label for="first_name">First Name</label>
 									</div>
 									<div  class="input-field">
-									<input  name="zipcode" id="zipcode" type="text" class="validate primary-text-color"pattern="-?[0-9]*(\.[0-9]+)?" required length="8">
-									<label for="first_name">Zip Code</label>
+									<input  name="zipcode" id="zipcode" type="text" class="validate primary-text-color" pattern="-?[0-9]*(\.[0-9]+)?" length="8" maxlength="8" required>
+									<label for="zipcode">Zip Code</label>
 									</div>
 									<input  name="party" id="party" type="hidden" value="company">
 									<button class="btn btn-small " type="submit" href="#">Submit</button>		
 								</form>
 							</div>
 							<div id="testa2" >
-								<form id="private_form"  role="form" action="<?php echo base_url();?>Order/pre_order" method="post">
+								<form id="private_form"  role="form" action="<?php echo base_url();?>Order/pre_order" method="post" class="primary-text-color">
 									<div  class="input-field">
 										<select  name="partytype" class="primary-text-color" id="party-type">
-										  <option value="" disabled selected>Choose your option</option>
+										 
 										  <option value="Conference">Conference</option>
 										  <option value="Reception">Reception</option>
 										  <option value="Messe">Messe</option>
@@ -243,12 +243,12 @@
 										<label for="party-type">Select Party Type</label>
 									</div>		
 									<div  class="input-field">
-									<input name="fname" id="first_name" type="text" class="validate primary-text-color">
-									<label for="first_name">First Name</label>
+									<input name="fname" id="first_name2" type="text" class="validate primary-text-color">
+									<label for="first_name2">First Name</label>
 									</div>
 									<div  class="input-field">
-									<input name="zipcode" id="zipcode" type="text" class="validate primary-text-color"pattern="-?[0-9]*(\.[0-9]+)?" required length="8">
-									<label for="first_name">Zip Code</label>
+									<input name="zipcode" id="zipcode2" type="text" class="validate primary-text-color" pattern="-?[0-9]*(\.[0-9]+)?" length="8" maxlength="8" required>
+									<label for="zipcode2">Zip Code</label>
 									</div>
 									<input  name="party" id="party" type="hidden" value="private">
 									<button class="btn btn-small " type="submit" href="#">Submit</button>

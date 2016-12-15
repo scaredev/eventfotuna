@@ -26,7 +26,9 @@
         </footer>
 	 
 	 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	 
      <script type="text/javascript" src="<?php echo base_url();?>js/materialize.min.js"></script>
+	 
 	  <script type="text/javascript">
 	  
 	  $(document).ready(function() {
@@ -89,9 +91,10 @@
   });
   </script>
   
-  <script type="text/javascript>
+ 
+  <script type="text/javascript">
   
-   $("#company_form).validate({
+   $('#company_form').validate({
         rules: {
             uname: {
                 required: true,

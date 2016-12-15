@@ -26,7 +26,7 @@
 		  <li><a class="secondary-text-color" href="#!">menuone</a></li>
 		  <li><a class="secondary-text-color" href="#!">menutwo</a></li>
 		  <li class="divider"></li>
-		  <li><a class="secondary-text-color" href="#!">logout</a></li>
+		  <li><a class="secondary-text-color" href="<?=base_url();?>Login/logout">logout</a></li>
 		</ul>
 		<nav class="top-nav white flow-text hide-on-med-and-down">
 		 <div class=" center">

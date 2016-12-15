@@ -24,7 +24,7 @@
 		  <label for="email" data-error="not an email" data-success="right" >Email</label>
         </div>
 		<div class="input-field col s6">
-          <input name="tel" id="tel" type="text" class="validate primary-text-color" pattern="-?[0-9]*(\.[0-9]+)?" required length="8">
+          <input name="tel" id="tel" type="text" class="validate primary-text-color" pattern="-?[0-9]*(\.[0-9]+)?" required length="8" maxlength="8">
 		  <label for="tel" data-error="not a number">Tel#</label>
         </div>
       </div>
@@ -34,8 +34,8 @@
           <label for="participants" data-error="not a number">No. of Participants</label>
         </div>
 		<div class="input-field col s6">
-          <input name="eventdate" id="date-picker" type="date" class="datepicker" required>
-          <label for="date-picker">Date</label>
+          <input name="eventdate" id="date-picker" type="date" class="datepicker" placeholder="Date" required>
+         
         </div>
       </div>
       <div class="row">
@@ -45,7 +45,7 @@
         </div>
 		<div class="input-field col s6">
 		  <input name="fname" id="zipcode" type="hidden" class="validate" value="<?php echo $fname;?>">
-          <input name="zipcode" id="zipcode" type="text" class="validate" value="<?php echo $zipcode;?>">
+          <input name="zipcode" id="zipcode" type="text" class="validate" value="<?php echo $zipcode;?>" pattern="-?[0-9]*(\.[0-9]+)?" required length="8" maxlength="8">
           <label for="zipcode" >Zip Code</label>
         </div>
       </div>
