@@ -46,7 +46,7 @@
 								<form id="company_form"  role="form" action="<?php echo base_url();?>Order/pre_order" method="post" class="primary-text-color">
 									<div  class="input-field">
 										<select name="partytype" class="primary-text-color" id="party-type">
-										  <option value="" disabled selected>Choose your option</option>
+
 										  <option value="Bryllup">Bryllup</option>
 										  <option value="Barnedab">Barnedab</option>
 										  <option value="Komfirmation">Komfirmation</option>
@@ -72,7 +72,7 @@
 								<form id="private_form"  role="form" action="<?php echo base_url();?>Order/pre_order" method="post" class="primary-text-color">
 									<div  class="input-field">
 										<select  name="partytype" class="primary-text-color" id="party-type">
-										  <option value="" disabled selected>Choose your option</option>
+										 
 										  <option value="Conference">Conference</option>
 										  <option value="Reception">Reception</option>
 										  <option value="Messe">Messe</option>
