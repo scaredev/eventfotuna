@@ -26,10 +26,12 @@
 									</div>
                               
                <div class="form-group">
-               <div class="col-lg-12 col-sm-12 text-center">
-                    <input id="btn_login" name="btn_login" type="submit" class="btn btn-default" value="Login" />
-                    <input id="btn_cancel" name="btn_cancel" type="reset" class="btn btn-default" value="Cancel" />
-               </div>
+			   
+				   <div class="row text-center">
+						<input class="col s4 m4  btn btn-default" id="btn_login" name="btn_login" type="submit"  value="Login" />
+						<input class="col s4 m4 offset-s1 offset-m1 btn btn-default" id="btn_cancel" name="btn_cancel" type="reset"  value="Cancel" />
+				   </div>
+			  
                </div>
           </fieldset>
           <?php echo form_close(); ?>

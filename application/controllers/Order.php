@@ -30,8 +30,18 @@ class Order extends CI_Controller{
 		);
 		
 		$data['title'] = ucfirst("Order confirmation"); // Capitalize the first letter
-		$this->load->view('templates/material-header',$data);
+		$this->load->view('templates/order-header',$data);
 		$this->load->view('pages/confirm-order',$data);
+		$this->load->view('templates/material-footer');	
+		
+		
+	}
+	
+	function form_order(){
+		
+		$data['title'] = ucfirst("Order Form"); // Capitalize the first letter
+		$this->load->view('templates/order-header',$data);
+		$this->load->view('pages/form-order',$data);
 		$this->load->view('templates/material-footer');	
 		
 		

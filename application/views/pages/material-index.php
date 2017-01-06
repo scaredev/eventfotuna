@@ -13,7 +13,7 @@
 				  
 				</div>
 				<div class="action-button">
-				<a href="#order" class="waves-effect waves-orange large-blue">
+				<a href="<?php echo base_url();?>Order/form_order" class="waves-effect waves-orange large-blue">
 				
 				Order Some Coffee
 			  </a> 
@@ -37,9 +37,10 @@
 						  	<div class="divider"></div><br/>
 						
 							<ul id="host" class="tabs tabs-fixed-width flow-text">
-							<label for="host">Party Host</label>
-								<li class="tab col s3"><a href="#test1">Company</a></li>
-								<li class="tab col s3"><a class="" href="#test2">Private</a></li>
+							<label for="host">Host:</label>
+								<li class="tab col s3"><a class="" href="#test1">Private</a></li>
+								<li class="tab col s3"><a href="#test2">Firma</a></li>
+								
 							</ul>
 							<br/>
 							<div id="test1">
@@ -54,18 +55,18 @@
 										  <option value="Fodseldag">Fodseldag</option>
 										   <option value="Other...">Other...</option>
 										</select>
-										<label for="party-type">Party Type</label>
+										<label for="party-type">Fest Type:</label>
 									</div>		
 									<div  class="input-field">
 									<input name="fname" id="first_name" type="text" class="validate primary-text-color" required>
-									<label for="first_name">First Name</label>
+									<label for="first_name">Name:</label>
 									</div>
 									<div  class="input-field">
-									<input  name="zipcode" id="zipcode" type="text" class="validate primary-text-color" pattern="-?[0-9]*(\.[0-9]+)?" length="8" maxlength="8" required>
-									<label for="zipcode">Zip Code</label>
+									<input  name="zipcode" id="zipcode" type="text" class="validate primary-text-color" pattern="-?[0-9]*(\.[0-9]+)?" length="4" maxlength="4" required>
+									<label for="zipcode">Zip Code:</label>
 									</div>
 									<input  name="party" id="party" type="hidden" value="company">
-									<button class="btn btn-small " type="submit" href="#">Submit</button>		
+									<button class="btn waves-effect waves-orange  accent-color" type="submit" href="#">Submit</button>		
 								</form>
 							</div>
 							<div id="test2" >
@@ -79,18 +80,18 @@
 										  <option value="Promovering">Promovering</option>
 										  <option value="Other...">Other...</option>
 										</select>
-										<label for="party-type">Party Type</label>
+										<label for="party-type">Fest Type:</label>
 									</div>		
 									<div  class="input-field">
 									<input name="fname" id="first_name2" type="text" class="validate primary-text-color">
-									<label for="first_name2">First Name</label>
+									<label for="first_name2">Name:</label>
 									</div>
 									<div  class="input-field">
-									<input name="zipcode" id="zipcode2" type="text" class="validate primary-text-color" pattern="-?[0-9]*(\.[0-9]+)?" length="8" maxlength="8" required>
-									<label for="zipcode2">Zip Code</label>
+									<input name="zipcode" id="zipcode2" type="text" class="validate primary-text-color" pattern="-?[0-9]*(\.[0-9]+)?" length="4" maxlength="4" required>
+									<label for="zipcode2">Zip Code:</label>
 									</div>
 									<input  name="party" id="party" type="hidden" value="private">
-									<button class="btn btn-small " type="submit" href="#">Submit</button>
+									<button class="btn waves-effect waves-orange  accent-color " type="submit" href="#">Submit</button>
 								</form>
 							
 							</div>
@@ -120,32 +121,32 @@
 				<div class="ul-wrapper">
 					<div class="row">
 						<div class="input-field col s6">
-						  <input name="company" placeholder="Your Company" id="first_name" type="text" class="validate" required>
-						  <label for="company">Company</label>
+						  <input name="company"  id="first_name" type="text" class="validate" required>
+						  <label for="company">Firma:</label>
 						</div>
 						<div class="input-field col s6">
-						  <input name="cart-type" placeholder="Cart Type" id="first_name" type="text" class="validate" pattern="-?[0-9]*(\.[0-9]+)?" required length="8" maxlength="8">
-						  <label for="cart-type">CVR</label>
+						  <input name="cart-type" id="first_name" type="text" class="validate" pattern="-?[0-9]*(\.[0-9]+)?" required length="8" maxlength="8">
+						  <label for="cart-type">CVR:</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col s6">
-						  <input name="fname"placeholder="YourName" id="first_name" type="text" class="validate" required>
-						  <label for="fname">First Name</label>
+						  <input name="fname" id="first_name" type="text" class="validate" required>
+						  <label for="fname">Fulde navn:</label>
 						</div>
 						<div class="input-field col s6">
-						  <input name="mobile" placeholder="xxxxxxxx" id="mobile" type="text" class="validate" pattern="-?[0-9]*(\.[0-9]+)?" required length="8" maxlength="8">
-						  <label for="mobile">mobile number</label>
+						  <input name="mobile"  id="mobile" type="text" class="validate" pattern="-?[0-9]*(\.[0-9]+)?" required length="8" maxlength="8">
+						  <label for="mobile">Mobil nr:</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-						  <input name="email" placeholder="you@domain.com "id="last_name" type="email" class="validate" required>
-						  <label for="email" data-error="wrong format" data-success="success">Email Address</label>
+						  <input name="email" id="last_name" type="email" class="validate" required>
+						  <label for="email" data-error="wrong format" data-success="success">Email:</label>
 						</div>
 						<div class="input-field col s12">
-						  <input name="password" placeholder="Placeholder" id="password" type="password" class="validate" required minlength="8" >
-						  <label for="first_name">Password</label>
+						  <input name="password"  id="password" type="password" class="validate" required minlength="8" >
+						  <label for="first_name">Password:</label>
 						</div>
 						
 					</div>
@@ -156,9 +157,7 @@
         
 			
 			<div class="modal-footer">
-            <button type="reset" class="modal-action waves-effect waves-red btn-flat ">Reset</button>
-			&nbsp;&nbsp;&nbsp;&nbsp;
-            <button type="submit" class="modal-action waves-effect waves-green btn-flat">Agree<i class="material-icons right">send</i></button>
+               <button type="submit" class="btn btn-flat btn-small waves-effect waves-light accent2-color text-primary-color">Fortsæt<i class="material-icons right">send</i></button>
             </div>
 			
 			</form>
@@ -199,8 +198,9 @@
 							
 							<ul id="host" class="tabs tabs-fixed-width">
 							<label for="host">Party Host</label>
-								<li class="tab col s3"><a href="#testa1">Company</a></li>
-								<li class="tab col s3"><a class="" href="#testa2">Private</a></li>
+								<li class="tab col s3"><a class="" href="#testa1">Private</a></li>
+								<li class="tab col s3"><a href="#testa2">Company</a></li>
+								
 							</ul>
 							<br/>
 							<div id="testa1">

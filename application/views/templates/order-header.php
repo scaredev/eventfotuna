@@ -30,14 +30,14 @@
 	  
       <ul class="right hide-on-med-and-down ">
         <li><a href="sass.html">About Us</a></li>
-        <li><a href="<?php echo base_url();?>Register/registration2" class="modal-trigger" >Register</a></li>
-        <li><a href="<?php echo base_url();?>login/loginform">Log In</a></li>
+        <li><a href="">Betingelser</a></li>
+        
       </ul>
       <ul class="side-nav" id="mobile-demo">
 		<li> <a href="<?php echo base_url();?>login/parallax">Event fortuna</a></li>
         <li><a href="sass.html">About Us</a></li>
-        <li><a href="<?php echo base_url();?>Register/registration2" class="modal-trigger" >Register</a></li>
-        <li><a href="<?php echo base_url();?>login/loginform">Log In</a></li>
+        <li><a href="">Betingelser</a></li>
+        
       </ul>
     </div>
   </nav>

@@ -9,7 +9,8 @@
 <p class="mensahe">Thank you, a link will be sent to your e-mail 
 Remember to check your private your spam tray after 24 hrs</p>
 </p>
-			<a class="homebutt" href="<?php echo base_url();?>" >BACK TO HOME</a>
+			<a class="homebutt" href="<?php echo base_url();?>" >BACK TO HOME</a>&nbsp;&nbsp;&nbsp;
+			<a class="homebutt" href="<?php echo base_url();?>login/loginform">Login</a>
    </div>
    
  </main>
